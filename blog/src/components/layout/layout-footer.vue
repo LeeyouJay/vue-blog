@@ -43,9 +43,9 @@
 					{
 						id: 3,
 						title: '后台管理',
-						tips:'https:chenyi.ink/manage',
+						tips:'https://chenyi.ink/manage',
 						icon: 'icon-guanli',
-						href: 'https:chenyi.ink/manage'
+						href: 'https://chenyi.ink/manage'
 					},
 				]
 			}
