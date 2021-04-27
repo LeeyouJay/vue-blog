@@ -127,7 +127,8 @@
 		loginAPI,
 		mobileCodeLoginAPI,
 		getCaptchaImageAPI,
-		getMobileCodeAPI
+		getMobileCodeAPI,
+		getIpName
 	} from '@/api'
 
 	export default {
@@ -189,6 +190,7 @@
 					sh: 60,
 					sw: 75,
 				},
+				IpInfo:{},
 				showLog: false,
 				userAvatar: '',
 				lastScrollTop: 0,
@@ -215,6 +217,13 @@
 			window.removeEventListener("scroll", this.watchScroll)
 		},
 		methods: {
+			getIpName(){
+				getIpName().then(res=>{
+					const IpInfo = res.data.IpInfo
+					this.IpInfo = res.data.IpInfo
+					this.phoneLog = Object.assign(this.phoneLog,IpInfo)
+				})
+			},
 			sendMsg() {
 				let me = this;
 				if (!this.phoneLog.mobile) {
@@ -257,6 +266,7 @@
 			submitLogin() {
 				this.$refs.login.validate(valid => {
 					if (valid) {
+						this.getIpName()
 						this.onRefresh()
 					} else {
 						return false;
@@ -282,6 +292,7 @@
 					captchaUUid: this.param.captchaUUid,
 					moveX: left
 				}
+				user = Object.assign(user,this.IpInfo);
 				user.password = this.setSha256(user.password);
 				this.login(user);
 			},

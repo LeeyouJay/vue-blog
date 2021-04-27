@@ -105,3 +105,7 @@ export function getCaptchaImageAPI() {
 export function getMobileCodeAPI(params) {
 	return request.get(`${base.localUrl}/user/getMobileCode/` + params)
 }
+//获取IP地址
+export function getIpName(){
+	return request.get("http://127.0.0.1:8900/getIp");
+}
