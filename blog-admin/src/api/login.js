@@ -45,7 +45,7 @@ const login = {
 	},
 	//获取IP地址
 	getIpName(){
-		return axios.get("https://chenyi.ink:8900/getIp");
+		return axios.get("https://127.0.0.1:8900/getIp");
 	}
 	
 }

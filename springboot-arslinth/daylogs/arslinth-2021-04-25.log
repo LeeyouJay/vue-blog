@@ -1,0 +1,809 @@
+2021-04-25 01:37:15.701 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 10528 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-25 01:37:15.709 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-25 01:37:16.348 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-25 01:37:16.350 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-25 01:37:16.372 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Redis repository interfaces.
+2021-04-25 01:37:16.593 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$818c8813] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 01:37:16.621 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1142d377' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 01:37:16.624 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 01:37:16.904 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-25 01:37:16.910 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-25 01:37:16.910 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-25 01:37:16.910 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-25 01:37:16.975 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-25 01:37:16.975 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1241 ms
+2021-04-25 01:37:17.053 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-25 01:37:17.130 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-25 01:37:17.530 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-25 01:37:17.951 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-25 01:37:18.388 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-25 01:37:18.406 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-25 01:37:18.407 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-25 01:37:18.414 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-25 01:37:18.478 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d8d671b, org.springframework.security.web.context.SecurityContextPersistenceFilter@1002b06d, org.springframework.security.web.header.HeaderWriterFilter@68f264bf, org.springframework.web.filter.CorsFilter@1e734eee, org.springframework.security.web.authentication.logout.LogoutFilter@194eae3e, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@28b68067, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@19540247, com.arslinth.config.jwt.JwtAuthenticationFilter@acb1c9c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5008559a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51e1e058, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c681761, org.springframework.security.web.session.SessionManagementFilter@f5f8de2, org.springframework.security.web.access.ExceptionTranslationFilter@18bc1064, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@272c5abd]
+2021-04-25 01:37:18.761 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-25 01:37:18.806 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-25 01:37:18.806 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-25 01:37:18.815 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-25 01:37:18.837 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-25 01:37:18.944 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-25 01:37:18.990 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.553 seconds (JVM running for 4.15)
+2021-04-25 01:39:57.145 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-25 01:39:57.146 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-25 01:39:57.151 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-04-25 01:39:57.173 [http-nio-8800-exec-1] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 01:39:57.174 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - file = 88.png
+2021-04-25 01:39:57.205 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 01:39:57.207 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:LEFT
+2021-04-25 01:39:57.207 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - XPOS=155  YPOS=172
+2021-04-25 01:39:57.207 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=155  yBulgeCenter=202
+2021-04-25 01:39:57.207 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=185  yConcaveCenter=232
+2021-04-25 01:39:57.227 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=140, ypos=172, cutImageWidth=75, cutImageHeight=60)
+2021-04-25 01:39:57.268 [http-nio-8800-exec-1] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:95ms
+2021-04-25 01:40:00.272 [http-nio-8800-exec-2] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+### The error may exist in com/arslinth/dao/SysLogDao.java (best guess)
+### The error may involve com.arslinth.dao.SysLogDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO sys_log  ( id, username,   message,  type, is_success,  create_time )  VALUES  ( ?, ?,   ?,  ?, ?,  ? )
+### Cause: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+; Field 'ip_address' doesn't have a default value; nested exception is java.sql.SQLException: Field 'ip_address' doesn't have a default value
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at com.sun.proxy.$Proxy87.insert(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:60) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.sun.proxy.$Proxy96.insert(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at com.sun.proxy.$Proxy97.insert(Unknown Source) ~[?:?]
+	at com.arslinth.service.SysLogService.insertSysLog(SysLogService.java:64) ~[classes/:?]
+	at com.arslinth.config.jwt.JwtLoginAuthenticationFilter.successfulAuthentication(JwtLoginAuthenticationFilter.java:85) ~[classes/:?]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:240) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.lang.Thread.run(Thread.java:830) [?:?]
+Caused by: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:627) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497) ~[druid-1.1.14.jar:1.1.14]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy145.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47) ~[mybatis-3.5.5.jar:3.5.5]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74) ~[mybatis-3.5.5.jar:3.5.5]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy143.update(Unknown Source) ~[?:?]
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:56) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.update(MybatisCachingExecutor.java:85) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:82) ~[mybatis-plus-extension-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy142.update(Unknown Source) ~[?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197) ~[mybatis-3.5.5.jar:3.5.5]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184) ~[mybatis-3.5.5.jar:3.5.5]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	... 71 more
+2021-04-25 01:41:18.457 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 19172 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-25 01:41:18.463 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-25 01:41:19.158 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-25 01:41:19.160 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-25 01:41:19.181 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Redis repository interfaces.
+2021-04-25 01:41:19.436 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$6b666ea9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 01:41:19.467 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@37775bb1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 01:41:19.471 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 01:41:19.669 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-25 01:41:19.675 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-25 01:41:19.675 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-25 01:41:19.675 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-25 01:41:19.741 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-25 01:41:19.742 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1243 ms
+2021-04-25 01:41:19.788 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-25 01:41:19.832 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-25 01:41:20.288 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-25 01:41:20.755 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-25 01:41:21.258 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-25 01:41:21.274 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-25 01:41:21.275 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-25 01:41:21.282 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-25 01:41:21.345 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74f92d14, org.springframework.security.web.context.SecurityContextPersistenceFilter@64a4739, org.springframework.security.web.header.HeaderWriterFilter@478cc5f1, org.springframework.web.filter.CorsFilter@259195fe, org.springframework.security.web.authentication.logout.LogoutFilter@2f8ab988, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@40071890, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@748aa7dc, com.arslinth.config.jwt.JwtAuthenticationFilter@31e84f10, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@613a608e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d7772d3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c4455b4, org.springframework.security.web.session.SessionManagementFilter@3bf41cd0, org.springframework.security.web.access.ExceptionTranslationFilter@5169db2f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@370a935f]
+2021-04-25 01:41:21.671 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-25 01:41:21.718 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-25 01:41:21.719 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-25 01:41:21.729 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-25 01:41:21.755 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-25 01:41:21.878 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-25 01:41:21.927 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.736 seconds (JVM running for 4.976)
+2021-04-25 01:41:42.185 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-25 01:41:42.186 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-25 01:41:42.190 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-04-25 01:41:42.214 [http-nio-8800-exec-1] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 01:41:42.215 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - file = 34.png
+2021-04-25 01:41:42.243 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 01:41:42.246 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:LEFT
+2021-04-25 01:41:42.246 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - XPOS=180  YPOS=91
+2021-04-25 01:41:42.246 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=180  yBulgeCenter=121
+2021-04-25 01:41:42.246 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=210  yConcaveCenter=151
+2021-04-25 01:41:42.272 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=165, ypos=91, cutImageWidth=75, cutImageHeight=60)
+2021-04-25 01:41:42.351 [http-nio-8800-exec-1] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:137ms
+2021-04-25 01:42:24.063 [http-nio-8800-exec-2] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+### The error may exist in com/arslinth/dao/SysLogDao.java (best guess)
+### The error may involve com.arslinth.dao.SysLogDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO sys_log  ( id, username,   message,  type, is_success,  create_time )  VALUES  ( ?, ?,   ?,  ?, ?,  ? )
+### Cause: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+; Field 'ip_address' doesn't have a default value; nested exception is java.sql.SQLException: Field 'ip_address' doesn't have a default value
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at com.sun.proxy.$Proxy87.insert(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:60) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.sun.proxy.$Proxy96.insert(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at com.sun.proxy.$Proxy97.insert(Unknown Source) ~[?:?]
+	at com.arslinth.service.SysLogService.insertSysLog(SysLogService.java:64) ~[classes/:?]
+	at com.arslinth.config.jwt.JwtLoginAuthenticationFilter.successfulAuthentication(JwtLoginAuthenticationFilter.java:85) ~[classes/:?]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:240) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.lang.Thread.run(Thread.java:830) [?:?]
+Caused by: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:627) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497) ~[druid-1.1.14.jar:1.1.14]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy145.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47) ~[mybatis-3.5.5.jar:3.5.5]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74) ~[mybatis-3.5.5.jar:3.5.5]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy143.update(Unknown Source) ~[?:?]
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:56) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.update(MybatisCachingExecutor.java:85) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:82) ~[mybatis-plus-extension-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy142.update(Unknown Source) ~[?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197) ~[mybatis-3.5.5.jar:3.5.5]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184) ~[mybatis-3.5.5.jar:3.5.5]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	... 71 more
+2021-04-25 01:42:52.136 [http-nio-8800-exec-3] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 01:42:52.136 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - file = 22.png
+2021-04-25 01:42:52.142 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 01:42:52.142 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:LEFT
+2021-04-25 01:42:52.142 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - XPOS=180  YPOS=168
+2021-04-25 01:42:52.142 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=180  yBulgeCenter=198
+2021-04-25 01:42:52.142 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=210  yConcaveCenter=228
+2021-04-25 01:42:52.142 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=165, ypos=168, cutImageWidth=75, cutImageHeight=60)
+2021-04-25 01:42:52.163 [http-nio-8800-exec-3] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:27ms
+2021-04-25 01:43:32.269 [http-nio-8800-exec-4] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+### The error may exist in com/arslinth/dao/SysLogDao.java (best guess)
+### The error may involve com.arslinth.dao.SysLogDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO sys_log  ( id, username,   message,  type, is_success,  create_time )  VALUES  ( ?, ?,   ?,  ?, ?,  ? )
+### Cause: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+; Field 'ip_address' doesn't have a default value; nested exception is java.sql.SQLException: Field 'ip_address' doesn't have a default value
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at com.sun.proxy.$Proxy87.insert(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:60) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.sun.proxy.$Proxy96.insert(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at com.sun.proxy.$Proxy97.insert(Unknown Source) ~[?:?]
+	at com.arslinth.service.SysLogService.insertSysLog(SysLogService.java:64) ~[classes/:?]
+	at com.arslinth.config.jwt.JwtLoginAuthenticationFilter.successfulAuthentication(JwtLoginAuthenticationFilter.java:85) ~[classes/:?]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:240) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.lang.Thread.run(Thread.java:830) [?:?]
+Caused by: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:627) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497) ~[druid-1.1.14.jar:1.1.14]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy145.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47) ~[mybatis-3.5.5.jar:3.5.5]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74) ~[mybatis-3.5.5.jar:3.5.5]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy143.update(Unknown Source) ~[?:?]
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:56) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.update(MybatisCachingExecutor.java:85) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:82) ~[mybatis-plus-extension-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy142.update(Unknown Source) ~[?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197) ~[mybatis-3.5.5.jar:3.5.5]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184) ~[mybatis-3.5.5.jar:3.5.5]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	... 71 more
+2021-04-25 01:44:00.323 [http-nio-8800-exec-5] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 01:44:00.324 [http-nio-8800-exec-5] INFO  com.arslinth.utils.SliderImgUtil - file = 97.png
+2021-04-25 01:44:00.328 [http-nio-8800-exec-5] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 01:44:00.329 [http-nio-8800-exec-5] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:UP
+2021-04-25 01:44:00.329 [http-nio-8800-exec-5] INFO  com.arslinth.utils.SliderImgUtil - XPOS=214  YPOS=67
+2021-04-25 01:44:00.329 [http-nio-8800-exec-5] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=244  yBulgeCenter=67
+2021-04-25 01:44:00.329 [http-nio-8800-exec-5] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=214  yConcaveCenter=97
+2021-04-25 01:44:00.329 [http-nio-8800-exec-5] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=214, ypos=52, cutImageWidth=60, cutImageHeight=75)
+2021-04-25 01:44:00.346 [http-nio-8800-exec-5] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:23ms
+2021-04-25 01:44:19.546 [http-nio-8800-exec-6] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+### The error may exist in com/arslinth/dao/SysLogDao.java (best guess)
+### The error may involve com.arslinth.dao.SysLogDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO sys_log  ( id, username,   message,  type, is_success,  create_time )  VALUES  ( ?, ?,   ?,  ?, ?,  ? )
+### Cause: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+; Field 'ip_address' doesn't have a default value; nested exception is java.sql.SQLException: Field 'ip_address' doesn't have a default value
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72) ~[spring-jdbc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at com.sun.proxy.$Proxy87.insert(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:60) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at com.sun.proxy.$Proxy96.insert(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at com.sun.proxy.$Proxy97.insert(Unknown Source) ~[?:?]
+	at com.arslinth.service.SysLogService.insertSysLog(SysLogService.java:64) ~[classes/:?]
+	at com.arslinth.config.jwt.JwtLoginAuthenticationFilter.successfulAuthentication(JwtLoginAuthenticationFilter.java:85) ~[classes/:?]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:240) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.2.RELEASE.jar:5.3.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.lang.Thread.run(Thread.java:830) [?:?]
+Caused by: java.sql.SQLException: Field 'ip_address' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:627) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167) ~[druid-1.1.14.jar:1.1.14]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497) ~[druid-1.1.14.jar:1.1.14]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy145.execute(Unknown Source) ~[?:?]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47) ~[mybatis-3.5.5.jar:3.5.5]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74) ~[mybatis-3.5.5.jar:3.5.5]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy143.update(Unknown Source) ~[?:?]
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:56) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.update(MybatisCachingExecutor.java:85) ~[mybatis-plus-core-3.4.0.jar:3.4.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:82) ~[mybatis-plus-extension-3.4.0.jar:3.4.0]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.5.jar:3.5.5]
+	at com.sun.proxy.$Proxy142.update(Unknown Source) ~[?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197) ~[mybatis-3.5.5.jar:3.5.5]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184) ~[mybatis-3.5.5.jar:3.5.5]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426) ~[mybatis-spring-2.0.5.jar:2.0.5]
+	... 71 more
+2021-04-25 01:47:07.678 [http-nio-8800-exec-7] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 01:47:07.678 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - file = 88.png
+2021-04-25 01:47:07.681 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 01:47:07.681 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:DOWN
+2021-04-25 01:47:07.681 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - XPOS=175  YPOS=63
+2021-04-25 01:47:07.681 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=205  yBulgeCenter=123
+2021-04-25 01:47:07.681 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=235  yConcaveCenter=93
+2021-04-25 01:47:07.681 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=175, ypos=63, cutImageWidth=60, cutImageHeight=75)
+2021-04-25 01:47:07.707 [http-nio-8800-exec-7] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:29ms
+2021-04-25 01:48:14.185 [http-nio-8800-exec-8] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 01:48:14.186 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - file = 39.png
+2021-04-25 01:48:14.191 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 01:48:14.191 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:DOWN
+2021-04-25 01:48:14.191 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - XPOS=172  YPOS=130
+2021-04-25 01:48:14.191 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=202  yBulgeCenter=190
+2021-04-25 01:48:14.191 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=232  yConcaveCenter=160
+2021-04-25 01:48:14.191 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=172, ypos=130, cutImageWidth=60, cutImageHeight=75)
+2021-04-25 01:48:14.209 [http-nio-8800-exec-8] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:24ms
+2021-04-25 01:48:43.385 [http-nio-8800-exec-1] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 01:48:43.385 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - file = 39.png
+2021-04-25 01:48:43.388 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 01:48:43.389 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:DOWN
+2021-04-25 01:48:43.389 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - XPOS=166  YPOS=116
+2021-04-25 01:48:43.389 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=196  yBulgeCenter=176
+2021-04-25 01:48:43.389 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=226  yConcaveCenter=146
+2021-04-25 01:48:43.389 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=166, ypos=116, cutImageWidth=60, cutImageHeight=75)
+2021-04-25 01:48:43.407 [http-nio-8800-exec-1] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:22ms
+2021-04-25 14:27:38.074 [http-nio-8800-exec-1] WARN  com.arslinth.config.jwt.JwtUtil - 解析出错,非有效token
+2021-04-25 14:27:38.074 [http-nio-8800-exec-1] WARN  com.arslinth.config.jwt.JwtUtil - JWT expired at 2021-04-24T18:48:49Z. Current time: 2021-04-25T06:27:38Z, a difference of 41929060 milliseconds.  Allowed clock skew: 0 milliseconds.
+2021-04-25 14:27:38.074 [http-nio-8800-exec-10] WARN  com.arslinth.config.jwt.JwtUtil - 解析出错,非有效token
+2021-04-25 14:27:38.074 [http-nio-8800-exec-10] WARN  com.arslinth.config.jwt.JwtUtil - JWT expired at 2021-04-24T18:48:49Z. Current time: 2021-04-25T06:27:38Z, a difference of 41929060 milliseconds.  Allowed clock skew: 0 milliseconds.
+2021-04-25 14:27:38.084 [http-nio-8800-exec-1] WARN  com.arslinth.config.jwt.JwtUtil - 解析出错,非有效token
+2021-04-25 14:27:38.084 [http-nio-8800-exec-10] WARN  com.arslinth.config.jwt.JwtUtil - 解析出错,非有效token
+2021-04-25 14:27:38.084 [http-nio-8800-exec-10] WARN  com.arslinth.config.jwt.JwtUtil - JWT expired at 2021-04-24T18:48:49Z. Current time: 2021-04-25T06:27:38Z, a difference of 41929084 milliseconds.  Allowed clock skew: 0 milliseconds.
+2021-04-25 14:27:38.084 [http-nio-8800-exec-1] WARN  com.arslinth.config.jwt.JwtUtil - JWT expired at 2021-04-24T18:48:49Z. Current time: 2021-04-25T06:27:38Z, a difference of 41929084 milliseconds.  Allowed clock skew: 0 milliseconds.
+2021-04-25 14:28:20.786 [http-nio-8800-exec-4] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 14:28:20.787 [http-nio-8800-exec-4] INFO  com.arslinth.utils.SliderImgUtil - file = 34.png
+2021-04-25 14:28:20.789 [http-nio-8800-exec-4] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 14:28:20.790 [http-nio-8800-exec-4] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:UP
+2021-04-25 14:28:20.790 [http-nio-8800-exec-4] INFO  com.arslinth.utils.SliderImgUtil - XPOS=194  YPOS=109
+2021-04-25 14:28:20.790 [http-nio-8800-exec-4] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=224  yBulgeCenter=109
+2021-04-25 14:28:20.790 [http-nio-8800-exec-4] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=194  yConcaveCenter=139
+2021-04-25 14:28:20.790 [http-nio-8800-exec-4] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=194, ypos=94, cutImageWidth=60, cutImageHeight=75)
+2021-04-25 14:28:20.807 [http-nio-8800-exec-4] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:21ms
+2021-04-25 14:29:37.138 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'taskExecutor'
+2021-04-25 14:29:37.263 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2021-04-25 14:29:39.084 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 24400 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-25 14:29:39.089 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-25 14:29:39.754 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-25 14:29:39.756 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-25 14:29:39.779 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15ms. Found 0 Redis repository interfaces.
+2021-04-25 14:29:39.988 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$4866032f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 14:29:40.021 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5ea7bc4' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 14:29:40.025 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 14:29:40.198 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-25 14:29:40.204 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-25 14:29:40.205 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-25 14:29:40.205 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-25 14:29:40.275 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-25 14:29:40.275 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1158 ms
+2021-04-25 14:29:40.318 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-25 14:29:40.358 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-25 14:29:40.699 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-25 14:29:41.136 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-25 14:29:41.582 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-25 14:29:41.599 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-25 14:29:41.600 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-25 14:29:41.606 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-25 14:29:41.671 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@377cbdae, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d4e424e, org.springframework.security.web.header.HeaderWriterFilter@66f5770e, org.springframework.web.filter.CorsFilter@19faedcc, org.springframework.security.web.authentication.logout.LogoutFilter@1bd6638, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@37a939bc, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@74d776fb, com.arslinth.config.jwt.JwtAuthenticationFilter@406decb2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60251ddb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7fdf7359, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@122ea8dc, org.springframework.security.web.session.SessionManagementFilter@53f94afe, org.springframework.security.web.access.ExceptionTranslationFilter@46507dda, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@14b4d90b]
+2021-04-25 14:29:41.979 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-25 14:29:42.026 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-25 14:29:42.026 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-25 14:29:42.035 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-25 14:29:42.054 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-25 14:29:42.161 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-25 14:29:42.206 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.4 seconds (JVM running for 4.085)
+2021-04-25 14:29:51.231 [http-nio-8800-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-25 14:29:51.231 [http-nio-8800-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-25 14:29:51.236 [http-nio-8800-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-04-25 14:29:51.257 [http-nio-8800-exec-2] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 14:29:51.257 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - file = 34.png
+2021-04-25 14:29:51.285 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 14:29:51.288 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:LEFT
+2021-04-25 14:29:51.288 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - XPOS=169  YPOS=145
+2021-04-25 14:29:51.288 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=169  yBulgeCenter=175
+2021-04-25 14:29:51.288 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=199  yConcaveCenter=205
+2021-04-25 14:29:51.310 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=154, ypos=145, cutImageWidth=75, cutImageHeight=60)
+2021-04-25 14:29:51.370 [http-nio-8800-exec-2] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:113ms
+2021-04-25 14:58:45.893 [http-nio-8800-exec-3] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 14:58:45.893 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - file = 83.png
+2021-04-25 14:58:45.900 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 14:58:45.900 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:DOWN
+2021-04-25 14:58:45.900 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - XPOS=175  YPOS=42
+2021-04-25 14:58:45.900 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=205  yBulgeCenter=102
+2021-04-25 14:58:45.900 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=235  yConcaveCenter=72
+2021-04-25 14:58:45.900 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=175, ypos=42, cutImageWidth=60, cutImageHeight=75)
+2021-04-25 14:58:45.923 [http-nio-8800-exec-3] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:30ms
+2021-04-25 15:25:06.246 [http-nio-8800-exec-2] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 15:25:06.246 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - file = 34.png
+2021-04-25 15:25:06.249 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 15:25:06.249 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:UP
+2021-04-25 15:25:06.249 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - XPOS=223  YPOS=134
+2021-04-25 15:25:06.249 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=253  yBulgeCenter=134
+2021-04-25 15:25:06.249 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=223  yConcaveCenter=164
+2021-04-25 15:25:06.249 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=223, ypos=119, cutImageWidth=60, cutImageHeight=75)
+2021-04-25 15:25:06.266 [http-nio-8800-exec-2] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:20ms
+2021-04-25 15:34:58.282 [http-nio-8800-exec-8] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-25 15:34:58.282 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - file = 22.png
+2021-04-25 15:34:58.285 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-25 15:34:58.285 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:DOWN
+2021-04-25 15:34:58.285 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - XPOS=162  YPOS=111
+2021-04-25 15:34:58.285 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=192  yBulgeCenter=171
+2021-04-25 15:34:58.285 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=222  yConcaveCenter=141
+2021-04-25 15:34:58.286 [http-nio-8800-exec-8] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=162, ypos=111, cutImageWidth=60, cutImageHeight=75)
+2021-04-25 15:34:58.302 [http-nio-8800-exec-8] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:20ms
+2021-04-25 16:10:20.423 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'taskExecutor'
+2021-04-25 16:10:20.550 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2021-04-25 16:28:37.474 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 19072 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-25 16:28:37.478 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-25 16:28:38.091 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-25 16:28:38.093 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-25 16:28:38.114 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15ms. Found 0 Redis repository interfaces.
+2021-04-25 16:28:38.303 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$44f988ae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 16:28:38.329 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1a9ec80e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 16:28:38.333 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 16:28:38.498 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-25 16:28:38.504 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-25 16:28:38.504 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-25 16:28:38.504 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-25 16:28:38.563 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-25 16:28:38.563 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1061 ms
+2021-04-25 16:28:38.613 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-25 16:28:38.649 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-25 16:28:38.956 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-25 16:28:39.364 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-25 16:28:39.769 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-25 16:28:39.784 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-25 16:28:39.785 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-25 16:28:39.792 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-25 16:28:39.852 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60c8909a, org.springframework.security.web.context.SecurityContextPersistenceFilter@18bc1064, org.springframework.security.web.header.HeaderWriterFilter@18d1d137, org.springframework.web.filter.CorsFilter@27bcb4ad, org.springframework.security.web.authentication.logout.LogoutFilter@3450bd13, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@70ad0854, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@76208b80, com.arslinth.config.jwt.JwtAuthenticationFilter@339cde4b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68f264bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c0bfe9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1774c4e2, org.springframework.security.web.session.SessionManagementFilter@7c45191e, org.springframework.security.web.access.ExceptionTranslationFilter@478c84aa, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@107ebdad]
+2021-04-25 16:28:40.122 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-25 16:28:40.173 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-25 16:28:40.173 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-25 16:28:40.182 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-25 16:28:40.199 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-25 16:28:40.302 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-25 16:28:40.349 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.125 seconds (JVM running for 3.634)
+2021-04-25 16:28:59.061 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-25 16:28:59.062 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-25 16:28:59.066 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-04-25 21:17:02.013 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 18832 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-25 21:17:02.018 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-25 21:17:02.670 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-25 21:17:02.671 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-25 21:17:02.692 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Redis repository interfaces.
+2021-04-25 21:17:02.880 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$71e6d1e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 21:17:02.908 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@217235f5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 21:17:02.911 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-25 21:17:03.090 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-25 21:17:03.095 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-25 21:17:03.096 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-25 21:17:03.096 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-25 21:17:03.153 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-25 21:17:03.153 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1109 ms
+2021-04-25 21:17:03.196 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-25 21:17:03.234 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-25 21:17:03.612 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-25 21:17:04.019 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-25 21:17:04.434 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-25 21:17:04.449 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-25 21:17:04.449 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-25 21:17:04.456 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-25 21:17:04.519 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1820f274, org.springframework.security.web.context.SecurityContextPersistenceFilter@70eb94d7, org.springframework.security.web.header.HeaderWriterFilter@a1a72d4, org.springframework.web.filter.CorsFilter@4cae66a8, org.springframework.security.web.authentication.logout.LogoutFilter@71de1091, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@221cdd87, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@4d66cb, com.arslinth.config.jwt.JwtAuthenticationFilter@7c79f2cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e43b342, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36931450, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63551c66, org.springframework.security.web.session.SessionManagementFilter@1afa048a, org.springframework.security.web.access.ExceptionTranslationFilter@3ba8ef4e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@23e0c200]
+2021-04-25 21:17:04.802 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-25 21:17:04.851 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-25 21:17:04.851 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-25 21:17:04.862 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-25 21:17:04.884 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-25 21:17:04.990 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-25 21:17:05.040 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.293 seconds (JVM running for 3.858)
+2021-04-25 21:18:49.548 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-25 21:18:49.548 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-25 21:18:49.554 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2021-04-25 21:18:49.595 [http-nio-8800-exec-3] WARN  com.arslinth.config.jwt.JwtUtil - 解析出错,非有效token
+2021-04-25 21:18:49.595 [http-nio-8800-exec-3] WARN  com.arslinth.config.jwt.JwtUtil - JWT expired at 2021-04-25T08:35:00Z. Current time: 2021-04-25T13:18:49Z, a difference of 17029594 milliseconds.  Allowed clock skew: 0 milliseconds.
+2021-04-25 21:18:49.595 [http-nio-8800-exec-4] WARN  com.arslinth.config.jwt.JwtUtil - 解析出错,非有效token
+2021-04-25 21:18:49.595 [http-nio-8800-exec-4] WARN  com.arslinth.config.jwt.JwtUtil - JWT expired at 2021-04-25T08:35:00Z. Current time: 2021-04-25T13:18:49Z, a difference of 17029594 milliseconds.  Allowed clock skew: 0 milliseconds.

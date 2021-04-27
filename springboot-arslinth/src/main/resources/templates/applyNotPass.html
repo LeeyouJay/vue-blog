@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>友链申请回复</title>
+</head>
+<body>
+<div style="padding: 20px;">
+    <p>一条来自<a href="http://localhost:8888/friend">ArslinthBlog</a>博客友链的申请回复：<span th:text="${content}"></span></p>
+    <hr style="height: 1px;border: 0;width: 100%;background-color: #e3e3e3;"/>
+    <p>
+        <img th:src="@{${icon}}" class="avatar" />
+    </p>
+    <p>站名：<span th:text="${siteName}"></p>
+    <p>链接：<span th:text="${siteLink}"></p>
+    <p>邮箱：<span th:text="${email}"></p>
+    <p>头像：<span th:text="${icon}"></p>
+    <p>描述：<span th:text="${description}"></p>
+    <p>提交时间：<span th:text="${createTime}"></p>
+    <hr style="height: 1px;border: 0;width: 100%;background-color: #e3e3e3;"/>
+    <p style="font-size: 10px;color: #989898;margin-left: 20px">——此为系统邮件请勿回复</p>
+</div>
+</body>
+<style>
+    .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+</style>
+</html>

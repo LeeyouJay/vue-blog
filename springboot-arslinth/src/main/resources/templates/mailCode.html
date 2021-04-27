@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言通知</title>
+</head>
+<body>
+<div style="padding: 20px;">
+    <p>您正在<a href="https://www.chenyi.ink">ArslinthBlog</a>博客中使用邮箱验证，验证码：
+        <span th:text="${code}" style="color: royalblue;"></span>，有效时间
+        <span style="color: darkgray;">2</span>分钟。
+    </p>
+    <p>若非本人操作，请勿泄露。</p>
+    <hr style="height: 1px;border: 0;width: 100%;background-color: #e3e3e3;"/>
+    <p style="font-size: 14px;color: #6d6d6d;">此为系统邮件请勿回复</p>
+</div>
+</body>
+</html>
+

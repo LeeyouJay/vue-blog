@@ -2,37 +2,6 @@ import request from '@/utils/request'
 import base from './base.js'
 import QS from 'qs';
 
-export function fetchFriend() {
-	return request({
-		url: '/friend',
-		method: 'get',
-		params: {}
-	})
-}
-
-export function fetchSocial() {
-	return request({
-		url: '/social',
-		method: 'get',
-		params: {}
-	});
-}
-
-export function fetchSiteInfo() {
-	return request({
-		url: '/site',
-		method: 'get',
-		params: {}
-	})
-}
-
-export function fetchComment() {
-	return request({
-		url: '/comment',
-		method: 'get',
-		params: {}
-	})
-}
 //获取qq昵称头像
 export function getQQUser(qq) {
 	return request({

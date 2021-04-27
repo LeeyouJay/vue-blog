@@ -1,0 +1,363 @@
+2021-04-27 06:02:41.567 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 23268 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-27 06:02:41.575 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-27 06:02:42.263 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-27 06:02:42.265 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-27 06:02:42.291 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16ms. Found 0 Redis repository interfaces.
+2021-04-27 06:02:42.496 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$bcbb0900] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 06:02:42.525 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@22a260ff' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 06:02:42.528 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 06:02:42.704 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-27 06:02:42.711 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-27 06:02:42.712 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 06:02:42.712 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-27 06:02:42.778 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-27 06:02:42.778 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1176 ms
+2021-04-27 06:02:42.822 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-27 06:02:42.861 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-27 06:02:43.276 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-27 06:02:43.747 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-27 06:02:44.170 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-27 06:02:44.186 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-27 06:02:44.187 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-27 06:02:44.194 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-27 06:02:44.261 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@677c2820, org.springframework.security.web.context.SecurityContextPersistenceFilter@6d0bcf8c, org.springframework.security.web.header.HeaderWriterFilter@65a66a75, org.springframework.web.filter.CorsFilter@1815577b, org.springframework.security.web.authentication.logout.LogoutFilter@3a7dcfb7, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@39c1e7b7, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@1c14d24d, com.arslinth.config.jwt.JwtAuthenticationFilter@28515443, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66d44581, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@dbcf7c3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2eea4441, org.springframework.security.web.session.SessionManagementFilter@78829412, org.springframework.security.web.access.ExceptionTranslationFilter@544e6b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35dc849b]
+2021-04-27 06:02:44.552 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-27 06:02:44.605 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-27 06:02:44.606 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-27 06:02:44.616 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-27 06:02:44.636 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-27 06:02:44.741 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-27 06:02:44.787 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.51 seconds (JVM running for 4.185)
+2021-04-27 06:03:01.693 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-27 06:03:01.693 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-27 06:03:01.697 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-04-27 06:03:02.082 [http-nio-8800-exec-1] INFO  com.arslinth.controller.SysUserController -  验证码为：7137
+2021-04-27 06:03:17.702 [http-nio-8800-exec-2] INFO  com.arslinth.controller.SysUserController -  验证码为：1470
+2021-04-27 13:14:57.751 [http-nio-8800-exec-2] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-27 13:14:57.755 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - file = 97.png
+2021-04-27 13:14:57.766 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-27 13:14:57.768 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:LEFT
+2021-04-27 13:14:57.769 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - XPOS=209  YPOS=169
+2021-04-27 13:14:57.769 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=209  yBulgeCenter=199
+2021-04-27 13:14:57.769 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=239  yConcaveCenter=229
+2021-04-27 13:14:57.769 [http-nio-8800-exec-2] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=194, ypos=169, cutImageWidth=75, cutImageHeight=60)
+2021-04-27 13:14:57.805 [http-nio-8800-exec-2] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:53ms
+2021-04-27 13:18:47.108 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 18832 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-27 13:18:47.112 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-27 13:18:47.757 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-27 13:18:47.759 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-27 13:18:47.779 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2021-04-27 13:18:47.968 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$8fc5573a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:18:47.997 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@54c425b1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:18:48.001 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:18:48.180 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-27 13:18:48.186 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-27 13:18:48.187 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 13:18:48.187 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-27 13:18:48.248 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-27 13:18:48.248 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1113 ms
+2021-04-27 13:18:48.290 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-27 13:18:48.329 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-27 13:18:48.638 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-27 13:18:49.038 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-27 13:18:49.443 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-27 13:18:49.458 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-27 13:18:49.458 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-27 13:18:49.465 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-27 13:18:49.523 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64186f60, org.springframework.security.web.context.SecurityContextPersistenceFilter@c478e4e, org.springframework.security.web.header.HeaderWriterFilter@599310ab, org.springframework.web.filter.CorsFilter@1f949ab9, org.springframework.security.web.authentication.logout.LogoutFilter@738ed8f5, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@de40aa1, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@61b76a7d, com.arslinth.config.jwt.JwtAuthenticationFilter@57f89680, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ba08f26, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1642968c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70bc9070, org.springframework.security.web.session.SessionManagementFilter@f575d2b, org.springframework.security.web.access.ExceptionTranslationFilter@74919649, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1bb51492]
+2021-04-27 13:18:49.790 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-27 13:18:49.835 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-27 13:18:49.836 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-27 13:18:49.844 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-27 13:18:49.862 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-27 13:18:49.964 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-27 13:18:50.008 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.131 seconds (JVM running for 3.637)
+2021-04-27 13:19:20.027 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-27 13:19:20.028 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-27 13:19:20.032 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-04-27 13:38:26.356 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 7212 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-27 13:38:26.360 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-27 13:38:26.960 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-27 13:38:26.961 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-27 13:38:26.981 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2021-04-27 13:38:27.166 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$ef510d5b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:38:27.192 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2f9a10df' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:38:27.196 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:38:27.355 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-27 13:38:27.360 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-27 13:38:27.361 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 13:38:27.361 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-27 13:38:27.423 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-27 13:38:27.423 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1039 ms
+2021-04-27 13:38:27.466 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-27 13:38:27.505 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-27 13:38:27.809 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-27 13:38:28.209 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-27 13:38:28.602 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-27 13:38:28.620 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-27 13:38:28.621 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-27 13:38:28.627 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-27 13:38:28.686 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@234bfc8c, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c1a95a2, org.springframework.security.web.header.HeaderWriterFilter@1b6683c4, org.springframework.web.filter.CorsFilter@7336fd8f, org.springframework.security.web.authentication.logout.LogoutFilter@4d90d91f, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@5008559a, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@4c0bfe9e, com.arslinth.config.jwt.JwtAuthenticationFilter@490fbeaa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72b53f27, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78829412, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35dc849b, org.springframework.security.web.session.SessionManagementFilter@7db2b614, org.springframework.security.web.access.ExceptionTranslationFilter@629de8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18bc1064]
+2021-04-27 13:38:28.953 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-27 13:38:28.999 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-27 13:38:29.000 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-27 13:38:29.008 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-27 13:38:29.026 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-27 13:38:29.131 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-27 13:38:29.175 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.066 seconds (JVM running for 3.589)
+2021-04-27 13:41:07.808 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-27 13:41:07.809 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-27 13:41:07.814 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-04-27 13:42:27.676 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 17488 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-27 13:42:27.680 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-27 13:42:28.262 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-27 13:42:28.264 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-27 13:42:28.284 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2021-04-27 13:42:28.460 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$4c9bcb0f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:42:28.486 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7f5614f9' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:42:28.489 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:42:28.654 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-27 13:42:28.660 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-27 13:42:28.660 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 13:42:28.660 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-27 13:42:28.718 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-27 13:42:28.718 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1015 ms
+2021-04-27 13:42:28.759 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-27 13:42:28.796 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-27 13:42:29.108 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-27 13:42:29.508 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-27 13:42:29.896 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-27 13:42:29.912 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-27 13:42:29.912 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-27 13:42:29.922 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-27 13:42:29.981 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@107ebdad, org.springframework.security.web.context.SecurityContextPersistenceFilter@1cfb7450, org.springframework.security.web.header.HeaderWriterFilter@1ddc8fc, org.springframework.web.filter.CorsFilter@28e7bb31, org.springframework.security.web.authentication.logout.LogoutFilter@221cdd87, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@e3275d3, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@1bfafce1, com.arslinth.config.jwt.JwtAuthenticationFilter@138a952f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d1deb11, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68f264bf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@767cc126, org.springframework.security.web.session.SessionManagementFilter@1e288c76, org.springframework.security.web.access.ExceptionTranslationFilter@221961af, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33a7331]
+2021-04-27 13:42:30.243 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-27 13:42:30.290 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-27 13:42:30.290 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-27 13:42:30.299 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-27 13:42:30.317 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-27 13:42:30.419 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-27 13:42:30.463 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.025 seconds (JVM running for 3.548)
+2021-04-27 13:42:41.959 [http-nio-8800-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-27 13:42:41.959 [http-nio-8800-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-27 13:42:41.963 [http-nio-8800-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-04-27 13:42:55.331 [http-nio-8800-exec-1] INFO  com.arslinth.controller.SysUserController -  验证码为：4092
+2021-04-27 13:43:28.992 [http-nio-8800-exec-3] INFO  com.arslinth.controller.SysUserController -  验证码为：5632
+2021-04-27 13:57:54.445 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 12892 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-27 13:57:54.449 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-27 13:57:55.035 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-27 13:57:55.037 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-27 13:57:55.059 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Redis repository interfaces.
+2021-04-27 13:57:55.244 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$24851522] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:57:55.271 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ee88e21' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:57:55.274 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 13:57:55.435 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-27 13:57:55.440 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-27 13:57:55.441 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 13:57:55.441 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-27 13:57:55.506 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-27 13:57:55.506 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1035 ms
+2021-04-27 13:57:55.546 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-27 13:57:55.581 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-27 13:57:55.878 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-27 13:57:56.278 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-27 13:57:56.681 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-27 13:57:56.696 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-27 13:57:56.697 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-27 13:57:56.704 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-27 13:57:56.762 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23e0c200, org.springframework.security.web.context.SecurityContextPersistenceFilter@78829412, org.springframework.security.web.header.HeaderWriterFilter@69abeb14, org.springframework.web.filter.CorsFilter@5203c80f, org.springframework.security.web.authentication.logout.LogoutFilter@2634d000, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@25d23478, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@677c2820, com.arslinth.config.jwt.JwtAuthenticationFilter@39c1e7b7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d0bcf8c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e43b342, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c14d24d, org.springframework.security.web.session.SessionManagementFilter@34d5eac, org.springframework.security.web.access.ExceptionTranslationFilter@6b32b678, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4c0bfe9e]
+2021-04-27 13:57:57.029 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-27 13:57:57.076 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-27 13:57:57.076 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-27 13:57:57.084 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-27 13:57:57.107 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-27 13:57:57.204 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-27 13:57:57.249 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.036 seconds (JVM running for 3.538)
+2021-04-27 14:12:52.491 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-27 14:12:52.491 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-27 14:12:52.496 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-04-27 14:12:56.177 [http-nio-8800-exec-2] INFO  com.arslinth.controller.SysUserController -  验证码为：1453
+2021-04-27 14:16:29.651 [http-nio-8800-exec-4] INFO  com.arslinth.controller.SysUserController -  验证码为：3172
+2021-04-27 14:16:47.650 [http-nio-8800-exec-7] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-27 14:16:47.651 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - file = 88.png
+2021-04-27 14:16:47.679 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-27 14:16:47.681 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:DOWN
+2021-04-27 14:16:47.681 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - XPOS=224  YPOS=32
+2021-04-27 14:16:47.681 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=254  yBulgeCenter=92
+2021-04-27 14:16:47.681 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=284  yConcaveCenter=62
+2021-04-27 14:16:47.700 [http-nio-8800-exec-7] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=224, ypos=32, cutImageWidth=60, cutImageHeight=75)
+2021-04-27 14:16:47.737 [http-nio-8800-exec-7] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:87ms
+2021-04-27 14:16:49.841 [http-nio-8800-exec-8] WARN  com.arslinth.config.jwt.JwtLoginAuthenticationFilter - 账号不存在！
+2021-04-27 14:16:56.726 [http-nio-8800-exec-9] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-27 14:16:56.726 [http-nio-8800-exec-9] INFO  com.arslinth.utils.SliderImgUtil - file = 70.png
+2021-04-27 14:16:56.731 [http-nio-8800-exec-9] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-27 14:16:56.732 [http-nio-8800-exec-9] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:LEFT
+2021-04-27 14:16:56.732 [http-nio-8800-exec-9] INFO  com.arslinth.utils.SliderImgUtil - XPOS=179  YPOS=92
+2021-04-27 14:16:56.732 [http-nio-8800-exec-9] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=179  yBulgeCenter=122
+2021-04-27 14:16:56.732 [http-nio-8800-exec-9] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=209  yConcaveCenter=152
+2021-04-27 14:16:56.732 [http-nio-8800-exec-9] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=164, ypos=92, cutImageWidth=75, cutImageHeight=60)
+2021-04-27 14:16:56.754 [http-nio-8800-exec-9] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:28ms
+2021-04-27 14:32:51.698 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 1752 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-27 14:32:51.703 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-27 14:32:52.318 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-27 14:32:52.320 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-27 14:32:52.340 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2021-04-27 14:32:52.521 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$b815c560] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 14:32:52.548 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@15e1f8fe' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 14:32:52.551 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 14:32:52.713 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-27 14:32:52.718 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-27 14:32:52.718 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 14:32:52.718 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-27 14:32:52.774 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-27 14:32:52.774 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1042 ms
+2021-04-27 14:32:52.815 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-27 14:32:52.853 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-27 14:32:53.160 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-27 14:32:53.566 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-27 14:32:54.018 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-27 14:32:54.039 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-27 14:32:54.040 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-27 14:32:54.047 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-27 14:32:54.108 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1820f274, org.springframework.security.web.context.SecurityContextPersistenceFilter@70eb94d7, org.springframework.security.web.header.HeaderWriterFilter@a1a72d4, org.springframework.web.filter.CorsFilter@550c973e, org.springframework.security.web.authentication.logout.LogoutFilter@71de1091, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@221cdd87, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@4d66cb, com.arslinth.config.jwt.JwtAuthenticationFilter@7c79f2cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e43b342, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36931450, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63551c66, org.springframework.security.web.session.SessionManagementFilter@1afa048a, org.springframework.security.web.access.ExceptionTranslationFilter@3ba8ef4e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@23e0c200]
+2021-04-27 14:32:54.385 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-27 14:32:54.430 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-27 14:32:54.431 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-27 14:32:54.439 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-27 14:32:54.459 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-27 14:32:54.566 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-27 14:32:54.612 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.155 seconds (JVM running for 3.685)
+2021-04-27 14:33:13.435 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-27 14:33:13.435 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-27 14:33:13.440 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-04-27 14:33:13.460 [http-nio-8800-exec-1] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-27 14:33:13.461 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - file = 67.png
+2021-04-27 14:33:13.488 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-27 14:33:13.490 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:DOWN
+2021-04-27 14:33:13.490 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - XPOS=157  YPOS=77
+2021-04-27 14:33:13.490 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=187  yBulgeCenter=137
+2021-04-27 14:33:13.490 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=217  yConcaveCenter=107
+2021-04-27 14:33:13.511 [http-nio-8800-exec-1] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=157, ypos=77, cutImageWidth=60, cutImageHeight=75)
+2021-04-27 14:33:13.551 [http-nio-8800-exec-1] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:91ms
+2021-04-27 14:36:20.141 [http-nio-8800-exec-3] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-27 14:36:20.141 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - file = 88.png
+2021-04-27 14:36:20.144 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-27 14:36:20.144 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:UP
+2021-04-27 14:36:20.144 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - XPOS=151  YPOS=157
+2021-04-27 14:36:20.144 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=181  yBulgeCenter=157
+2021-04-27 14:36:20.144 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=151  yConcaveCenter=187
+2021-04-27 14:36:20.145 [http-nio-8800-exec-3] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=151, ypos=142, cutImageWidth=60, cutImageHeight=75)
+2021-04-27 14:36:20.165 [http-nio-8800-exec-3] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:24ms
+2021-04-27 14:37:55.473 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 9904 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-27 14:37:55.478 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-27 14:37:56.070 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-27 14:37:56.071 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-27 14:37:56.091 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2021-04-27 14:37:56.268 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$71e6d1e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 14:37:56.295 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@217235f5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 14:37:56.298 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 14:37:56.460 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-27 14:37:56.466 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-27 14:37:56.467 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 14:37:56.467 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-27 14:37:56.521 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-27 14:37:56.521 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1019 ms
+2021-04-27 14:37:56.561 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-27 14:37:56.599 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-27 14:37:56.903 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-27 14:37:57.309 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-27 14:37:57.733 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-27 14:37:57.748 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-27 14:37:57.749 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-27 14:37:57.755 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-27 14:37:57.818 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1820f274, org.springframework.security.web.context.SecurityContextPersistenceFilter@70eb94d7, org.springframework.security.web.header.HeaderWriterFilter@a1a72d4, org.springframework.web.filter.CorsFilter@4cae66a8, org.springframework.security.web.authentication.logout.LogoutFilter@71de1091, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@221cdd87, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@4d66cb, com.arslinth.config.jwt.JwtAuthenticationFilter@7c79f2cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e43b342, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36931450, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63551c66, org.springframework.security.web.session.SessionManagementFilter@1afa048a, org.springframework.security.web.access.ExceptionTranslationFilter@3ba8ef4e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@23e0c200]
+2021-04-27 14:37:58.099 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-27 14:37:58.145 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-27 14:37:58.146 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-27 14:37:58.156 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-27 14:37:58.174 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-27 14:37:58.272 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-27 14:37:58.321 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.082 seconds (JVM running for 3.587)
+2021-04-27 14:38:14.189 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-27 14:38:14.189 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-27 14:38:14.193 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-04-27 14:38:14.537 [http-nio-8800-exec-1] INFO  com.arslinth.controller.SysUserController -  验证码为：3982
+2021-04-27 16:18:37.350 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 16160 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-27 16:18:37.355 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-27 16:18:38.051 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-27 16:18:38.053 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-27 16:18:38.080 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17ms. Found 0 Redis repository interfaces.
+2021-04-27 16:18:38.285 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$24851522] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 16:18:38.312 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ee88e21' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 16:18:38.315 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 16:18:38.482 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-27 16:18:38.488 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-27 16:18:38.488 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 16:18:38.488 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-27 16:18:38.547 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-27 16:18:38.547 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1171 ms
+2021-04-27 16:18:38.589 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-27 16:18:38.628 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-27 16:18:38.954 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-27 16:18:39.376 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-27 16:18:39.855 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-27 16:18:39.872 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-27 16:18:39.873 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-27 16:18:39.880 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-27 16:18:39.948 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23e0c200, org.springframework.security.web.context.SecurityContextPersistenceFilter@78829412, org.springframework.security.web.header.HeaderWriterFilter@69abeb14, org.springframework.web.filter.CorsFilter@5203c80f, org.springframework.security.web.authentication.logout.LogoutFilter@2634d000, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@25d23478, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@677c2820, com.arslinth.config.jwt.JwtAuthenticationFilter@39c1e7b7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d0bcf8c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e43b342, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c14d24d, org.springframework.security.web.session.SessionManagementFilter@34d5eac, org.springframework.security.web.access.ExceptionTranslationFilter@6b32b678, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4c0bfe9e]
+2021-04-27 16:18:40.375 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-27 16:18:40.466 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-27 16:18:40.467 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-27 16:18:40.494 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-27 16:18:40.541 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-27 16:18:40.705 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-27 16:18:40.761 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.654 seconds (JVM running for 4.229)
+2021-04-27 16:18:43.381 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-27 16:18:43.381 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-27 16:18:43.386 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-04-27 18:01:12.653 [main] INFO  com.arslinth.ArslinthBootApplication - Starting ArslinthBootApplication on Arslinth-PC with PID 19708 (E:\Java project\ArslinthBoot-jwt\target\classes started by Arslinth in E:\Java project\ArslinthBoot-jwt)
+2021-04-27 18:01:12.657 [main] INFO  com.arslinth.ArslinthBootApplication - The following profiles are active: dev
+2021-04-27 18:01:13.258 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-27 18:01:13.259 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-27 18:01:13.280 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Redis repository interfaces.
+2021-04-27 18:01:13.465 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.arslinth.config.redis.RedisConfig$$EnhancerBySpringCGLIB$$bcbb0900] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 18:01:13.490 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@22a260ff' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 18:01:13.493 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-27 18:01:13.646 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8800 (http)
+2021-04-27 18:01:13.651 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8800"]
+2021-04-27 18:01:13.652 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 18:01:13.652 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2021-04-27 18:01:13.713 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-04-27 18:01:13.713 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1033 ms
+2021-04-27 18:01:13.753 [main] INFO  com.arslinth.config.xss.XssFilter - 初始化XssFilter过滤器....
+2021-04-27 18:01:13.793 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-27 18:01:14.097 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-27 18:01:14.496 [main] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.arslinth.entity.VO.RoleAuths".
+2021-04-27 18:01:14.892 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-27 18:01:14.907 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-04-27 18:01:14.908 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2021-04-27 18:01:14.915 [main] INFO  com.arslinth.config.redis.RedisConfig - 初始化 -> [Redis CacheErrorHandler]
+2021-04-27 18:01:14.972 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c79f2cf, org.springframework.security.web.context.SecurityContextPersistenceFilter@21dd9203, org.springframework.security.web.header.HeaderWriterFilter@293ecff6, org.springframework.web.filter.CorsFilter@1815577b, org.springframework.security.web.authentication.logout.LogoutFilter@520ec7a7, com.arslinth.config.mobile.MobileCodeAuthenticationFilter@63551c66, com.arslinth.config.jwt.JwtLoginAuthenticationFilter@2761156e, com.arslinth.config.jwt.JwtAuthenticationFilter@4cf15477, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e466d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@599310ab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7fad28ac, org.springframework.security.web.session.SessionManagementFilter@34d72f06, org.springframework.security.web.access.ExceptionTranslationFilter@66d44581, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@39c1e7b7]
+2021-04-27 18:01:15.242 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8800"]
+2021-04-27 18:01:15.287 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8800 (http) with context path '/api'
+2021-04-27 18:01:15.288 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-04-27 18:01:15.297 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-04-27 18:01:15.315 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-04-27 18:01:15.420 [main] INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: applyFriendUsingPOST_1
+2021-04-27 18:01:15.463 [main] INFO  com.arslinth.ArslinthBootApplication - Started ArslinthBootApplication in 3.045 seconds (JVM running for 3.565)
+2021-04-27 18:02:40.527 [http-nio-8800-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-27 18:02:40.527 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-27 18:02:40.532 [http-nio-8800-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-04-27 18:02:40.576 [http-nio-8800-exec-4] WARN  com.arslinth.config.jwt.JwtUtil - 解析出错,非有效token
+2021-04-27 18:02:40.576 [http-nio-8800-exec-2] WARN  com.arslinth.config.jwt.JwtUtil - 解析出错,非有效token
+2021-04-27 18:02:40.576 [http-nio-8800-exec-4] WARN  com.arslinth.config.jwt.JwtUtil - JWT expired at 2021-04-27T07:38:19Z. Current time: 2021-04-27T10:02:40Z, a difference of 8661575 milliseconds.  Allowed clock skew: 0 milliseconds.
+2021-04-27 18:02:40.576 [http-nio-8800-exec-2] WARN  com.arslinth.config.jwt.JwtUtil - JWT expired at 2021-04-27T07:38:19Z. Current time: 2021-04-27T10:02:40Z, a difference of 8661575 milliseconds.  Allowed clock skew: 0 milliseconds.
+2021-04-27 18:03:13.432 [http-nio-8800-exec-6] INFO  com.arslinth.controller.SliderController - /slider/image
+2021-04-27 18:03:13.433 [http-nio-8800-exec-6] INFO  com.arslinth.utils.SliderImgUtil - file = 82.png
+2021-04-27 18:03:13.482 [http-nio-8800-exec-6] INFO  com.arslinth.utils.SliderImgUtil - 图片大小符合要求
+2021-04-27 18:03:13.484 [http-nio-8800-exec-6] INFO  com.arslinth.utils.SliderImgUtil - 突出圆形位置:UP
+2021-04-27 18:03:13.484 [http-nio-8800-exec-6] INFO  com.arslinth.utils.SliderImgUtil - XPOS=157  YPOS=155
+2021-04-27 18:03:13.484 [http-nio-8800-exec-6] INFO  com.arslinth.utils.SliderImgUtil - xBulgeCenter=187  yBulgeCenter=155
+2021-04-27 18:03:13.484 [http-nio-8800-exec-6] INFO  com.arslinth.utils.SliderImgUtil - xConcaveCenter=157  yConcaveCenter=185
+2021-04-27 18:03:13.526 [http-nio-8800-exec-6] INFO  com.arslinth.utils.SliderImgUtil - imageMessage = SliderImgUtil.ImageMessage(xpos=157, ypos=140, cutImageWidth=60, cutImageHeight=75)
+2021-04-27 18:03:13.567 [http-nio-8800-exec-6] INFO  com.arslinth.utils.TimeUtil - 1-花费时间:135ms

@@ -1,0 +1,800 @@
+DEBUG main druid.sql.Connection - {conn-10001,procId-60} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-61} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-62} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-63} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-64} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-65} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-66} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-67} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-68} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-69} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-70} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-71} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-72} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-73} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-74} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-75} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-76} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-77} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-78} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-79} connected
+DEBUG main druid.sql.Connection - {conn-10001} closed
+DEBUG main druid.sql.Connection - {conn-10002} closed
+DEBUG main druid.sql.Connection - {conn-10003} closed
+DEBUG main druid.sql.Connection - {conn-10004} closed
+DEBUG main druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-80} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-81} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-82} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-83} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-84} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-85} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-86} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-87} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-88} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-89} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-90} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-91} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-92} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-93} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-94} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-95} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-96} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-97} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-98} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-99} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-100} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-101} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-102} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-103} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-104} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-105} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-106} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-107} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-108} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-109} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-110} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-111} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-112} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-113} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-114} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-115} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-116} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-117} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-118} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-119} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-120} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-121} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-122} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-123} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-124} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-125} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-126} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-127} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-128} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-129} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-130} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-131} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-132} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-133} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-134} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-135} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-136} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-137} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-138} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-139} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-140} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-141} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-142} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-143} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-144} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-145} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-146} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-147} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-148} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-149} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-150} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-151} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-152} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-153} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-154} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-155} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-156} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-157} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-158} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-159} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-160} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-161} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-162} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-163} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-164} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-165} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-166} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-167} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-168} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-169} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-170} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-171} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-172} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-173} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-174} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-175} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-176} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-177} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-178} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-179} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-180} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-181} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-182} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-183} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-184} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-187} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-188} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-189} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-190} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-191} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-192} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-193} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-194} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-195} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-196} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-197} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-198} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-199} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-200} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-201} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-202} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-203} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-204} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-205} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-206} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-207} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-208} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-209} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-210} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-211} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-212} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-213} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-214} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-215} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-216} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-217} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-218} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-219} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-220} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-221} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-222} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-223} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-224} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-225} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-226} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-227} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-228} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-229} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-230} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-231} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-232} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-233} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-234} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-235} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-236} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-237} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-238} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-239} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-240} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-241} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-242} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-243} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-244} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-245} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-246} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-247} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-248} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-249} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-250} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-251} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-252} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-253} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-254} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-255} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-256} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-257} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-258} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-259} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-260} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-261} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-262} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-263} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-264} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-265} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-266} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-267} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-268} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-269} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-270} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-271} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-272} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-273} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-274} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-275} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-276} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-277} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-278} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-279} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-280} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-281} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-282} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-283} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-284} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-285} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-286} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-287} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-288} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-289} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-290} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-291} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-292} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-293} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-294} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-295} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-296} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-297} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-298} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-299} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-300} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-301} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-302} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-303} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-304} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-305} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-306} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-307} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-308} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-309} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-310} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-311} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-312} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-313} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-314} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-315} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-316} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-317} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-318} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-319} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-320} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-321} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-322} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-323} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-324} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-325} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-326} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-327} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-328} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-329} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-330} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-331} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [3tp6m1ymyob12hli]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 6.4065 millis. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, user_id, authority, authority_name, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3tp6m1ymyob12hli, null, ROLE_ADMIN, 开发, 2021-02-22 15:53:05.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-332} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-333} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-334} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-335} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-336} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [3tp6m1ymyob12hli]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 5.2801 millis. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, user_id, authority, authority_name, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3tp6m1ymyob12hli, null, ROLE_ADMIN, 开发, 2021-02-22 15:53:05.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-337} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-338} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-339} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-340} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-341} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-342} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-343} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-344} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-345} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-346} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-347} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-348} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-349} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-350} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-351} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-352} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-353} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-354} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-355} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-356} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-357} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-358} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-359} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-360} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-361} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-362} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-363} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-364} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-365} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-366} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-367} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-368} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-369} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-370} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-371} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-372} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-373} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-374} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-375} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-376} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-377} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-378} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-379} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-380} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-381} connected
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-382} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-383} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-384} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-385} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-386} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [3tp6m1ymyob12hli]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 5.3657 millis. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, user_id, authority, authority_name, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3tp6m1ymyob12hli, null, ROLE_ADMIN, 开发, 2021-02-22 15:53:05.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-387} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-388} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-389} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-390} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-391} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [3tp6m1ymyob12hli]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 10.3888 millis. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, user_id, authority, authority_name, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3tp6m1ymyob12hli, null, ROLE_ADMIN, 开发, 2021-02-22 15:53:05.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-392} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-393} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-394} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-395} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-396} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [3tp6m1ymyob12hli]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 5.0505 millis. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, user_id, authority, authority_name, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3tp6m1ymyob12hli, null, ROLE_ADMIN, 开发, 2021-02-22 15:53:05.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-397} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-398} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-399} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-400} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-401} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [3tp6m1ymyob12hli]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 5.3927 millis. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, user_id, authority, authority_name, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3tp6m1ymyob12hli, null, ROLE_ADMIN, 开发, 2021-02-22 15:53:05.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-402} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-403} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-404} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-405} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-406} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [3tp6m1ymyob12hli]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 5.6722 millis. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, user_id, authority, authority_name, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3tp6m1ymyob12hli, null, ROLE_ADMIN, 开发, 2021-02-22 15:53:05.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-409} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-410} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-411} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-412} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-413} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [3tp6m1ymyob12hli]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 5.1632 millis. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, user_id, authority, authority_name, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3tp6m1ymyob12hli, null, ROLE_ADMIN, 开发, 2021-02-22 15:53:05.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-419} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-420} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-421} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-422} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-423} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [3tp6m1ymyob12hli]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 5.3205 millis. SELECT  id,user_id,authority,authority_name,create_time  FROM sys_role 
+ 
+ WHERE (id = ?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, user_id, authority, authority_name, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3tp6m1ymyob12hli, null, ROLE_ADMIN, 开发, 2021-02-22 15:53:05.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed

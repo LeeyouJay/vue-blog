@@ -1,0 +1,100 @@
+server:
+  port: 8800
+  servlet:
+    context-path: /api
+#springboot数据库相关
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      #最大单个上传文件大小
+      max-file-size: 4MB
+      #最大总文件上传大小
+      max-request-size: 10MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/arslinth?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      stat-view-servlet:
+        login-username: druid
+        login-password: d123
+        url-pattern: /druid/*
+        # IP 白名单，没有配置或者为空，则允许所有访问
+        allow: 127.0.0.1
+        # IP 黑名单，若白名单也存在，则优先使用
+        #deny: 192.168.31.253
+      #初始化大小、最小、最大
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      # 配置获取连接等待超时的时间，单位毫秒
+      max-wait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存时间
+      min-evictable-idle-time-millis: 300000
+      # 配置监控统计拦截的 Filter，去掉后监控界面 SQL 无法统计，wall 用于防火墙
+      filters: stat,wall
+  redis:
+    host: localhost
+    port: 6379
+    #连接超时时间
+    timeout: 5000ms
+    lettuce:
+      pool:
+        # 连接池最大连接数（使用负值表示没有限制） 默认 8
+        max-active: 8
+        # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+        max-wait: -1ms
+        # 连接池中的最大空闲连接 默认 8
+        max-idle: 8
+        # 连接池中的最小空闲连接 默认 0
+        min-idle: 0
+  mail:
+    host: smtp.163.com    #邮箱服务器地址
+    #username: 752279593@qq.com #邮箱账号
+    #password:  #邮箱密码
+    username: ArslinthBoot@163.com
+    password: 
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+#mybatis配置
+mybatis-plus:
+  type-aliases-package: com.arslinth.entity
+  #  config-location: classpath:mybatis/config/mybatis-config.xml
+  #  mapper-locations: classpath:mybatis/mapper/*.xml
+  global-config:
+    banner: false
+
+jwtUtil:
+  #token的过期时间(分钟)
+  expireTime: 60
+  #加密规则 必须满足43位字符串且不能包含符号
+  AppSecret: ThisSignIsArslinthAppSecretForJwthmacShaKeyFor
+
+file:
+  # 上传的服务器上的映射文件夹
+  accessPath: /loadImg/
+  #静态资源对外暴露的访问路径
+  staticAccessPath: /loadImg/**
+
+signUp:
+  #注册赋予的权限(dashboard 首页)
+  authorities: dashboard,blog,write_html,write_markdown,article_list,ht_publish,md_publish,article_del
+  #注册默认的头像
+  avatarUrl: /loadImg/d6879fe4742048218ad62a92656f12f6-thumbnail.jpg
+
+# 防止XSS攻击
+xss:
+  # 排除链接（多个用逗号分隔）
+  excludes: /article/add,/article/edit,/blog/addComment,/blog/applyFriend
+  # 匹配链接(所有)
+  urlPatterns: /*
+  # 是否过滤富文本
+  isIncludeRichText: false

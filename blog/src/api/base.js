@@ -3,7 +3,6 @@
  */
 const base = {
     localUrl: 'http://192.168.199.155:8800/api',
-	//localUrl: 'https://chenyi.ink/api',
 }
 
 export default base;

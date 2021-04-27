@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言回复</title>
+</head>
+<body>
+<div style="padding: 20px;">
+    <p>一条来自<a href="http://localhost:8888">ArslinthBlog</a>博客的留言回复，</p>
+    <p>
+        <span th:text="${nickName}" style="color: royalblue;"></span>&emsp;在<a th:href="@{'http://localhost:8888/article/'+${articleId}}">评论</a>中回复了您：
+    </p>
+    &emsp;&emsp;<p th:text="${content}"></p>
+    <hr style="height: 1px;border: 0;width: 100%;background-color: #e3e3e3;"/>
+    <p style="font-size: 10px;color: #989898">——此为系统邮件请勿回复</p>
+</div>
+</body>
+</html>

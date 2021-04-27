@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    username: 
+    password: 
+  redis:
+    password: 
+
+logging:
+  config: classpath:log4j2/log4j2-spring-prod.xml
+
+file:
+  uploadFolder: /root/uploadFiles/blog/
