@@ -1,12 +1,16 @@
 spring:
   datasource:
-    username: 
-    password: 
+    username: arslinth
+    password: arslinth-boot
   redis:
-    password: 
+    password: Arslinth
 
 logging:
   config: classpath:log4j2/log4j2-spring-prod.xml
 
 file:
   uploadFolder: /root/uploadFiles/blog/
+
+# 第三方登录
+justAuth:
+  callbackUrl: https://chenyi.ink/manage/callback

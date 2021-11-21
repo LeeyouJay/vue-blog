@@ -5,7 +5,7 @@ import QS from 'qs';
 //获取qq昵称头像
 export function getQQUser(qq) {
 	return request({
-		url: `${base.localUrl}/blog/getQQInfo/`+qq,
+		url: `${base.localUrl}/blog/getQQInfo/` + qq,
 		method: 'get',
 		params: {}
 	})
@@ -33,7 +33,7 @@ export function getArchivesAPI() {
 	return request({
 		url: `${base.localUrl}/blog/getArchives`,
 		method: 'get',
-		params:{}
+		params: {}
 	})
 }
 
@@ -42,12 +42,20 @@ export function articleAPI(params) {
 	return request({
 		url: `${base.localUrl}/blog` + params,
 		method: 'get',
-		params:{}
+		params: {}
+	})
+}
+//根据ID获取文章音乐
+export function ArticleSongAPI(params) {
+	return request({
+		url: `${base.localUrl}/blog/ArticleSong/` + params,
+		method: 'get',
+		params: {}
 	})
 }
 
 //获取文章留言
-export function getCommentsAPI(params,page) {
+export function getCommentsAPI(params, page) {
 	return request({
 		url: `${base.localUrl}/blog/getComments/` + params,
 		method: 'post',
@@ -76,7 +84,7 @@ export function getFriends() {
 	return request({
 		url: `${base.localUrl}/blog/getFriends`,
 		method: 'get',
-		params:{}
+		params: {}
 	})
 }
 
@@ -84,6 +92,18 @@ export function getFriends() {
 // 账号密码登入提交 
 export function loginAPI(params) {
 	return request.post(`${base.localUrl}/login`, QS.stringify(params), {
+		headers: {
+			"Content-Type": "application/x-www-form-urlencoded"
+		}
+	});
+}
+//跳转第三方授权页
+export function	getAuthorize(params){
+	return request.get(`${base.localUrl}/oauth/getAuthorize/`+params);
+}
+//第三方登入
+export function authLoginAPI(params) {
+	return request.post(`${base.localUrl}/authorizeLogin`, QS.stringify(params), {
 		headers: {
 			"Content-Type": "application/x-www-form-urlencoded"
 		}
@@ -104,8 +124,4 @@ export function getCaptchaImageAPI() {
 //获取短信验证码
 export function getMobileCodeAPI(params) {
 	return request.get(`${base.localUrl}/user/getMobileCode/` + params)
-}
-//获取IP地址
-export function getIpName(){
-	return request.get("http://127.0.0.1:8900/getIp");
 }

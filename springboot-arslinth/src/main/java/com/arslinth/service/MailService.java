@@ -1,12 +1,16 @@
 package com.arslinth.service;
 
 
+import com.arslinth.exception.MyAccountException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.retry.annotation.Backoff;
+import org.springframework.retry.annotation.Recover;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
@@ -18,7 +22,7 @@ import java.util.Map;
 /**
  * @author Arslinth
  * @ClassName MailService
- * @Description TODO
+ * @Description 发送邮件
  * @Date 2021/4/15
  */
 @Slf4j
@@ -31,10 +35,13 @@ public class MailService {
     //邮件发件人
     @Value("${spring.mail.username}")
     private String from;
+    @Value("${spring.mail.nickName}")
+    private String nickName;
 
     private final TemplateEngine templateEngine;
 
     @Async
+    @Retryable(value = Exception.class, maxAttempts = 3, backoff = @Backoff(delay = 2000L, multiplier = 1))
     public void sendMail(String to, String subject,String template, Map<String,String> templateMap) {
 
         String emailContent = emailTemplate(template,templateMap);
@@ -43,7 +50,7 @@ public class MailService {
         try {
             messageHelper = new MimeMessageHelper(message, true);
             //邮件发送人
-            messageHelper.setFrom(from);
+            messageHelper.setFrom(nickName+'<'+from+'>');
             //邮件接收人
             messageHelper.setTo(to);
             //邮件主题
@@ -54,8 +61,8 @@ public class MailService {
             mailSender.send(message);
             log.info("邮箱 "+to+"信息发送成功！");
         } catch (Exception e) {
-            log.error("发送简单邮件时发生异常！");
             e.printStackTrace();
+            throw new MyAccountException(e.getMessage());
         }
     }
     private String emailTemplate(String template,Map<String,String> map){
@@ -65,4 +72,12 @@ public class MailService {
         //将模块引擎内容解析成html字符串
         return templateEngine.process(template, context);
     }
+
+    // 重试失败调用的方法
+    @Recover
+    private void mailRetryFail(MyAccountException e) {
+        log.info("邮件发送失败: {} ", e.getMessage());
+
+    }
+
 }

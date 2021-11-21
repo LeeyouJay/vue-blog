@@ -43,7 +43,7 @@ public class MobileCodeAuthenticationProvider implements AuthenticationProvider 
         SysUser user = sysUserService.findByPhoneOrEmail(mobile);
 
         if (user==null) {
-            throw new MyAccountException(ResponseCode.NO_USER,"账号不存在！");
+            throw new MyAccountException(ResponseCode.NO_USER,"邮箱或手机号关联账号不存在！");
         }
         if (!user.isState()) {
             throw new MyAccountException(ResponseCode.IS_LOCKED,"账号已被禁用！");

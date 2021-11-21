@@ -16,7 +16,7 @@
 				</li>
 			</ul>
 		</div>
-		站点信息：
+		站点信息：<span class="info-text">移动屏幕暂不显示</span>
 		<div class="info-card">
 		   <p>
 			   站名：Arslinth<br />
@@ -27,9 +27,7 @@
 		   </p>
 		</div>
 		<div style="line-height: 2rem;" class="info">
-			注意啦！不定时清理打不开的友链！
-			暂只接受科技代码类博客，
-			交换友链请提供以下信息：
+			欢迎来交换友链，目前只暂时接受科技代码类博客，不会添加论坛，若需要更改站内信息可以重新提交申请：
 		</div>
 		<div style="margin-top: 30px;" class="info">
 			<el-form :model="friend" :rules="rules" ref="linkApply" label-width="0px">
@@ -40,7 +38,7 @@
 								<img style="border-radius: 50%;" height="55px" width="55px"
 									:src="icon" @error="imgerrorfun()"/>
 							</div>
-							<el-input :clearable="true" class="item-align" style="width: calc(100% - 100px);margin-left: 10px;" size="small" placeholder="网站头像url" v-model="friend.icon">
+							<el-input :clearable="true" class="item-align" style="width: calc(100% - 100px);margin-left: 10px;" size="small" placeholder="网站头像(非https://可能会访问不了哦)" v-model="friend.icon">
 							</el-input>
 						</el-form-item>
 					</el-col>
@@ -53,14 +51,14 @@
 						</el-form-item>
 					</el-col>
 					<el-col :span="8">
-						<el-form-item prop="email">
-							<el-input size="small" placeholder="邮箱" maxlength="100" type="email" v-model="friend.email">
+						<el-form-item prop="siteLink">
+							<el-input size="small" placeholder="地址(http://)" v-model="friend.siteLink">
 							</el-input>
 						</el-form-item>
 					</el-col>
 					<el-col :span="8">
-						<el-form-item prop="siteLink">
-							<el-input size="small" placeholder="地址(http://)" v-model="friend.siteLink">
+						<el-form-item prop="email">
+							<el-input size="small" placeholder="通知邮箱" maxlength="100" type="email" v-model="friend.email">
 							</el-input>
 						</el-form-item>
 					</el-col>
@@ -91,14 +89,14 @@
 		data() {
 			var checkEmail = (rule, value, callback) => {
 				const mailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/
-				if (!value) {
-					return callback(new Error('邮箱不能为空'))
-				}
-				if (mailReg.test(value)) {
+				if (value) {
+					if (mailReg.test(value)) {
+						callback()
+					} else {
+						callback(new Error('请输入正确的邮箱格式'))
+					}
+				}else
 					callback()
-				} else {
-					callback(new Error('请输入正确的邮箱格式'))
-				}
 			}
 			return {
 				friends:[],
@@ -135,7 +133,7 @@
 		computed:{
 			icon(){
 				if(this.friend.icon == "")
-					return "https://gravatar.loli.net/avatar/baee522214bec0d6d3664fa8a6640a1c?s=80&r=X&d=mm"
+					return "https://z3.ax1x.com/2021/07/17/WlmaTS.png"
 				else
 					return this.friend.icon
 			}
@@ -143,7 +141,7 @@
 		methods: {
 			imgerrorfun(){
 				let img = event.srcElement;
-					 img.src = 'https://gravatar.loli.net/avatar/baee522214bec0d6d3664fa8a6640a1c?s=80&r=X&d=mm';
+					 img.src = 'https://z3.ax1x.com/2021/07/17/WlmaTS.png';
 					 img.onerror = null; 
 			},
 			applyFriend(){
@@ -168,7 +166,6 @@
 				getFriends().then(res=>{
 					if(res.code === 200){
 						this.friends = res.data.friends
-						console.log(this.friends)
 					}
 				})
 			}
@@ -319,11 +316,20 @@
 		display: inline-flex;
 		vertical-align: -webkit-baseline-middle;
 	}
+	.info-text {
+		display: none;
+	}
 	@media (max-width: 600px) {
 		.links ul li {
 			width: 94%;
 		}
+		.info-text {
+			display: inline;
+		}
 		.info {
+			display: none;
+		}
+		.info-card {
 			display: none;
 		}
 	}

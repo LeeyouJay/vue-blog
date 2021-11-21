@@ -7,6 +7,13 @@ Vue.use(Router);
 
 export const constantRoutes = [
 	{
+		path: '/callback',
+		component: () => import( '../views/callback.vue'),
+		meta: {
+			title: '授权暂停页'
+		}
+	},
+	{
 		path: '/login',
 		component: () => import( '../views/login/index.vue'),
 		meta: {

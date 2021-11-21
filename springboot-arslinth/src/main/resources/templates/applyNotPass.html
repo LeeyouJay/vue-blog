@@ -1,31 +1,152 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>友链申请回复</title>
 </head>
 <body>
-<div style="padding: 20px;">
-    <p>一条来自<a href="http://localhost:8888/friend">ArslinthBlog</a>博客友链的申请回复：<span th:text="${content}"></span></p>
-    <hr style="height: 1px;border: 0;width: 100%;background-color: #e3e3e3;"/>
-    <p>
-        <img th:src="@{${icon}}" class="avatar" />
-    </p>
-    <p>站名：<span th:text="${siteName}"></p>
-    <p>链接：<span th:text="${siteLink}"></p>
-    <p>邮箱：<span th:text="${email}"></p>
-    <p>头像：<span th:text="${icon}"></p>
-    <p>描述：<span th:text="${description}"></p>
-    <p>提交时间：<span th:text="${createTime}"></p>
-    <hr style="height: 1px;border: 0;width: 100%;background-color: #e3e3e3;"/>
-    <p style="font-size: 10px;color: #989898;margin-left: 20px">——此为系统邮件请勿回复</p>
+<div style="width: 550px;
+        height: auto;
+        border-radius: 5px;
+        margin: 10px auto;
+        border: 1px solid #e8e8e8;
+        position: relative;">
+    <div style="width: 200px;
+        height: 40px;
+        background-color: royalblue;
+        margin-top: -20px;
+        margin-left: 20px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        line-height: 40px;
+        border-radius: 5px;">Dear：<span th:text="${siteName}"></span></div>
+    <div style="background-color: white;
+        line-height: 180%;
+        padding: 0 15px 12px;
+        width: 90%;
+        margin: 30px auto;
+        color: #555555;
+        font-family: 'Century Gothic', 'Trebuchet MS', 'Hiragino Sans GB', 微软雅黑, 'Microsoft Yahei', Tahoma, Helvetica, Arial, 'SimSun', sans-serif;
+        font-size: 12px;
+        margin-bottom: 0px;">
+        <h2 style="font-size: 14px;
+        font-weight: normal;
+        padding: 13px 0 10px 8px;">您在 <a href="https://chenyi.ink" style="color: royalblue">Arslinth</a>的博客提交的友链申请有了新的回复呐~</h2>
+        <div class="detail">
+            <div style="background-color: #f5f5f5;
+        border: 0px solid #DDD;
+        border-radius: 5px;
+        padding: 10px 15px;
+        margin: 18px 0;">
+                <p>您提交的申请：</p>
+                <p>
+                    <img th:src="@{${icon}}" style="width: 40px;
+        height: 40px;
+        border-radius: 50%;" />
+                </p>
+                <p>站名：<span th:text="${siteName}"></p>
+                <p>链接：<span th:text="${siteLink}"></p>
+                <p>邮箱：<span th:text="${email}"></p>
+                <p>头像：<span th:text="${icon}"></p>
+                <p>描述：<span th:text="${description}"></p>
+                <p>提交时间：<span th:text="${createTime}"></p>
+            </div>
+            <p>回复信息：</p>
+            <p style="background-color: #f5f5f5;
+        border: 0px solid #DDD;
+        border-radius: 5px;
+        padding: 10px 15px;
+        margin: 18px 0;" th:text="${content}"></p>
+        </div>
+    </div>
+    <div style="color: #8c8c8c;
+        font-family: 'Century Gothic', 'Trebuchet MS', 'Hiragino Sans GB', 微软雅黑, 'Microsoft Yahei', Tahoma, Helvetica, Arial, 'SimSun', sans-serif;
+        font-size: 10px;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;">
+        <p>本邮件为系统自动发送，请勿直接回复~</p>
+    </div>
+    <div style="color: #8c8c8c;
+        font-family: 'Century Gothic', 'Trebuchet MS', 'Hiragino Sans GB', 微软雅黑, 'Microsoft Yahei', Tahoma, Helvetica, Arial, 'SimSun', sans-serif;
+        font-size: 10px;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 1px;">
+        <p>©2021 Copyright Arslinth的个人小站</p>
+    </div>
 </div>
+
 </body>
 <style>
+    .contain {
+        width: 550px;
+        height: auto;
+        border-radius: 5px;
+        margin: 10px auto;
+        border: 1px solid #e8e8e8;
+        position: relative;
+    }
+
+    .title {
+        width: 200px;
+        height: 40px;
+        background-color: royalblue;
+        margin-top: -20px;
+        margin-left: 20px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        line-height: 40px;
+        border-radius: 5px;
+    }
+
     .avatar {
         width: 40px;
         height: 40px;
         border-radius: 50%;
+    }
+    .call {
+        font-size: 14px;
+        font-weight: normal;
+        padding: 13px 0 10px 8px;
+    }
+
+    .content {
+        background-color: white;
+        line-height: 180%;
+        padding: 0 15px 12px;
+        width: 90%;
+        margin: 30px auto;
+        color: #555555;
+        font-family: 'Century Gothic', 'Trebuchet MS', 'Hiragino Sans GB', 微软雅黑, 'Microsoft Yahei', Tahoma, Helvetica, Arial, 'SimSun', sans-serif;
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+
+    .comment {
+        background-color: #f5f5f5;
+        border: 0px solid #DDD;
+        border-radius: 5px;
+        padding: 10px 15px;
+        margin: 18px 0;
+    }
+
+    .footer-name {
+        color: #8c8c8c;
+        font-family: 'Century Gothic', 'Trebuchet MS', 'Hiragino Sans GB', 微软雅黑, 'Microsoft Yahei', Tahoma, Helvetica, Arial, 'SimSun', sans-serif;
+        font-size: 10px;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .footer-right {
+        color: #8c8c8c;
+        font-family: 'Century Gothic', 'Trebuchet MS', 'Hiragino Sans GB', 微软雅黑, 'Microsoft Yahei', Tahoma, Helvetica, Arial, 'SimSun', sans-serif;
+        font-size: 10px;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 1px;
     }
 </style>
 </html>

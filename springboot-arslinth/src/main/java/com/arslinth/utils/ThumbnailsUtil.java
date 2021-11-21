@@ -60,6 +60,8 @@ public class ThumbnailsUtil {
         File file = new File(filePath);
 
         InputStream inputStream = new FileInputStream(file);
+
+
         Thumbnails.of(inputStream)
                 .outputQuality(1f).size(550, 700).toFile(appendSuffix(filePath, SUFFIX));
         return appendSuffix(filePath, SUFFIX);

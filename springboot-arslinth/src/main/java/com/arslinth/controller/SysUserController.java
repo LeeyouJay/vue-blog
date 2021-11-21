@@ -6,24 +6,25 @@ import cn.hutool.core.util.ReUtil;
 import com.arslinth.common.ApiResponse;
 import com.arslinth.common.Constants;
 import com.arslinth.common.ResponseCode;
+import com.arslinth.config.jwt.JwtUtil;
 import com.arslinth.config.redis.RedisTool;
 import com.arslinth.dao.SysAuthorityDao;
 import com.arslinth.dao.UserAuthorityDao;
+import com.arslinth.entity.JustAuthUser;
 import com.arslinth.entity.VO.QueryBody;
 import com.arslinth.entity.SysAuthority;
 import com.arslinth.entity.SysUser;
 import com.arslinth.entity.VO.UserVO;
-import com.arslinth.service.MailService;
-import com.arslinth.service.MenuService;
-import com.arslinth.service.SysUserService;
-import com.arslinth.service.UploadService;
+import com.arslinth.service.*;
 import com.arslinth.utils.AuthenticationUtils;
+import com.arslinth.utils.EntityUtils;
 import com.arslinth.utils.PageUtil;
 import com.arslinth.utils.VerifyCodeUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -64,80 +65,101 @@ public class SysUserController {
 
     private final MailService mailService;
 
+    private final OAuthLoginService oAuthLoginService;
+
     private final RedisTool redisTool;
+
+    @Value("${signUp.authorities}")
+    private List<String> defaultAuthorities;
 
     //用户注册
     @PostMapping("/signup")
-    public ApiResponse signUp(@RequestBody SysUser sysUser){
+    public ApiResponse signUp(@RequestBody SysUser sysUser) {
 
-
-        if(!redisTool.exists(sysUser.getEmail()+Constants.MOBILE_CODE_SUFFIX)){
-            return  ApiResponse.code(ResponseCode.CHECK_CAPTCHA_FAIL).message("验证码已过期！");
+        if (!redisTool.exists(sysUser.getEmail() + Constants.MOBILE_CODE_SUFFIX)) {
+            return ApiResponse.code(ResponseCode.CHECK_CAPTCHA_FAIL).message("验证码已过期！");
         }
-
-        String value = redisTool.get(sysUser.getEmail()+Constants.MOBILE_CODE_SUFFIX).toString();
+        String value = redisTool.get(sysUser.getEmail() + Constants.MOBILE_CODE_SUFFIX).toString();
+        //验证码先放在了userId上，通过认证之后会重新设置新的id
+        if (!value.equalsIgnoreCase(sysUser.getId())) {
+            return ApiResponse.code(ResponseCode.CHECK_CAPTCHA_FAIL).message("验证码不正确！");
+        }
 
         SysUser check = sysUserService.findByName(sysUser.getUsername());
-        if (check!=null)
+        if (check != null)
             return ApiResponse.code(ResponseCode.FAIL).message("登入账号已存在！");
-        //验证码先放在了userId上，通过认证之后会重新设置新的id
-        if (!value.equalsIgnoreCase(sysUser.getId())){
-            return  ApiResponse.code(ResponseCode.CHECK_CAPTCHA_FAIL).message("验证码不正确！");
-        }
-        sysUserService.signUp(sysUser);
-        return ApiResponse.code(ResponseCode.SUCCESS).message("注册成功！");
+
+        SysUser user = sysUserService.signUp(sysUser);
+
+        String username = user.getUsername();
+        String email = user.getEmail();
+        String jwtToken = JwtUtil.getJwtToken(username, email, defaultAuthorities);
+
+        return ApiResponse.code(ResponseCode.SUCCESS).message("注册成功！")
+                .data("token", jwtToken).data("nickName", user.getNickName()).data("avatar", user.getAvatar());
     }
+
+    @PostMapping("/singAndBind")
+    @PreAuthorize("hasAnyAuthority('dashboard')")
+    public ApiResponse singAndBind(@RequestBody JustAuthUser justAuthUser) {
+        int i = oAuthLoginService.handleAuthorizeBind(justAuthUser);
+        if (i == 1)
+            return ApiResponse.code(ResponseCode.SUCCESS).message("社交账号绑定成功！");
+        else
+            return ApiResponse.code(ResponseCode.FAIL).message("绑定失败！"+i);
+    }
+
     //获取注册验证码
     @GetMapping("/sendVerifyCode/{phoneEmail}")
-    public ApiResponse sendCode(@PathVariable String phoneEmail){
+    public ApiResponse sendCode(@PathVariable String phoneEmail) {
         SysUser user = sysUserService.findByPhoneOrEmail(phoneEmail);
-        if (user != null){
+        if (user != null) {
             return ApiResponse.code(ResponseCode.FAIL).message("邮箱绑定用户已存在！");
         }
-        int code = RandomUtil.randomInt(1000,9999);
-        redisTool.set(phoneEmail+ Constants.MOBILE_CODE_SUFFIX,code,2L,TimeUnit.MINUTES);
+        int code = RandomUtil.randomInt(1000, 9999);
+        redisTool.set(phoneEmail + Constants.MOBILE_CODE_SUFFIX, code, 2L, TimeUnit.MINUTES);
         HashMap<String, String> map = new HashMap<>();
-        map.put("code",code+"");
-        mailService.sendMail(phoneEmail,"登入验证","mailCode",map);
-        log.info(" 验证码为：{}",code);
+        map.put("code", code + "");
+        mailService.sendMail(phoneEmail, "验证码", "mailCode", map);
+        log.info(" 验证码为：{}", code);
         return ApiResponse.code(ResponseCode.SUCCESS).message("邮箱验证码发送成功！");
     }
 
     //获取登入验证码
     @GetMapping("/getMobileCode/{phoneEmail}")
-    public ApiResponse getMobileCode(@PathVariable String phoneEmail){
+    public ApiResponse getMobileCode(@PathVariable String phoneEmail) {
         //匹配是否为邮箱
         boolean match = ReUtil.isMatch("\\w[-\\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\\.)+[A-Za-z]{2,14}", phoneEmail);
         SysUser user = sysUserService.findByPhoneOrEmail(phoneEmail);
-        if (user == null){
+        if (user == null) {
             return ApiResponse.code(ResponseCode.FAIL).message("手机或邮箱绑定用户不存在！");
         }
 
-        int code = RandomUtil.randomInt(1000,9999);
-        redisTool.set(phoneEmail+ Constants.MOBILE_CODE_SUFFIX,code,2L,TimeUnit.MINUTES);
-        if(match){
+        int code = RandomUtil.randomInt(1000, 9999);
+        redisTool.set(phoneEmail + Constants.MOBILE_CODE_SUFFIX, code, 2L, TimeUnit.MINUTES);
+        if (match) {
             HashMap<String, String> map = new HashMap<>();
-            map.put("code",code+"");
-            //mailService.sendMail(phoneEmail,"登入验证","mailCode",map);
-            log.info(" 验证码为：{}",code);
-        }else
-            log.info("手机号 "+phoneEmail+" 验证码为：{}",code);
+            map.put("code", code + "");
+            mailService.sendMail(phoneEmail, "登入验证", "mailCode", map);
+            log.info(" 验证码为：{}", code);
+        } else
+            log.info("手机号 " + phoneEmail + " 验证码为：{}", code);
         return ApiResponse.code(ResponseCode.SUCCESS).message("验证码发送成功！");
     }
 
 
     //获取图形验证码
     @GetMapping("/captchaImage")
-    public ApiResponse getCode() throws IOException{
+    public ApiResponse getCode() throws IOException {
         String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
         String uuid = IdUtil.simpleUUID();
-        redisTool.set(uuid,verifyCode,2L, TimeUnit.MINUTES);
+        redisTool.set(uuid, verifyCode, 2L, TimeUnit.MINUTES);
         int w = 111, h = 36;
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         VerifyCodeUtils.outputImage(w, h, stream, verifyCode);
         try {
             Base64.Encoder encoder = Base64.getEncoder();
-            return ApiResponse.code(ResponseCode.SUCCESS).data("uuid",uuid).data("img",encoder.encodeToString(stream.toByteArray()));
+            return ApiResponse.code(ResponseCode.SUCCESS).data("uuid", uuid).data("img", encoder.encodeToString(stream.toByteArray()));
         } catch (Exception e) {
             e.printStackTrace();
             return ApiResponse.code(ResponseCode.FAIL).message("图片生成失败！");
@@ -150,7 +172,7 @@ public class SysUserController {
     //左侧菜单数据
     @GetMapping("/getMenuList")
     @PreAuthorize("hasAnyAuthority('dashboard')")
-    public ApiResponse getMenuList(){
+    public ApiResponse getMenuList() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getPrincipal().toString();
         List<SysAuthority> list = menuService.getMenuList(username);
@@ -160,35 +182,36 @@ public class SysUserController {
 
         List<SysAuthority> singleMenu = list.stream()
                 .filter(menu -> menu.getChildren().size() == 0).collect(Collectors.toList());
-        return ApiResponse.code(ResponseCode.SUCCESS).message("数据请求成功！").data("menuList",menuList).data("singleMenu",singleMenu);
+        return ApiResponse.code(ResponseCode.SUCCESS).message("数据请求成功！").data("menuList", menuList).data("singleMenu", singleMenu);
     }
 
     @PostMapping("/list")
     @PreAuthorize("hasAnyAuthority('user_list')")
-    public ApiResponse userList(@RequestBody QueryBody query){
+    public ApiResponse userList(@RequestBody QueryBody query) {
         List<SysUser> userList = sysUserService.getUserList(query);
         return ApiResponse.code(ResponseCode.SUCCESS)
                 .data("list", PageUtil.limit(userList, query.getPageIndex(), query.getPageSize()))
-                .data("pageTotal",userList.size());
+                .data("pageTotal", userList.size());
     }
 
     @GetMapping("/authorityList")
     @PreAuthorize("hasAnyAuthority('user_list')")
-    public ApiResponse getAuthorities(){
-        List<SysAuthority> list = sysAuthorityDao.selectList(new QueryWrapper<SysAuthority>().orderByAsc("level","sorted"));
+    public ApiResponse getAuthorities() {
+        List<SysAuthority> list = sysAuthorityDao.selectList(new QueryWrapper<SysAuthority>().orderByAsc("level", "sorted"));
         Map<String, List<SysAuthority>> map = list.stream().collect(Collectors.groupingBy(SysAuthority::getParentId));
-        list = list.stream().filter(l->!"dashboard".equals(l.getAuthority())).map(item -> {
-            item.setChildren(map.get(item.getId())==null?new ArrayList<>():map.get(item.getId()));
+        list = list.stream().filter(l -> !"dashboard".equals(l.getAuthority())).map(item -> {
+            item.setChildren(map.get(item.getId()) == null ? new ArrayList<>() : map.get(item.getId()));
             return item;
         }).filter(each -> "none".equals(each.getParentId())).collect(Collectors.toList());
 
-        return ApiResponse.code(ResponseCode.SUCCESS).message("数据请求成功！").data("authorityTree",list);
+        return ApiResponse.code(ResponseCode.SUCCESS).message("数据请求成功！").data("authorityTree", list);
     }
+
     //设置用户权限
     @PostMapping("/setAuthority")
     @PreAuthorize("hasAnyAuthority('setAuthority')")
-    public ApiResponse setAuthority(@RequestBody UserVO userVO){
-        ArrayList< String> asList = new ArrayList<>(userVO.getSysAuthorities().length);
+    public ApiResponse setAuthority(@RequestBody UserVO userVO) {
+        ArrayList<String> asList = new ArrayList<>(userVO.getSysAuthorities().length);
         Collections.addAll(asList, userVO.getSysAuthorities());
         asList.add("dashboard");
         sysUserService.setRight(userVO.getUsername());
@@ -196,14 +219,15 @@ public class SysUserController {
         if (b)
             return ApiResponse.code(ResponseCode.SUCCESS).message("设置成功！");
         else
-           return ApiResponse.code(ResponseCode.FAIL).message("更新失败！");
+            return ApiResponse.code(ResponseCode.FAIL).message("更新失败！");
     }
+
     //重置密码
     @PostMapping("/resetPassword")
     @PreAuthorize("hasAnyAuthority('resetPassword')")
-    public ApiResponse resetPassword(@RequestBody SysUser sysUser){
+    public ApiResponse resetPassword(@RequestBody SysUser sysUser) {
         int i = sysUserService.resetPassword(sysUser);
-        if (i==1)
+        if (i == 1)
             return ApiResponse.code(ResponseCode.SUCCESS).message("重置成功！");
         else
             return ApiResponse.code(ResponseCode.FAIL).message("密码重置失败！");
@@ -211,26 +235,27 @@ public class SysUserController {
 
     @PostMapping("/setState")
     @PreAuthorize("hasAnyAuthority('changState')")
-    public ApiResponse setState(@RequestBody SysUser sysUser){
+    public ApiResponse setState(@RequestBody SysUser sysUser) {
         int i = sysUserService.setState(sysUser);
-        if (i==1)
+        if (i == 1)
             return ApiResponse.code(ResponseCode.SUCCESS).message("更改成功！");
         else
             return ApiResponse.code(ResponseCode.FAIL).message("更改失败！");
     }
+
     @PostMapping("/changePassword")
-    public ApiResponse changePassword(@RequestBody UserVO userVO){
+    public ApiResponse changePassword(@RequestBody UserVO userVO) {
         SysUser user = sysUserService.findByName(userVO.getUsername());
 
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-        if (!passwordEncoder.matches(userVO.getOldPassword(),user.getPassword())){
+        if (!passwordEncoder.matches(userVO.getOldPassword(), user.getPassword())) {
             return ApiResponse.code(ResponseCode.FAIL).message("原密码不正确！");
         }
         user.setPassword(passwordEncoder.encode(userVO.getNewPassword()));
 
         int i = sysUserService.changePassword(user);
-        if (i==1)
+        if (i == 1)
             return ApiResponse.code(ResponseCode.SUCCESS).message("密码更改成功！");
         else
             return ApiResponse.code(ResponseCode.FAIL).message("更改失败！");
@@ -238,38 +263,38 @@ public class SysUserController {
 
     @GetMapping("/getUserInfo")
     @PreAuthorize("hasAnyAuthority('dashboard')")
-    public ApiResponse getUserInfo(){
+    public ApiResponse getUserInfo() {
         String username = AuthenticationUtils.getAuthenticationName();
         SysUser user = sysUserService.findByName(username);
         if (user != null)
             user.setPassword(null);
-        return ApiResponse.code(ResponseCode.SUCCESS).message("数据请求成功！").data("userInfo",user);
+        return ApiResponse.code(ResponseCode.SUCCESS).message("数据请求成功！").data("userInfo", user);
     }
 
     @PostMapping("/changeUserInfo")
     @PreAuthorize("hasAnyAuthority('dashboard')")
-    public ApiResponse changeUserInfo(@RequestBody SysUser sysUser){
+    public ApiResponse changeUserInfo(@RequestBody SysUser sysUser) {
         int i = sysUserService.changeUserInfo(sysUser);
-        if (i==1)
+        if (i == 1)
             return ApiResponse.code(ResponseCode.SUCCESS).message("更改成功！");
-        else if(i==-1)
+        else if (i == -1)
             return ApiResponse.code(ResponseCode.FAIL).message("手机号或邮箱已被绑定！");
         else
             return ApiResponse.code(ResponseCode.FAIL).message("更改失败！");
     }
+
     @PostMapping("/changeAvatar")
     @PreAuthorize("hasAnyAuthority('dashboard')")
-    public ApiResponse changeAvatar(@RequestParam("avatarfile") MultipartFile file){
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getPrincipal().toString();
+    public ApiResponse changeAvatar(@RequestParam("avatarfile") MultipartFile file) {
+        String username = AuthenticationUtils.getAuthenticationName();
         SysUser user = sysUserService.findByName(username);
         try {
             String imgUrl = uploadService.uploadImg(file, username);
             user.setAvatar(imgUrl);
             int i = sysUserService.changeUserInfo(user);
-            if (i==1)
-                return ApiResponse.code(ResponseCode.SUCCESS).message("更改成功！").data("imgUrl",imgUrl);
-            else if(i==-1)
+            if (i == 1)
+                return ApiResponse.code(ResponseCode.SUCCESS).message("更改成功！").data("imgUrl", imgUrl);
+            else if (i == -1)
                 return ApiResponse.code(ResponseCode.FAIL).message("手机号或邮箱已被绑定！");
             else
                 return ApiResponse.code(ResponseCode.FAIL).message("更改失败！");
@@ -277,5 +302,21 @@ public class SysUserController {
             e.printStackTrace();
             return ApiResponse.code(ResponseCode.FAIL).message("更改失败！");
         }
+    }
+
+    @GetMapping("/changeAvatarFromPlatform/{platform}")
+    @PreAuthorize("hasAnyAuthority('dashboard')")
+    public ApiResponse changeAvatarFromPlatform(@PathVariable String platform) {
+        String username = AuthenticationUtils.getAuthenticationName();
+        SysUser user = sysUserService.findByName(username);
+        Map<String, Object> objectMap = EntityUtils.entityToMap(user);
+        String uuid = (String) objectMap.get(platform.toLowerCase());
+        JustAuthUser justAuthUser = oAuthLoginService.findOn(platform, uuid);
+        user.setAvatar(justAuthUser.getAvatar());
+        int i = sysUserService.changeUserInfo(user);
+        if (i == 1)
+            return ApiResponse.code(ResponseCode.SUCCESS).message("更改成功！");
+        else
+            return ApiResponse.code(ResponseCode.FAIL).message("错误代码：" + i);
     }
 }

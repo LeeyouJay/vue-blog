@@ -6,31 +6,33 @@
 				访问地址：<a href="http://www.wangeditor.com/" target="_blank">wangEditor</a>
 			</div>
 			<div style="margin: 20px 60px;">
-				<el-form :model="article" status-icon :rules="rules" ref="ruleForm" label-width="80px" 
+				<el-form :model="article" status-icon :rules="rules" ref="ruleForm" label-width="80px"
 					class="demo-ruleForm">
 					<el-row :gutter="20">
 						<el-col :span="12">
 							<el-form-item label="标题:" prop="title">
-								<el-input type="text" v-model="article.title" placeholder="请输入文章标题" autocomplete="off" maxlength="30" show-word-limit>
+								<el-input type="text" v-model="article.title" placeholder="请输入文章标题" autocomplete="off"
+									maxlength="30" show-word-limit>
 								</el-input>
 							</el-form-item>
 							<el-form-item label="标图:" prop="banner">
-								<el-input :clearable="true" type="text" v-model="article.banner" autocomplete="off" style="width: 80%;">
+								<el-input :clearable="true" type="text" v-model="article.banner" autocomplete="off"
+									style="width: 80%;">
 								</el-input>
-								<el-upload ref="uploadImage" class="upload-demo" action="#"  :http-request="requestUpload" accept=".jpg, .png, .bmp, .jpeg, .webp"
-								 :multiple="false" :show-file-list="false" :auto-upload="false" :on-change="handleChange">
-									<el-button type="primary" :loading="btnLoading" >本地上传</el-button>
+								<el-upload ref="uploadImage" class="upload-demo" action="#"
+									:http-request="requestUpload" accept=".jpg, .png, .bmp, .jpeg, .webp"
+									:multiple="false" :show-file-list="false" :auto-upload="false"
+									:on-change="handleChange">
+									<el-button type="primary" :loading="btnLoading">本地上传</el-button>
 								</el-upload>
 							</el-form-item>
 						</el-col>
 						<el-col :span="12">
 							<el-form-item label="分类:" prop="tag">
-								<el-select v-model="article.tag" placeholder="选择分类标签" clearable >
-								      <el-option label="JAVA" value="JAVA"></el-option>
-								      <el-option label="SpringBoot" value="SpringBoot"></el-option>
-									  <el-option label="Vue" value="Vue"></el-option>
-									  <el-option label="随笔" value="随笔"></el-option>
-								    </el-select>
+								<el-select v-model="article.tag" placeholder="选择分类标签" clearable>
+									<el-option v-for="(item,index) in tags" :key="index" :label="item" :value="item">
+									</el-option>
+								</el-select>
 							</el-form-item>
 							<el-form-item label="显示:">
 								<el-radio-group v-model="article.showType">
@@ -40,18 +42,19 @@
 							</el-form-item>
 						</el-col>
 						<el-col :span="24">
-							<el-form-item prop="summary" label-width="20px"	>
+							<el-form-item prop="summary" label-width="20px">
 								<div style="width: 100px; display: inline-flex;">
 									<img class="banner" :src="article.banner" @error="imgerrorfun()" />
 								</div>
 								<el-input type="textarea" v-model="article.summary" :autosize="autosize"
-									placeholder="请输入内容" autocomplete="off" maxlength="100" show-word-limit
+									placeholder="请输入内容" autocomplete="off" maxlength="120" show-word-limit
 									style="width: calc(100% - 100px)"></el-input>
 							</el-form-item>
 						</el-col>
 					</el-row>
 				</el-form>
-				<el-button class="editor-btn" :type="articleEdit?'warning':'primary'" :disabled="isDisabled" @click="submit">{{articleEdit?'修改':publishBtn}}</el-button>
+				<el-button class="editor-btn" :type="articleEdit?'warning':'primary'" :disabled="isDisabled"
+					@click="submit">{{articleEdit?'修改':publishBtn}}</el-button>
 			</div>
 			<div ref="editorEle" class="editor-container" v-loading="loading" />
 		</div>
@@ -67,11 +70,11 @@
 		data: function() {
 			return {
 				loading: false,
-				isDisabled:false,
-				publishBtn:'发布',
-				btnLoading:false,
-				articleEdit:false,
-				isSave:true,
+				isDisabled: false,
+				publishBtn: '发布',
+				btnLoading: false,
+				articleEdit: false,
+				isSave: true,
 				basicUrl: '',
 				autosize: {
 					minRows: 3
@@ -104,24 +107,26 @@
 					banner: 'https://img.printf520.com/dist/static/images/avatar/006-avatar.jpg',
 					summary: '',
 					content: '',
-					showType:'公开',
+					showType: '公开',
 					markdown: false
 				}
 			}
 		},
-		components: {
-
+		computed: {
+			tags() {
+				return this.$store.state.articleTags
+			}
 		},
 		created() {
 			this.basicUrl = base.localUrl
 			var v = this.$store.state.articleEdit
-			if(v){
+			if (v) {
 				this.isSave = false
 				this.article = this.$store.state.article
 				this.articleEdit = v
-			}else{
+			} else {
 				var article = JSON.parse(localStorage.getItem('ht_article'))
-				if(article)
+				if (article)
 					this.article = article
 			}
 		},
@@ -154,7 +159,7 @@
 			submit() {
 				this.$refs.ruleForm.validate(valid => {
 					if (valid) {
-						if(this.articleEdit)
+						if (this.articleEdit)
 							this.editArticle()
 						else
 							this.addArticle()
@@ -191,7 +196,7 @@
 					if (res.code === 200) {
 						this.$message.success(res.message)
 						this.isSave = false
-						this.isDisabled = true 
+						this.isDisabled = true
 						this.publishBtn = '已发布'
 						localStorage.removeItem('ht_article')
 					} else if (res.code === 401) {
@@ -207,23 +212,23 @@
 						this.$message.error(res.message);
 				})
 			},
-			editArticle(){
-				this.$api.blog.editArticleAPI(this.article).then(res=>{
-					if(res.code === 200){
+			editArticle() {
+				this.$api.blog.editArticleAPI(this.article).then(res => {
+					if (res.code === 200) {
 						this.$message.success(res.message)
-						setTimeout(()=>{
-							 this.$router.go(-1);
-						},2000)
-					}else if(res.code === 401){
+						setTimeout(() => {
+							this.$router.go(-1);
+						}, 2000)
+					} else if (res.code === 401) {
 						this.$removeToken()
 						this.$alert(res.message, "提示", {
 							type: 'warning',
-							 center: true,
-							 callback: action => {
-								 this.$router.replace('/login')
-							 }
+							center: true,
+							callback: action => {
+								this.$router.replace('/login')
+							}
 						})
-					}else
+					} else
 						this.$message.error(res.message);
 				})
 			},
@@ -241,7 +246,7 @@
 				}
 				this.requestUpload(rawImage)
 			},
-			requestUpload(rawImage){
+			requestUpload(rawImage) {
 				var formdata = new FormData();
 				formdata.append('files', rawImage);
 				this.$api.blog.imgAddAPI(formdata).then(res => {
@@ -267,16 +272,16 @@
 					}, 10)
 				})
 			},
-			imgerrorfun(){
+			imgerrorfun() {
 				let img = event.srcElement;
-					 img.src = this.basicUrl +'/loadImg/noPicture.jpg';
-					img.onerror = null; 
+				img.src = this.basicUrl + '/loadImg/noPicture.jpg';
+				img.onerror = null;
 			}
 		},
 		beforeDestroy() {
 			var article = this.article
 			this.$store.dispatch('setArticleEdit', false);
-			if(this.isSave){
+			if (this.isSave) {
 				localStorage.setItem('ht_article', JSON.stringify(article))
 			}
 			this.editor.destroy()
@@ -298,9 +303,10 @@
 		height: 64px;
 		border-radius: 50%;
 	}
-	.upload-demo{
+
+	.upload-demo {
 		display: inline-flex;
-		margin-left: 2%; 
+		margin-left: 2%;
 		width: 18%;
 	}
 </style>

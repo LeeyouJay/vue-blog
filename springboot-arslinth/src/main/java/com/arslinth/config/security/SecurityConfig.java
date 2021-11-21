@@ -2,6 +2,8 @@ package com.arslinth.config.security;
 
 import com.arslinth.config.handler.JwtAuthorizedEntryPoint;
 import com.arslinth.config.handler.JwtLogoutHandler;
+import com.arslinth.config.justauth.JustAuthenticationFilter;
+import com.arslinth.config.justauth.JustAuthenticationProvider;
 import com.arslinth.config.jwt.JwtAuthenticationFilter;
 import com.arslinth.config.jwt.JwtLoginAuthenticationFilter;
 import com.arslinth.config.jwt.MyAuthenticationProvider;
@@ -42,6 +44,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final MyAuthenticationProvider myAuthenticationProvider;
 
+    private final JustAuthenticationProvider justAuthenticationProvider;
+
     private final MobileCodeAuthenticationProvider mobileCodeAuthenticationProvider;
 
     private final JwtAuthorizedEntryPoint jwtAuthorizedEntryPoint;
@@ -56,6 +60,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(myAuthenticationProvider);
         auth.authenticationProvider(mobileCodeAuthenticationProvider);
+        auth.authenticationProvider(justAuthenticationProvider);
+
     }
 
     @Override
@@ -81,7 +87,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 and().addFilter(new JwtLoginAuthenticationFilter(this.authenticationManager(),sysLogService))
                 //该过滤器因为没有注入到spring容器中，所以创建一个构造方法，在配置中将redisTool传入该过滤器中
                 .addFilter(new JwtAuthenticationFilter(this.authenticationManager(), redisTool))
-                .addFilterBefore(new MobileCodeAuthenticationFilter(this.authenticationManager(),sysLogService), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(new MobileCodeAuthenticationFilter(this.authenticationManager(),sysLogService), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new JustAuthenticationFilter(this.authenticationManager(),sysLogService),UsernamePasswordAuthenticationFilter.class);
     }
 
 }

@@ -64,13 +64,13 @@
 			return {
 				features: [{
 						id: 1,
-						url:'about',
+						url:'meaning',
 						title: '个人博客，意义何在',
 						img: 'https://c.pxhere.com/photos/c1/1d/cloud_sky_fluffy_atmosphere_heaven-1625.jpg!d'
 					},
 					{
 						id: 2,
-						url:'about',
+						url:'article/about',
 						title: '关于博客',
 						img: 'https://c.pxhere.com/photos/a2/e4/mist_fog_forest_evergreen_nature-100653.jpg!d'
 					},

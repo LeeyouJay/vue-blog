@@ -3,6 +3,7 @@ package com.arslinth.service;
 import cn.hutool.core.util.RandomUtil;
 import com.alibaba.druid.util.StringUtils;
 import com.arslinth.common.Constants;
+import com.arslinth.dao.CommentDao;
 import com.arslinth.dao.SysUserDao;
 import com.arslinth.dao.UserAuthorityDao;
 import com.arslinth.entity.VO.QueryBody;
@@ -11,7 +12,6 @@ import com.arslinth.utils.AuthenticationUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import lombok.RequiredArgsConstructor;
-import org.jsoup.helper.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -35,6 +35,7 @@ public class SysUserService{
 
     private final UserAuthorityDao userAuthorityDao;
 
+    private final CommentDao commentDao;
 
     @Value("${signUp.authorities}")
     private List<String> defaultAuthorities;
@@ -42,15 +43,19 @@ public class SysUserService{
     @Value("${signUp.avatarUrl}")
     private String defaultAvatar;
 
-    public void signUp(SysUser sysUser) {
+    public SysUser signUp(SysUser sysUser) {
+
+        if(StringUtils.isEmpty(sysUser.getSource())){
+            sysUser.setAvatar(defaultAvatar);
+            sysUser.setNickName(sysUser.getUsername());
+        }
         sysUser.setId(RandomUtil.randomString(16));
-        sysUser.setPassword(new BCryptPasswordEncoder().encode(sysUser.getPassword()));
         sysUser.setState(true);
         sysUser.setRoleId("non");
-        sysUser.setNickName(sysUser.getUsername());
-        sysUser.setAvatar(defaultAvatar);
         userAuthorityDao.setUserAuthorities(sysUser.getUsername(),defaultAuthorities);
+        sysUser.setPassword(new BCryptPasswordEncoder().encode(sysUser.getPassword()));
         sysUserDao.insert(sysUser);
+        return sysUser;
     }
 
     public List<SysUser> getUserList(QueryBody query) {
@@ -111,6 +116,7 @@ public class SysUserService{
         if(user!=null && !user.getUsername().equals(name)){
             return -1;
         }
+        commentDao.changeAvatar(sysUser.getId(),sysUser.getAvatar());
         return sysUserDao.changeUserInfo(sysUser);
     }
     public void setRight(String username){
@@ -118,5 +124,8 @@ public class SysUserService{
         sysUserDao.update(null, wrapper);
     }
 
+    public SysUser findByAuthLogin(String source,String uuid){
+        return sysUserDao.findByAuthLogin(source,uuid);
+    }
 
 }

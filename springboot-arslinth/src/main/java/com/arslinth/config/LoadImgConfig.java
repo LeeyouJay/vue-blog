@@ -17,8 +17,13 @@ public class LoadImgConfig implements WebMvcConfigurer {
     private String staticAccessPath;
     @Value("${file.uploadFolder}")
     private String uploadFolder;
+
+    @Value("${file.musicStaticPath}")
+    private String musicStaticPath;
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler(staticAccessPath).addResourceLocations("file:" + uploadFolder);
+        registry.addResourceHandler(musicStaticPath).addResourceLocations("file:" + uploadFolder);
     }
 }

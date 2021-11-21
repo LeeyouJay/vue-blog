@@ -4,7 +4,7 @@ module.exports = {
 	outputDir: 'dist', // build 构建文件
 	productionSourceMap: false,
 	devServer: {
-		port: 8888,
+		port: 8088,
 		open: true
 	},
 	lintOnSave: false,

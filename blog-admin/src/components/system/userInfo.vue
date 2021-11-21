@@ -6,9 +6,18 @@
 					<div slot="header" class="user-head">个人信息</div>
 					<div class="user-info">
 						<div style="margin-bottom: 20px;">
-							<img :src="basicUrl+userInfo.avatar" class="user-avator" v-if="reloadImg" alt />
+							<img :src="userInfo.avatar" class="user-avator" v-if="reloadImg" alt />
 						</div>
-						<el-button type="primary" size="mini" round @click="editVisible = true">更换头像</el-button>
+						
+						<el-popover placement="top" width="200" v-model="visible">
+							<p>选择更换的方式：</p>
+							<div style="text-align: right; margin: 0">
+								<el-button size="mini" type="text" v-for="(item,index) in authSocial" :key="index" v-if="item.bind" @click="avatarTo(item.platform)">{{item.platform}}头像</el-button>
+								<el-button size="mini" type="text" @click="editVisible = true" >本地上传</el-button>
+							</div>
+							<el-button type="primary" slot="reference" size="mini" round>更换头像</el-button>
+						</el-popover>
+
 					</div>
 					<ul class="list-group">
 						<li class="list-group-item">
@@ -31,6 +40,13 @@
 							创建日期：
 							<div style="float: right;">{{userInfo.createTime}}</div>
 						</li>
+						<li class="list-group-item">
+							<i class="el-icon-star-off"></i>
+							绑定社交账号：
+							<div style="float: right;">
+								<SocialAuth :userInfo="userInfo"></SocialAuth>
+							</div>
+						</li>
 					</ul>
 				</el-card>
 			</el-col>
@@ -39,7 +55,8 @@
 					<div slot="header" class="user-head">基本信息</div>
 					<el-tabs v-model="activeName">
 						<el-tab-pane label="基本资料" name="first">
-							<el-form :model="userInfo" status-icon :rules="rules" ref="ruleForm1" label-width="100px" class="demo-ruleForm">
+							<el-form :model="userInfo" status-icon :rules="rules" ref="ruleForm1" label-width="100px"
+								class="demo-ruleForm">
 								<el-form-item label="用户昵称" prop="nickName">
 									<el-input type="text" v-model="userInfo.nickName" autocomplete="off"></el-input>
 								</el-form-item>
@@ -63,15 +80,19 @@
 							</el-form>
 						</el-tab-pane>
 						<el-tab-pane label="修改密码" name="second">
-							<el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
+							<el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm2" label-width="100px"
+								class="demo-ruleForm">
 								<el-form-item label="旧密码" prop="oldPass">
-									<el-input type="password" placeholder="请输入旧密码" v-model="ruleForm.oldPass" autocomplete="off"></el-input>
+									<el-input type="password" placeholder="请输入旧密码" v-model="ruleForm.oldPass"
+										autocomplete="off"></el-input>
 								</el-form-item>
 								<el-form-item label="新密码" prop="newPass">
-									<el-input type="password" placeholder="请输入新密码" v-model="ruleForm.newPass" autocomplete="off"></el-input>
+									<el-input type="password" placeholder="请输入新密码" v-model="ruleForm.newPass"
+										autocomplete="off"></el-input>
 								</el-form-item>
 								<el-form-item label="确认密码" prop="checkPass">
-									<el-input type="password" placeholder="请确认密码" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+									<el-input type="password" placeholder="请确认密码" v-model="ruleForm.checkPass"
+										autocomplete="off"></el-input>
 								</el-form-item>
 								<el-form-item>
 									<el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
@@ -94,30 +115,37 @@
 					<el-row :gutter="20">
 						<el-col :span="12">
 							<div style="height: 400px;">
-								<VueCropper ref="cropper" :img="configObj.imgSrc" :can-move="true" :auto-crop="true" :center-box="false"
-								 :info-true="true" :full="false" :fixedBox="true" :autoCropWidth="200" :autoCropHeight="200" output-type="png"
-								 @realTime="realTime" />
+								<VueCropper ref="cropper" :img="configObj.imgSrc" :can-move="true" :auto-crop="true"
+									:center-box="false" :info-true="true" :full="false" :fixedBox="true"
+									:autoCropWidth="200" :autoCropHeight="200" output-type="png" @realTime="realTime" />
 							</div>
 							<div style="margin-top: 20px;">
 								<el-row :gutter="20">
 									<el-col :span="8">
-										<el-upload ref="uploadImage" class="upload-demo" action="#"  :http-request="requestUpload" accept=".jpg, .png, .bmp, .jpeg, .webp"
-										 :multiple="false" :show-file-list="false" :auto-upload="false" :on-change="handleChange">
+										<el-upload ref="uploadImage" class="upload-demo" action="#"
+											:http-request="requestUpload" accept=".jpg, .png, .bmp, .jpeg, .webp"
+											:multiple="false" :show-file-list="false" :auto-upload="false"
+											:on-change="handleChange">
 											<el-button size="small" plain type="primary">选择照片</el-button>
 										</el-upload>
 									</el-col>
 									<el-col :span="16">
-										<el-button size="small" icon="el-icon-plus" plain type="primary" @click="changeScale(1)"></el-button>
-										<el-button size="small" icon="el-icon-minus" plain type="primary" @click="changeScale(-1)"></el-button>
-										<el-button size="small" icon="el-icon-refresh-left" plain type="primary" @click="rotateLeft"></el-button>
-										<el-button size="small" icon="el-icon-refresh-right" plain type="primary" @click="rotateRight"></el-button>
+										<el-button size="small" icon="el-icon-plus" plain type="primary"
+											@click="changeScale(1)"></el-button>
+										<el-button size="small" icon="el-icon-minus" plain type="primary"
+											@click="changeScale(-1)"></el-button>
+										<el-button size="small" icon="el-icon-refresh-left" plain type="primary"
+											@click="rotateLeft"></el-button>
+										<el-button size="small" icon="el-icon-refresh-right" plain type="primary"
+											@click="rotateRight"></el-button>
 									</el-col>
 								</el-row>
 							</div>
 						</el-col>
 						<el-col :span="12">
 							<div class="avatar-upload-preview">
-								<div :style="{'width': previews.w + 'px', 'height': previews.h + 'px', 'zoom': (200 / previews.h)}">
+								<div
+									:style="{'width': previews.w + 'px', 'height': previews.h + 'px', 'zoom': (200 / previews.h)}">
 									<el-image :src="previews.url" :style="previews.img" alt="预览"></el-image>
 								</div>
 							</div>
@@ -137,10 +165,28 @@
 	import {
 		VueCropper
 	} from 'vue-cropper'
+	import SocialAuth from './socialAuth.vue'
 	import base from '../../api/base.js'
 	export default {
 		components: {
-			VueCropper
+			VueCropper,
+			SocialAuth
+		},
+		computed:{
+			authSocial(){
+				const authSocial =  this.$store.state.authSocial
+				authSocial.map(val=>{
+					if(this.userInfo.qq)
+						if(val.platform === 'QQ') val.bind = true
+					if(this.userInfo.github)
+						if(val.platform === 'github') val.bind = true
+					if(this.userInfo.gitee)
+						if(val.platform === 'gitee') val.bind = true
+					if(this.userInfo.baidu)
+						if(val.platform === 'baidu') val.bind = true
+				})
+				return authSocial
+			}
 		},
 		data() {
 			var checkPhone = (rule, value, callback) => {
@@ -176,10 +222,11 @@
 				}
 			};
 			return {
-				reloadImg:true,
-				basicUrl:'',
-				loading:false,
+				reloadImg: true,
+				basicUrl: '',
+				loading: false,
 				editVisible: false,
+				visible: false,
 				activeName: 'first',
 				userInfo: {},
 				ruleForm: {
@@ -221,7 +268,7 @@
 					}],
 				},
 				configObj: {
-					imgSrc: 'https://img.printf520.com/dist/static/images/avatar/009-avatar.jpg',
+					imgSrc: '',
 					canMove: false,
 					autoCrop: true,
 					centerBox: true,
@@ -238,7 +285,11 @@
 				this.$api.system.getUserInfoAPI().then(res => {
 					if (res.code === 200) {
 						this.userInfo = res.data.userInfo;
-						this.configObj.imgSrc = this.basicUrl+this.rename(this.userInfo.avatar)
+						if (this.userInfo.avatar.indexOf('-thumbnail') != -1) {
+							this.userInfo.avatar = this.basicUrl + this.userInfo.avatar
+							this.configObj.imgSrc = this.rename(this.userInfo.avatar)
+						} else
+							this.configObj.imgSrc = this.userInfo.avatar
 					} else if (res.code === 401) {
 						this.$removeToken()
 						this.$alert(res.message, "提示", {
@@ -252,13 +303,13 @@
 						this.$message.error(res.message)
 				})
 			},
-			rename(imgUrl){
-				return imgUrl.substr(0,imgUrl.lastIndexOf('-'))+'.jpg'
+			rename(imgUrl) {
+				return imgUrl.substr(0, imgUrl.lastIndexOf('-')) + '.jpg'
 			},
 			changePassword(temp) {
 				this.$api.system.changePasswordAPI(temp).then(res => {
 					if (res.code === 200) {
-
+						this.resetForm('ruleForm2')
 						this.$message.success(res.message)
 					} else if (res.code === 401) {
 						this.$removeToken()
@@ -276,6 +327,7 @@
 			changeUserInfo() {
 				this.$api.system.changeUserInfoAPI(this.userInfo).then(res => {
 					if (res.code === 200) {
+						
 						this.$message.success(res.message)
 					} else if (res.code === 401) {
 						this.$removeToken()
@@ -320,7 +372,7 @@
 			rotateRight() {
 				this.$refs.cropper.rotateRight()
 			},
-			//提交按钮
+			//头像提交按钮
 			saveEdit() {
 				this.$refs.cropper.getCropBlob(data => {
 					this.loading = true
@@ -329,10 +381,10 @@
 					this.$api.system.changeAvatarAPI(formData).then(res => {
 						if (res.code === 200) {
 							this.$message.success(res.message)
-							this.reloadImg = false 
+							this.reloadImg = false
 							this.editVisible = false
 							this.loading = false
-							this.userInfo.avatar = res.data.imgUrl
+							this.userInfo.avatar = this.basicUrl + res.data.imgUrl
 						} else if (res.code === 401) {
 							this.$removeToken()
 							this.$alert(res.message, "提示", {
@@ -344,18 +396,31 @@
 							})
 						} else
 							this.$message.error(res.message)
-						this.$nextTick(()=>this.reloadImg = true)
+						this.$nextTick(() => this.reloadImg = true)
 					})
 				});
 			},
 			resetForm(formName) {
 				this.$refs[formName].resetFields();
 			},
+			avatarTo(platform){
+				this.$api.system.changeAvatarFromPlatformAPI(platform).then(res=>{
+					if(res.code === 200){
+						this.$message.success(res.message)
+						this.visible = false
+						setTimeout(()=>{
+							this.getUserInfo()
+						},500)
+					}else
+						this.$message.error(res.message)
+					
+				})
+			},
 			handleChange(image) {
 				const rawImage = image.raw
 				if (!rawImage) return false
 				if (rawImage.type.indexOf("image/") == -1) {
-					this.$message.warning('图片只支持.jpg, .png, .bmp, .jpeg, .webp格式!')
+					this.$message.warning('图片只支持.jpg, .png 格式!')
 					return false
 				}
 				if (this.isLimit3M(rawImage)) {
@@ -401,8 +466,8 @@
 			realTime(data) {
 				this.previews = data
 			},
-			requestUpload(){
-				
+			requestUpload() {
+
 			}
 		}
 

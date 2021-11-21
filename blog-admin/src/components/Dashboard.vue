@@ -5,7 +5,7 @@
 				<el-card shadow="always" class="mgb20" style="height:252px;">
 					<div class="user-info">
 						<router-link to="/userInfo">
-							<img :src="basicUrl+userInfo.avatar" class="user-avator" alt />
+							<img :src="userInfo.avatar" class="user-avator" alt />
 						</router-link>
 						<div class="user-info-cont">
 							<div class="user-info-name">{{userInfo.nickName}}</div>
@@ -132,10 +132,6 @@
 <script>
 	import base from '../api/base.js'
 	import comment from './comment.vue'
-	import {
-		div
-	} from '../utils/calculate.js'
-
 	export default {
 		name: 'dashboard',
 		components: {
@@ -146,7 +142,6 @@
 				editVisible: false,
 				commentList: [],
 				userInfo: {},
-				basicUrl: '',
 				sysLog: {},
 				msgQuery: {
 					pageIndex: 1,
@@ -175,7 +170,6 @@
 
 		},
 		created() {
-			this.basicUrl = base.localUrl
 			this.getUserInfo()
 		},
 		methods: {
@@ -183,6 +177,9 @@
 				this.$api.system.getUserInfoAPI().then(res => {
 					if (res.code === 200) {
 						this.userInfo = res.data.userInfo;
+						if(this.userInfo.avatar.indexOf("-thumbnail.jpg") != -1){
+							this.userInfo.avatar = base.localUrl +this.userInfo.avatar
+						}
 						this.getLatestLogByUser(this.userInfo.username)
 						this.getCommentList()
 						this.getStatistics(this.userInfo.id)
@@ -256,13 +253,13 @@
 						const comments = res.data.comments
 						comments.map(item => {
 							item.oppen = false
-							if (item.fromUserId) {
+							if (item.fromUserId && item.fromUserAvatar.indexOf('-thumbnail') != -1) {
 								item.fromUserAvatar = base.localUrl + item.fromUserAvatar
 							}
 							if (item.reply.length != 0) {
 								item.reply.map(val => {
 									val.oppen = false
-									if (val.fromUserId)
+									if (val.fromUserId && val.fromUserAvatar.indexOf('-thumbnail') != -1)
 										val.fromUserAvatar = base.localUrl + val.fromUserAvatar
 									return val
 								})
@@ -305,7 +302,6 @@
 					toUserEmail: v.fromUserEmail,
 					parentId: v.id
 				}
-				console.log(v)
 			},
 			toReply(v) {
 				var com = Object.assign(this.tempCom, v);
@@ -374,7 +370,8 @@
 				})
 			},
 			persent(arg1, arg2) {
-				return 100 * (parseInt(arg1) / arg2).toFixed(3)
+				var result = (100* (arg1/arg2)).toFixed(2)
+				return Number(result)
 			},
 			getColor() {
 				let count = ~~(Math.random() * this.color.length)

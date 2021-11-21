@@ -1,5 +1,6 @@
 package com.arslinth.controller;
 
+import cn.hutool.core.io.FileTypeUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.arslinth.common.ApiResponse;
 import com.arslinth.common.ResponseCode;
@@ -84,18 +85,18 @@ public class ArticleController {
     @PostMapping("/imgAdd")
     @PreAuthorize("hasAnyAuthority('ht_publish','md_publish')")
     public ApiResponse imgAdd(@RequestParam("files")MultipartFile[] file){
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getPrincipal().toString();
+        String username = AuthenticationUtils.getAuthenticationName();
         try {
             List<String> imgUrlList = new ArrayList<>();
             for (int i = 0; i < file.length; i++) {
+
                 String imgUrl = uploadService.uploadImg(file[i], username+RandomUtil.randomString(5));
                 imgUrlList.add(imgUrl);
             }
             return ApiResponse.code(ResponseCode.SUCCESS).data("url",imgUrlList);
         } catch (IOException e) {
             e.printStackTrace();
-            return ApiResponse.code(ResponseCode.FAIL).message("添加失败！");
+            return ApiResponse.code(ResponseCode.FAIL).message("文件格式不支持，添加失败！");
         }
     }
     @PostMapping("/list")

@@ -14,7 +14,7 @@
 				
 				<el-table-column label="头像" align="center">
 					<template slot-scope="scope">
-						<el-image class="table-td-thumb" :src="basicUrl+scope.row.avatar" :preview-src-list="preview(scope.row.avatar)"></el-image>
+						<el-image class="table-td-thumb" :src="preAvatar(scope.row.avatar)" :preview-src-list="preview(scope.row.avatar)"></el-image>
 					</template>
 				</el-table-column>
 				<el-table-column prop="username" label="账号" align="center"></el-table-column>
@@ -145,8 +145,11 @@
 						this.$message.error(res.message)
 				})
 			},
+			preAvatar(avatar){
+				return ( avatar.indexOf('-thumbnail') == -1) ? avatar : this.basicUrl + avatar
+			},
 			preview(avatar){
-				return avatar ? [this.basicUrl+avatar.substr(0,avatar.lastIndexOf('-'))+'.jpg'] : []
+				return ( avatar.indexOf('-thumbnail') == -1) ? [avatar] : [this.basicUrl+avatar.substr(0,avatar.lastIndexOf('-'))+'.jpg']
 			},
 			// 触发搜索按钮
 			handleSearch() {

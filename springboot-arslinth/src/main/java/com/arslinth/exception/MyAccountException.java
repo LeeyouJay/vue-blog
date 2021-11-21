@@ -2,6 +2,8 @@ package com.arslinth.exception;
 
 import org.springframework.security.core.AuthenticationException;
 
+import java.util.Map;
+
 /**
  * @author Arslinth
  * @ClassName AccountException
@@ -12,6 +14,8 @@ public class MyAccountException extends AuthenticationException {
 
     private int code;
 
+    private Map<String,Object> data;
+
     public MyAccountException(String msg) {
         super(msg);
     }
@@ -21,7 +25,16 @@ public class MyAccountException extends AuthenticationException {
         this.code =code;
     }
 
+    public MyAccountException(int code,Map data,String msg) {
+        super(msg);
+        this.code =code;
+        this.data = data;
+    }
+
     public int getCode() {
         return code;
+    }
+    public Map<String,Object> getData(){
+        return data;
     }
 }

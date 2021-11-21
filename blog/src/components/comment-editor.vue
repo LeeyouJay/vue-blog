@@ -9,7 +9,7 @@
 						    placement="top-start"
 						    width="200"
 						    trigger="focus"
-						    content="输入QQ自动获取昵称">
+						    content="输入QQ号自动获取昵称头像">
 						  </el-popover>
 						<el-input size="small" placeholder="(必填)昵称" :disabled="lockInput" v-popover:popover v-model="param.fromUserName" @blur="onBlur(param.fromUserName)">
 						</el-input>
@@ -106,7 +106,7 @@ import {
 				this.param.content = v
 				this.$refs['comment'].validate((valid) => {
 					if (valid) {
-						
+						this.$store.dispatch('setParam' ,this.param)
 						this.$emit('onSubmit',this.param)
 					} else {
 						console.log('验证失败！');

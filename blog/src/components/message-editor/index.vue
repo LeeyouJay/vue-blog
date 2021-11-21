@@ -13,13 +13,6 @@
 			<transition name="button">
 				<el-button  ref="button" type="primary" size="mini"
 					:disabled="!inputContent" v-show="showInlineButton && inline">{{buttonText}}</el-button>
-				<!-- <div
-          @click="handlerSubmit"
-          class="submit-button inline"
-          :disabled="!inputContent"
-          ref="button"
-          v-show="showInlineButton && inline"
-        >{{buttonText}}</div> -->
 			</transition>
 		</div>
 		<div class="footer-action" v-if="!inline">
@@ -73,6 +66,7 @@
 				this.$refs.inputBox.focus()
 			},
 			clearContent(){
+				this.inputContent =""
 				this.$refs.inputBox.clear()
 			},
 			hideButton(e) {

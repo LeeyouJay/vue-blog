@@ -26,10 +26,7 @@
 						<el-col :span="12">
 							<el-form-item label="分类:" prop="tag">
 								<el-select v-model="article.tag" placeholder="选择分类标签" clearable >
-								      <el-option label="JAVA" value="JAVA"></el-option>
-								      <el-option label="SpringBoot" value="SpringBoot"></el-option>
-									  <el-option label="Vue" value="Vue"></el-option>
-									  <el-option label="随笔" value="随笔"></el-option>
+								     <el-option v-for="(item,index) in tags" :key="index" :label="item" :value="item"></el-option>
 								</el-select>
 							</el-form-item>
 							<el-form-item label="状态:">
@@ -45,7 +42,7 @@
 									<img class="banner" :src="article.banner" @error="imgerrorfun()" />
 								</div>
 								<el-input type="textarea" v-model="article.summary" :autosize="autosize"
-									placeholder="请输入内容" autocomplete="off" maxlength="100" show-word-limit
+									placeholder="请输入内容" autocomplete="off" maxlength="120" show-word-limit
 									style="width: calc(100% - 100px)"></el-input>
 							</el-form-item>
 						</el-col>
@@ -115,6 +112,11 @@
 		components: {
 			mavonEditor
 		},
+		computed: {
+			tags(){
+				return this.$store.state.articleTags
+			}
+		},
 		created() {
 			this.basicUrl = base.localUrl
 			var v = this.$store.state.articleEdit
@@ -177,7 +179,6 @@
 				this.$refs.md.d_preview_imgsrc = src
 			},
 			submit() {
-				console.log(this.article)
 				this.$refs.ruleForm.validate(valid => {
 					if (valid) {
 						if(this.articleEdit)

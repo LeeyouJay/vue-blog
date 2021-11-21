@@ -38,9 +38,21 @@ const system = {
 	setStateAPI(params){
 		return axios.post(`${base.localUrl}/user/setState`, params);
 	},
+	//操作：更改头像
+	changeAvatarFromPlatformAPI(params){
+		return axios.get(`${base.localUrl}/user/changeAvatarFromPlatform/`+ params);
+	},
 	//操作：上传头像
 	changeAvatarAPI(params){
 		return axios.post(`${base.localUrl}/user/changeAvatar`, params);
+	},
+	//操作：绑定第三方登入信息
+	authBindAPI(params){
+		return axios.post(`${base.localUrl}/oauth/authorizeBind`, params);
+	},
+	//操作：解除第三方登入信息
+	authUndoAPI(params){
+		return axios.get(`${base.localUrl}/oauth/authorizeUndo/`+params);
 	},
 	//数据：获取侧边菜单
 	menuListAPI() {

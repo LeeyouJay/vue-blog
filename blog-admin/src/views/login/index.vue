@@ -3,7 +3,7 @@
 		<div class="ms-login">
 			<div class="ms-title">
 				<div style="width: 40%;  height: 60px; text-align: right;">
-					<img src="../../assets/img/github.png" width="45" />
+					<img src="../../assets/img/site-logo.svg" width="45" />
 				</div>
 				<div style="padding-left: 10px;">ArslinthBoot</div>
 			</div>
@@ -25,8 +25,14 @@
 							<el-button type="primary" @click="submitLogin()">登录</el-button>
 						</div>
 						<div>
-							<p class="login-tips">Tips : 用户名和密码随便注册。</p>
-							<el-link type="primary" @click="visible = true">去注册</el-link>
+							<div style="width: 65%; float: left;">
+								<p class="login-tips">Tips : 首页点击头像修改个人信息。</p>
+								<el-link type="primary" @click="visible = true">去注册</el-link>
+							</div>
+							<div style="width: 35%; float: right; text-align: right;">
+								<p class="login-tips">快速登入方式：</p>
+								<OAuthLogin @showLoading="showLoading" @stopLoading="stopLoading" @showSingUp="showSingUp"></OAuthLogin>
+							</div>
 						</div>
 					</el-form>
 				</el-tab-pane>
@@ -83,20 +89,25 @@
 	} from '../../utils/cookie.js';
 	import Signup from './signup.vue'
 	import Captcha from './captcha.vue'
+	import OAuthLogin from './OAuthLogin.vue'
+	import base from '../../api/base.js'
+
 	export default {
 		components: {
 			Signup,
-			Captcha
+			Captcha,
+			OAuthLogin
 		},
 		data() {
 			return {
 				buttonName: "发送验证码",
 				isDisabled: false,
-				time: 10,
+				time: 30,
 				activeName: 'first',
 				dialogVisible: false,
 				visible: false,
 				refreshCode: false,
+				contLoading:{},
 				catcha: {
 					blocky: 0,
 					imgurl: '',
@@ -114,7 +125,7 @@
 					captchaUUid: '',
 					moveX: '',
 				},
-				IpInfo:{},
+				IpInfo: {},
 				rules: {
 					username: [{
 						required: true,
@@ -145,16 +156,13 @@
 				}
 			};
 		},
-		created() {
-			this.getIpName()
+		mounted() {
+
 		},
+
 		methods: {
-			getIpName(){
-				this.$api.login.getIpName().then(res=>{
-					const IpInfo = res.data.IpInfo
-					this.IpInfo = res.data.IpInfo
-					this.phoneLog = Object.assign(this.phoneLog,IpInfo);
-				})
+			showSingUp(){
+				this.visible = true
 			},
 			sendMsg() {
 				let me = this;
@@ -171,7 +179,7 @@
 							--me.time;
 							if (me.time < 0) {
 								me.buttonName = "重新发送";
-								me.time = 10;
+								me.time = 30;
 								me.isDisabled = false;
 								window.clearInterval(interval);
 							}
@@ -196,7 +204,10 @@
 						this.$message.success(res.message)
 						this.$refs.dialogopen.handleSuccess()
 						setToken(res.data.token)
-						setAvatar(res.data.avatar)
+						if(res.data.avatar.indexOf('-thumbnail') != -1)
+							setAvatar(base.localUrl + res.data.avatar)
+						else
+							setAvatar(res.data.avatar)
 						localStorage.setItem('ms_username', res.data.nickName)
 						setTimeout(() => {
 							this.$router.push('/');
@@ -225,7 +236,10 @@
 					if (res.code === 200) {
 						this.$message.success(res.message)
 						setToken(res.data.token)
-						setAvatar(res.data.avatar)
+						if(res.data.avatar.indexOf('-thumbnail') != -1)
+							setAvatar(base.localUrl + res.data.avatar)
+						else
+							setAvatar(res.data.avatar)
 						localStorage.setItem('ms_username', res.data.nickName)
 						setTimeout(() => {
 							this.$router.push('/');
@@ -243,8 +257,8 @@
 				let sha256 = require("js-sha256").sha256 //这里用的是require方法，所以没用import
 				return sha256(password)
 			},
-			dialogData(data) {
-				this.visible = data
+			dialogData(v) {
+				this.visible = v
 			},
 			onSuccess(left, stddev) {
 				let user = {
@@ -253,10 +267,9 @@
 					captchaUUid: this.param.captchaUUid,
 					moveX: left
 				}
-				user = Object.assign(user,this.IpInfo);
+				//user = Object.assign(user,this.IpInfo);
 				user.password = this.setSha256(user.password);
 				this.login(user);
-
 			},
 			onFail() {
 				this.$refs.dialogopen.handleFail()
@@ -282,6 +295,18 @@
 					}
 				})
 			},
+			showLoading() {
+				this.contLoading = this.$loading({
+					lock: true,
+					text: '正在登入中...',
+					spinner: 'el-icon-loading',
+					background: 'rgba(0, 0, 0, 0.7)'
+				});
+			},
+			stopLoading(){
+				this.contLoading.close()
+			},
+			
 			handleClick(tab, event) {
 				//console.log(tab, event);
 			}
@@ -301,7 +326,7 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
-		background-image: url(https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+		background-image: url(https://images.pexels.com/photos/1054164/pexels-photo-1054164.jpeg);
 		background-size: 100%;
 	}
 
@@ -343,5 +368,21 @@
 		font-size: 12px;
 		line-height: 30px;
 		color: #000;
+	}
+
+	.account-list {
+		text-align: center;
+		width: auto;
+	}
+
+	.account-list li {
+		width: auto;
+		display: inline-block;
+	}
+
+	.account-list .social {
+		margin: 0px 20px;
+		width: 35px;
+		height: 35px;
 	}
 </style>

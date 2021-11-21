@@ -35,6 +35,8 @@ public class Comment {
 
     private String fromUserSite;
 
+    private String toUserSite;
+
     private String toUserId;
 
     private String toUserEmail;
@@ -54,9 +56,15 @@ public class Comment {
     private boolean hasNew;
 
     @TableField(exist = false)
+    private String yourContent;
+
+    @TableField(exist = false)
     private List<Comment> reply = new ArrayList<>();
+
 
     @TableField(fill = FieldFill.INSERT)
     private String createTime;
+
+
 
 }

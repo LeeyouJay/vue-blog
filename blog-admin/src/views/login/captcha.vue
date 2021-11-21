@@ -172,7 +172,6 @@ export default {
 		blockCtx.drawImage(img1, 0, blocky, that.sw, that.sh)
         //blockCtx.drawImage(img1, 0, blocky, 75, 60)
       }
-      // console.log(777, h)
     },　　// 刷新
     refresh() {
       this.$emit('refresh')
@@ -256,7 +255,6 @@ export default {
       this.showInfo = true
       this.infoText = '验证失败'
       this.containerFail = true
-      // console.log(6666)
       // setTimeout(() => {
       //   this.block.style.left = 0
       //   this.sliderMaskWidth = 0
@@ -267,7 +265,6 @@ export default {
       // }, 800)
     },
     handleSuccess() {
-      // console.log(777)
       this.showInfo = true
       this.infoText = '验证成功'
       this.containerSuccess = true

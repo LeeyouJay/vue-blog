@@ -59,9 +59,8 @@ public class MobileCodeAuthenticationFilter extends AbstractAuthenticationProces
             throw new AuthenticationServiceException(
                     "Authentication method not supported: " + request.getMethod());
         }
-
-        String mobile = obtainMobile(request);
-        String code = obtainCode(request);
+        String mobile = request.getParameter(mobileParameter);
+        String code = request.getParameter(codeParameter);
 
         if (mobile == null) {
             mobile = "";
@@ -70,30 +69,15 @@ public class MobileCodeAuthenticationFilter extends AbstractAuthenticationProces
         if (code == null) {
             code = "";
         }
-
         mobile = mobile.trim();
         code = code.trim();
-
         AbstractAuthenticationToken authRequest = new MobileCodeAuthenticationToken(mobile, code);
 
-        // Allow subclasses to set the "details" property
-        setDetails(request, authRequest);
+        authRequest.setDetails(authenticationDetailsSource.buildDetails(request));
 
         return this.getAuthenticationManager().authenticate(authRequest);
     }
 
-    protected String obtainMobile(HttpServletRequest request) {
-        return request.getParameter(mobileParameter);
-    }
-
-    protected String obtainCode(HttpServletRequest request) {
-        return request.getParameter(codeParameter);
-    }
-
-    protected void setDetails(HttpServletRequest request,
-                              AbstractAuthenticationToken authRequest) {
-        authRequest.setDetails(authenticationDetailsSource.buildDetails(request));
-    }
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
                                             Authentication authentication) throws IOException, ServletException {
@@ -102,12 +86,10 @@ public class MobileCodeAuthenticationFilter extends AbstractAuthenticationProces
         List<String> sysAuthorities = new ArrayList<>();
         authorities.forEach(item-> sysAuthorities.add(item.getAuthority()));
         String username = user.getUsername();
-        String phone = user.getPhone();
-        String jwtToken = JwtUtil.getJwtToken(username,phone,sysAuthorities);
+        String email = user.getEmail();
+        String jwtToken = JwtUtil.getJwtToken(username,email,sysAuthorities);
         //返回并保存信息
-        sysLogService.insertSysLog(SysLogUtils.getIpSource(request),"验证码方式","登录成功！",true,username);
-        //sysLogService.saveSysLog(request,"验证码方式","登录成功！",true,username);
-
+        sysLogService.saveSysLog(request,"验证码方式","登录成功！",true,username);
         ResponseUtil.print(response, JSON.toJSONString(ApiResponse.code(ResponseCode.SUCCESS)
                 .message("登录成功！").data("token", jwtToken).data("nickName",user.getNickName()).data("avatar",user.getAvatar())));
 
@@ -117,9 +99,8 @@ public class MobileCodeAuthenticationFilter extends AbstractAuthenticationProces
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response,
                                               AuthenticationException e) throws IOException, ServletException {
         MyAccountException ex = (MyAccountException)e;
-        String phone = obtainMobile(request);
-        sysLogService.insertSysLog(SysLogUtils.getIpSource(request),"验证码方式",ex.getMessage(),false,phone);
-        //sysLogService.saveSysLog(request,"验证码方式",ex.getMessage(),false,phone);
+        String phone = request.getParameter(mobileParameter);
+        sysLogService.saveSysLog(request,"验证码方式",ex.getMessage(),false,phone);
         log.warn(e.getMessage());
         ResponseUtil.print(response, JSON.toJSONString(ApiResponse.code(ex.getCode()).message(ex.getMessage())));
     }

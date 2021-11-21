@@ -8,7 +8,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Arslinth
@@ -21,9 +23,17 @@ import java.util.List;
 public class FriendService {
     private final FriendDao friendDao;
 
+    private final MailService mailService;
 
     public int applyFriend(Friend friend){
         friend.setId(RandomUtil.randomString(16));
+        Map<String, String> map = new HashMap<>();
+        map.put("siteName",friend.getSiteName());
+        map.put("siteLink",friend.getSiteLink());
+        map.put("email",friend.getEmail());
+        map.put("icon",friend.getIcon());
+        map.put("description",friend.getDescription());
+        mailService.sendMail("752279593@qq.com","您的博客Arslinth有了新的友链申请~","friendApply",map);
         return friendDao.insert(friend);
     }
     public int passApply(Friend friend){
@@ -37,5 +47,8 @@ public class FriendService {
     }
     public List<Friend> getApplyFriends(){
         return friendDao.selectList(new QueryWrapper<Friend>().eq("has_check",false).orderByDesc("create_time"));
+    }
+    public Friend findBySite(String siteLink){
+        return friendDao.selectOne(new QueryWrapper<Friend>().eq("site_link",siteLink));
     }
 }

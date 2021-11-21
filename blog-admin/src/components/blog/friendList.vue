@@ -151,7 +151,8 @@
 					if (res.code === 200) {
 						this.$message.success(res.message)
 						setTimeout(() => {
-							this.applyTotal--
+							if(this.applyTotal != 0)
+								this.applyTotal--
 							this.friendsTotal++
 							this.unread.splice(index, 1)
 							this.loading = false
@@ -196,7 +197,8 @@
 					if (res.code === 200) {
 						this.$message.success(res.message)
 						setTimeout(() => {
-							this.applyTotal--
+							if( this.applyTotal !== 0)
+								this.applyTotal--
 							this.unread.splice(index, 1)
 							this.loading = false
 							this.centerDialogVisible = false

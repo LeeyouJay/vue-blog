@@ -20,6 +20,7 @@ import "e-icon-picker/dist/symbol.js"; //基本彩色图标库
 import 'e-icon-picker/dist/index.css'; // 基本样式，包含基本图标
 import 'font-awesome/css/font-awesome.min.css'; //font-awesome 图标库
 import 'element-ui/lib/theme-chalk/icon.css'; //element-ui 图标库
+import './assets/font/iconfont.css'
 
 Vue.prototype.$api = api; // 将api挂载到vue的原型上
 Vue.prototype.$getToken = getToken;

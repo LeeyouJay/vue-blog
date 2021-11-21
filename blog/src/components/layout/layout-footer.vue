@@ -36,16 +36,16 @@
 					{
 						id: 2,
 						title: 'GitHub',
-						tips:'https://github.com/LeeyouJay',
+						tips:'https://github.com/LeeyouJay/vue-blog',
 						icon: 'icon-github',
-						href: 'https://github.com/LeeyouJay'
+						href: 'https://github.com/LeeyouJay/vue-blog'
 					},
 					{
 						id: 3,
 						title: '后台管理',
-						tips:'https://chenyi.ink/manage',
+						tips:'https://chenyi.ink/manage/',
 						icon: 'icon-guanli',
-						href: 'https://chenyi.ink/manage'
+						href: 'https://chenyi.ink/manage/'
 					},
 				]
 			}

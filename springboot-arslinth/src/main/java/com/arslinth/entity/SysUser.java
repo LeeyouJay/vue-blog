@@ -1,7 +1,9 @@
 package com.arslinth.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -40,8 +42,19 @@ public class SysUser {
 
     private boolean setRight;
 
+    private String github;
+
+    private String qq;
+
+    private String baidu;
+
+    private String gitee;
+
     @TableField(fill = FieldFill.INSERT)
     private String createTime;
+
+    @TableField(exist = false)
+    private String source;
 
     @TableField(exist = false)
     private String[] sysAuthorities;

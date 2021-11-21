@@ -9,7 +9,7 @@ import java.util.Collection;
 /**
  * @author Arslinth
  * @ClassName MobileCodeAuthenticationToken
- * @Description 手机验证码登入provider
+ * @Description 手机验证码登入Token
  * @Date 2021/3/5
  */
 public class MobileCodeAuthenticationToken extends AbstractAuthenticationToken {
@@ -19,7 +19,7 @@ public class MobileCodeAuthenticationToken extends AbstractAuthenticationToken {
     private Object credentials;
 
     public MobileCodeAuthenticationToken(Object principal, String credentials) {
-        super((Collection)null);
+        super(null);
         this.principal = principal;
         this.credentials = credentials;
         setAuthenticated(false);

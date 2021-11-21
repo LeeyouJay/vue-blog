@@ -19,9 +19,21 @@ const login = {
 			}
 		});
 	},
+	//第三方登入
+	authLoginAPI(params){
+		return axios.post(`${base.localUrl}/authorizeLogin`, QS.stringify(params), {
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			}
+		});
+	},
 	// 注册提交
 	signupApi(params) {
 		return axios.post(`${base.localUrl}/user/signup`, params);
+	},
+	//第三方平台注册
+	singAndBindApi(params) {
+		return axios.post(`${base.localUrl}/user/singAndBind`, params);
 	},
 	//获取图片验证码
 	getCaptchaImage() {
@@ -43,10 +55,9 @@ const login = {
 	getCaptcha() {
 		return axios.get(`${base.localUrl}/slider/image`);
 	},
-	//获取IP地址
-	getIpName(){
-		return axios.get("https://127.0.0.1:8900/getIp");
-	}
-	
+	//跳转第三方授权页
+	getAuthorize(params){
+		return axios.get(`${base.localUrl}/oauth/getAuthorize/`+params);
+	},
 }
 export default login;

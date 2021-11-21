@@ -6,16 +6,18 @@
 					<img :src="banner" />
 				</router-link>
 			</div>
-			<h1 class="entry-title">
-				<router-link :to="`/article/${post.id}`"><span v-if="post.top"
-						style="color:#ff6d6d;font-weight:600">[置顶] </span>{{strTitle(post.title)}}</router-link>
-			</h1>
+			<el-tooltip  effect="light" :open-delay="700" :content="post.title" placement="top-start">
+				<h1 class="entry-title">
+					<router-link :to="`/article/${post.id}`"><span v-if="post.top"
+							style="color:#ff6d6d;font-weight:600">[置顶] </span>{{post.title}}</router-link>
+				</h1>
+			</el-tooltip>
 			<div class="p-time">
 				<i class="iconfont icon-shijian"></i>
 				<span>发布于 {{post.createTime.substr(0,10)}}</span>
 				<i v-if="post.hot" class="iconfont icon-icon-test" style="margin-left: 5px;color: #ff6d6d;"></i>
 			</div>
-			<p class="summary">{{summary(post.summary)}}</p>
+			<p class="summary">{{post.summary}}</p>
 			<footer class="entry-footer">
 				<div class="post-more">
 					<div  style="display: inline;float: left;color: #989898;font-size: 14px;" >
@@ -53,19 +55,7 @@
 			}
 		},
 		methods:{
-			summary(text){
-				var len = text.length;  
-				   if(len >= 100)
-						return text+"..."
-					else
-						return text
-			},
-			strTitle(text){
-				if(text.length>17)
-					return text.substr(0,17)+"..."
-				else
-					return text
-			}
+			
 		}
 	}
 </script>
@@ -107,12 +97,11 @@
 			margin: 0 0 0 17%;
 			position: relative;
 			z-index: 1;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			width: 70%;
+			width: 64%;
 			color: #737373;
-
+			overflow:hidden;//超出一行文字自动隐藏 
+			text-overflow:ellipsis;//文字隐藏后添加省略号
+			white-space:nowrap;//强制不换行
 			& a:hover {
 				color: #00ba9a;
 			}
@@ -140,6 +129,12 @@
 			color: #6f6f6f;
 			letter-spacing: 1px;
 			line-height: 30px;
+			
+			overflow: hidden;
+			display: -webkit-box;
+			text-overflow: ellipsis;
+			-webkit-line-clamp: 3;  /*要显示的行数*/
+			 -webkit-box-orient: vertical;
 		}
 
 		footer.entry-footer {

@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { getToken } from '@/utils/cookie.js'
-
+import { getAvatar ,setAvatar ,setCookies ,getCookiesByKey} from '@/utils/cookie.js'
+import base from '@/api/base.js'
 
 Vue.use(Vuex)
 // 略:后台获取系统运行时间
-const runAt = Date.parse('2021-03-26 21:00:08');
+const runAt = Date.parse('2021-04-01 21:00:00');
 let timer = null;
 const state = {
 	loading: false,
@@ -14,6 +14,7 @@ const state = {
 	content:'',
 	needInfo:true,
 	websiteInfo: '',
+	avatar:'',
 	param: {
 		fromUserName: '',
 		fromUserEmail: '',
@@ -36,7 +37,18 @@ const mutations = {
 		state.needInfo = v;
 	},
 	SET_PARAM: (state, v) => {
+		setCookies('remember_name' ,v.fromUserName)
+		setCookies('remember_email' ,v.fromUserEmail)
+		setCookies('remember_site' ,v.fromUserSite)
+		setCookies('remember_avatar' ,v.fromUserAvatar)
 		state.param = v;
+	},
+	SET_AVATAR: (state, v) =>{
+		if(v.indexOf('-thumbnail') != -1)
+			state.avatar = base.localUrl + v
+		else
+			state.avatar = v
+		setAvatar(state.avatar)
 	},
 	GET_RUNTIME_INTERVAL: (state) => {
 		if (!timer || !state.runTimeInterval) {
@@ -66,13 +78,29 @@ const actions = {
 	initComputeTime: ({commit}) => {
 		commit('GET_RUNTIME_INTERVAL');
 	},
-	
+	setAvatar: ({commit}, v) =>{
+		commit('SET_AVATAR', v);
+	}
 }
 const getters = {
 	loading: state => state.loading,
 	runTimeInterval: state => state.runTimeInterval,
 	needInfo: state => state.needInfo,
-	param: state => state.param
+	param: state => {
+		if(getCookiesByKey('remember_name')){
+			state.param.fromUserName = getCookiesByKey('remember_name')
+			state.param.fromUserEmail = getCookiesByKey('remember_email')
+			state.param.fromUserSite = getCookiesByKey('remember_site')
+			state.param.fromUserAvatar = getCookiesByKey('remember_avatar')
+		}
+		return state.param
+	},
+	avatar : state => {
+		const avatar = getAvatar()
+		if(avatar)
+			state.avatar = avatar
+		return state.avatar
+	}
 }
 function getTimeInterval(startDate, endDate = Date.now()) {
   if (arguments.length === 0) {

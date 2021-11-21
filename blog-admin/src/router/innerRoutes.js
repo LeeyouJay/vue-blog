@@ -95,6 +95,14 @@ export let innerRoutes = [{
 		}
 	},
 	{
+		// 音乐列表
+		path: '/music_list',
+		component: () => import(  '../components/blog/musicList.vue'),
+		meta: {
+			title: '音乐列表'
+		}
+	},
+	{
 		path: '/permission',
 		component: () => import(  '../components/Permission.vue'),
 		beforeEnter: (to, from, next) => {

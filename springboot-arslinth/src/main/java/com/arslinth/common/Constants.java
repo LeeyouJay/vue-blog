@@ -9,6 +9,8 @@ package com.arslinth.common;
 public class Constants {
     //验证码登入地址
     public static final String MOBILE_LOGIN_URL = "/mobileCodeLogin";
+    public static final String AUTH_LOGIN_URL ="/authorizeLogin";
+
     //验证码登入提交字段
     public static final String FORM_MOBILE_NUM = "mobile";
     public static final String FORM_CODE = "code";

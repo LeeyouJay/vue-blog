@@ -48,6 +48,8 @@ public class Article {
 
     private boolean markdown;
 
+    private String songId;
+
     @TableField(fill = FieldFill.INSERT)
     private String createTime;
 

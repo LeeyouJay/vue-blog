@@ -14,7 +14,7 @@ const blog = {
 	saveTagsAPI(params){
 		return axios.post(`${base.localUrl}/article/saveTags`,params);
 	},
-	//修改文章
+	//批量删除文章
 	delArticleAPI(params){
 		return axios.post(`${base.localUrl}/article/del`,params);
 	},
@@ -49,12 +49,29 @@ const blog = {
 	getFriendsAPI(params){
 		return axios.post(`${base.localUrl}/friend/getFriends`,params);
 	},
-	
 	passApplyAPI(params){
 		return axios.post(`${base.localUrl}/friend/passApply`,params);
 	},
 	delFriendAPI(params){
 		return axios.post(`${base.localUrl}/friend/delFriend`,params);
+	},
+	//新增/修改音乐
+	editSongAPI(params) {
+		return axios.post(`${base.localUrl}/song/editSong`, params);
+	},
+	//删除音乐
+	delSongAPI(params){
+		return axios.get(`${base.localUrl}/song/del/`+params);
+	},
+	//获取音频列表
+	getMusicList(params){
+		return axios.post(`${base.localUrl}/song/getMusicList`,params);
+	},
+	//上传音频文件
+	songAddAPI(params){
+		return axios.post(`${base.localUrl}/song/uploadSong`, params,{
+			headers: {'Content-Type': 'multipart/form-data'}
+		});
 	},
 }
 	export default blog;

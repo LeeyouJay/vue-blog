@@ -9,6 +9,7 @@ import com.arslinth.entity.SysUser;
 import com.arslinth.entity.VO.RoleAuths;
 import com.arslinth.exception.MyAccountException;
 import com.arslinth.service.SysUserService;
+import com.arslinth.utils.AuthenticationUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,10 +72,12 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
         }
         //判断密码
         if (!new BCryptPasswordEncoder().matches(password, user.getPassword())) {
-            redisTool.sSetAndTime(username + Constants.FAIL_TIME_SUFFIX, 1800L, new Date());
+            redisTool.sSetAndTime(username + Constants.FAIL_TIME_SUFFIX, 600L, new Date());//秒
             throw new MyAccountException(ResponseCode.NO_PASS, "密码不正确,还有" + (5 - redisTool.sGetSetSize(username + Constants.FAIL_TIME_SUFFIX)) + "次机会！");
         }
-        return setAuthorities(user,password);
+        redisTool.remove(user.getUsername() + Constants.FAIL_TIME_SUFFIX);
+        UsernamePasswordAuthenticationToken authorities = AuthenticationUtils.setAuthorities(userAuthorityDao, roleAuthsDao, user, password);
+        return authorities;
     }
 
     @Override
@@ -102,27 +105,5 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
             throw new MyAccountException(ResponseCode.CHECK_CAPTCHA_FAIL, "验证失败！");
         }
         redisTool.remove(captchaUUid);
-    }
-
-    //查询权限
-    private UsernamePasswordAuthenticationToken setAuthorities(SysUser user,String password){
-        Collection<GrantedAuthority> authorities = new ArrayList<>();
-        List<String> userAuthorities = userAuthorityDao.getUserAuthorities(user.getUsername());
-
-        //在内存中没有权限时
-        if(userAuthorities.size() == 0){
-            List<RoleAuths> roleAuths = roleAuthsDao.selectList(new QueryWrapper<RoleAuths>().eq("role_id", user.getRoleId()));
-            userAuthorities = roleAuths.stream().map(RoleAuths::getAuth).collect(Collectors.toList());
-            userAuthorityDao.setUserAuthorities(user.getUsername(),userAuthorities);
-        }
-
-        for (String auth : userAuthorities) {
-            if (StringUtils.isEmpty(auth)) continue;
-            SimpleGrantedAuthority authority = new SimpleGrantedAuthority(auth);
-            authorities.add(authority);
-        }
-        redisTool.remove(user.getUsername() + Constants.FAIL_TIME_SUFFIX);
-        return new UsernamePasswordAuthenticationToken(user, password, authorities);
-
     }
 }

@@ -1,8 +1,6 @@
 package com.arslinth.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+
 import com.arslinth.common.ApiResponse;
 import com.arslinth.common.ResponseCode;
 import com.arslinth.entity.Article;
@@ -10,23 +8,20 @@ import com.arslinth.entity.Comment;
 import com.arslinth.entity.Friend;
 import com.arslinth.entity.SysUser;
 import com.arslinth.entity.VO.ArticleQuery;
-import com.arslinth.entity.VO.CommentVO;
 import com.arslinth.entity.VO.QueryBody;
 import com.arslinth.service.*;
 import com.arslinth.utils.AuthenticationUtils;
-import com.arslinth.utils.HtmlFilter;
 import com.arslinth.utils.IpInfoUtils;
 import com.arslinth.utils.PageUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -47,6 +42,8 @@ public class BlogController {
     private final CommentService commentService;
 
     private final FriendService friendService;
+
+    private final SongService songService;
 
     @GetMapping("/getArchives")
     public ApiResponse getArchives(){
@@ -102,6 +99,9 @@ public class BlogController {
         }
         if(StringUtils.isEmpty(comment.getFromUserName())&&StringUtils.isEmpty(comment.getFromUserEmail()))
             return ApiResponse.code(ResponseCode.NO_LOGIN).message("登入信息失效！");
+        Friend friend = friendService.findBySite(comment.getFromUserSite());
+
+        Optional.of(friend).map(Friend::getIcon).ifPresent(comment::setFromUserAvatar);
 
         comment.setBrowser(IpInfoUtils.getBrowser(request));
         comment.setSystemName(IpInfoUtils.getSystemName(request));
@@ -143,6 +143,11 @@ public class BlogController {
     public ApiResponse getFriends(){
         List<Friend> friends = friendService.getFriends();
         return ApiResponse.code(ResponseCode.SUCCESS).data("friends",friends);
+
+    }
+    @GetMapping("/ArticleSong/{id}")
+    public ApiResponse ArticleSong(@PathVariable String id){
+        return ApiResponse.code(ResponseCode.SUCCESS).data("song",songService.findById(id));
 
     }
 

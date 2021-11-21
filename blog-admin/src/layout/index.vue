@@ -38,7 +38,6 @@
 			this.$bus.$off('collapse-content')
 			this.$bus.$on('collapse-content', msg => {
 				this.collapse = msg;
-				console.log(msg)
 			});
 
 			// 只有在标签页列表里的页面才使用keep-alive，即关闭标签之后就不保存到内存中了。

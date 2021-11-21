@@ -1,7 +1,7 @@
 <template>
 	<div class="sidebar">
 		<div class="logo">
-				<a href="https://chenyi.ink" target="_blank">
+				<a href="https://github.com/LeeyouJay/vue-blog" target="_blank">
 					<img src="../assets/img/github.png" :width="[collapse ? 45 : 70]"/>
 				</a>
 		</div>

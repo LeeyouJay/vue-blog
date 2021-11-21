@@ -6,6 +6,7 @@ module.exports = {
 	devServer: {
 		port: 8100,
 		open: true,
+		//disableHostCheck: true,//解决Invalid Host header问题
 		overlay: { // 是否在浏览器上显示编译的 errors 或 warnings
 			warnings: false,
 			errors: true

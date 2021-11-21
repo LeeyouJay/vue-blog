@@ -4,7 +4,7 @@
 			<template v-if="isHome">
 				<div class="focusinfo">
 					<div class="header-info">
-						<p>The way up is not crowded, but most chose to lay down.</p>
+						<p>{{title}}</p>
 					</div>
 				</div>
 				<!--左右倾斜-->
@@ -27,11 +27,15 @@
 		props: {
 			src: {
 				type: String,
-				default: 'https://z3.ax1x.com/2021/03/10/6JfxHJ.jpg'
+				default: 'https://z3.ax1x.com/2021/07/17/WleyVO.jpg'
 			},
 			isHome: {
 				type: [Boolean, String],
 				default: false
+			},
+			title: {
+				type: String,
+				default: 'The way up is not crowded, but most chose to lay down.'
 			}
 		},
 		created() {

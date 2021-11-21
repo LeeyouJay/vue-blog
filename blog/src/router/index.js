@@ -24,11 +24,17 @@ const routes = [
         meta: { title: '搜索', params: 'words'}
     },
     {
-        path: '/about',
+        path: '/article/about',
         name: 'about',
         component: () => import('../views/About.vue'),
         meta: { title: '关于'}
     },
+	{
+	    path: '/meaning',
+	    name: 'meaning',
+	    component: () => import('../views/Meaning.vue'),
+	    meta: { title: '意义'}
+	},
     {
         path: '/friend',
         name: 'friend',
@@ -57,7 +63,6 @@ const routes = [
 
 const router = new VueRouter({
     mode: 'history',
-    base: process.env.BASE_URL,
     routes
 })
 router.beforeEach((to, from, next) => {

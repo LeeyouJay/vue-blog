@@ -1,6 +1,8 @@
 <template>
-	<el-dialog title="注册" center :visible.sync="openStatus" width="30%" :before-close="handleClose">
-		<el-form :model="ruleForm" status-icon :rules="registered" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+	<el-dialog title="注册" center :visible.sync="openStatus" width="30%" :before-close="handleClose" @open="open()"
+		@close="close()">
+		<el-form :model="ruleForm" status-icon :rules="registered" ref="ruleForm" label-width="100px"
+			class="demo-ruleForm">
 			<el-form-item label="登入账号" prop="username">
 				<el-input v-model="ruleForm.username" autocomplete="off"></el-input>
 			</el-form-item>
@@ -11,16 +13,17 @@
 				<el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
 			</el-form-item>
 			<el-form-item label="邮箱" prop="email">
-				<el-input v-model="ruleForm.email"></el-input>
+				<el-input v-model="ruleForm.email" autocomplete="off"></el-input>
 			</el-form-item>
-			
+
 			<el-form-item label="验证码" prop="verifyCode">
 				<el-row>
 					<el-col :span="9">
-						<el-input v-model="ruleForm.verifyCode"></el-input>
+						<el-input v-model="ruleForm.verifyCode" autocomplete="off"></el-input>
 					</el-col>
 					<el-col :span="9">
-						<el-button style="margin-left: 20px;" @click="toSendCode" type="primary" :disabled="isDisabled">{{buttonName}}
+						<el-button style="margin-left: 20px;" @click="toSendCode" type="primary" :disabled="isDisabled">
+							{{buttonName}}
 						</el-button>
 					</el-col>
 				</el-row>
@@ -34,6 +37,10 @@
 </template>
 
 <script>
+	import {
+		setToken,
+		setAvatar
+	} from '../../utils/cookie.js';
 	export default {
 		props: {
 			visible: {
@@ -92,16 +99,15 @@
 			return {
 				openStatus: this.visible,
 				captchaImage: '',
-				isDisabled:false,
+				isDisabled: false,
 				buttonName: "发送验证码",
-				time: 10,
+				time: 30,
 				ruleForm: {
 					id: '',
 					username: '',
 					password: '',
 					checkPass: '',
-					email:'',
-					phone: '',
+					email: '',
 				},
 				registered: {
 					username: [{
@@ -109,12 +115,12 @@
 							message: '请输入登入账号'
 						},
 						{
-							max: 10,
-							message: '长度在 10字符以内',
+							max: 30,
+							message: '长度在 30字符以内',
 							trigger: 'blur'
 						},
 					],
-					
+
 					password: [{
 						required: true,
 						validator: validatePass,
@@ -130,18 +136,33 @@
 						validator: checkEmail,
 						trigger: 'blur'
 					}],
-					phone: [{
-						validator: checkPhone,
-						trigger: 'blur'
-					}],
 					verifyCode: [{
 						required: true,
-						message: '请输入验证码'
+						message: '请输入验证码',
+						trigger: 'blur'
 					}]
 				},
 			};
 		},
 		methods: {
+			open() {
+				let other = this.$store.getters.getSignupParam
+				if (other.source) {
+					other[other.source.toLowerCase()] = other.uuid
+					this.ruleForm = Object.assign(this.ruleForm, other)
+					this.ruleForm.username = other.source + "_" + Number((10000 + (99999 - 10000) * Math.random()))
+						.toFixed(0)
+					this.ruleForm.nickName = other.nickname
+				}
+			},
+			close() {
+				if (this.ruleForm.source) {
+					this.$store.dispatch("resetSignupParam")
+					for (let key in this.ruleForm) {
+						this.ruleForm[key] = ''
+					}
+				}
+			},
 			submitRegistered(formName) {
 				this.$refs.ruleForm.validate(valid => {
 					if (valid) {
@@ -161,6 +182,21 @@
 						this.$emit('dialogData', false)
 						this.$refs['ruleForm'].resetFields()
 						this.$message.success(res.message);
+						setToken(res.data.token)
+						setAvatar(res.data.avatar)
+						localStorage.setItem('ms_username', res.data.nickName)
+						let signupParam = this.$store.state.signupParam
+						if (signupParam.uuid)
+							this.$api.login.singAndBindApi(signupParam).then(res => {
+								if (res.code === 200) {
+									this.$message.success(res.message);
+									setTimeout(() => {
+										this.$router.push('/');
+									}, 1000)
+								} else
+									this.$message.error(res.message);
+							})
+
 					} else {
 						this.ruleForm.password = ""
 						this.ruleForm.checkPass = ""
@@ -168,8 +204,10 @@
 					}
 				})
 			},
-			toSendCode(){
-				this.$refs.ruleForm.validateField('email',valid => {
+			toSendCode() {
+				//this.sendMsg(this.ruleForm.email)
+				this.$refs.ruleForm.validateField('email', msg => {
+					if (!msg)
 						this.sendMsg(this.ruleForm.email)
 				});
 			},

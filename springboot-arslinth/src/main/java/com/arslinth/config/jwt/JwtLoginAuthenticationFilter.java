@@ -47,7 +47,8 @@ public class JwtLoginAuthenticationFilter extends UsernamePasswordAuthentication
     }
 
     @Override
-    public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException {
+    public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
+            throws AuthenticationException {
 
         //从请求中读取数据
         String username = obtainUsername(req);
@@ -73,17 +74,15 @@ public class JwtLoginAuthenticationFilter extends UsernamePasswordAuthentication
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
                                             Authentication authentication) throws IOException, ServletException {
-
         SysUser user = (SysUser) authentication.getPrincipal();
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         List<String> sysAuthorities = new ArrayList<>();
         authorities.forEach(item-> sysAuthorities.add(item.getAuthority()));
         String username = user.getUsername();
-        String phone = user.getPhone();
-        String jwtToken = JwtUtil.getJwtToken(username,phone,sysAuthorities);
+        String email = user.getEmail();
+        String jwtToken = JwtUtil.getJwtToken(username,email,sysAuthorities);
         //返回并保存信息
-        sysLogService.insertSysLog(SysLogUtils.getIpSource(request),"账号密码验证","登录成功！",true,username);
-        //sysLogService.saveSysLog(request,"账号密码验证","登录成功！",true,username);
+        sysLogService.saveSysLog(request,"账号密码验证","登录成功！",true,username);
         ResponseUtil.print(response, JSON.toJSONString(ApiResponse.code(ResponseCode.SUCCESS)
                 .message("登录成功！").data("token", jwtToken).data("nickName",user.getNickName()).data("avatar",user.getAvatar())));
 
@@ -99,8 +98,7 @@ public class JwtLoginAuthenticationFilter extends UsernamePasswordAuthentication
         MyAccountException ex = (MyAccountException)e;
         String username = obtainUsername(request);
 
-        sysLogService.insertSysLog(SysLogUtils.getIpSource(request),"账号密码验证",ex.getMessage(),false,username);
-        //sysLogService.saveSysLog(request,"账号密码验证",ex.getMessage(),false,username);
+        sysLogService.saveSysLog(request,"账号密码验证",ex.getMessage(),false,username);
         log.warn(e.getMessage());
         ResponseUtil.print(response, JSON.toJSONString(ApiResponse.code(ex.getCode()).message(ex.getMessage())));
     }

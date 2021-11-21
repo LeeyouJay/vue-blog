@@ -10,3 +10,7 @@ logging:
 
 file:
   uploadFolder: C://Users//Arslinth//Pictures//spriingImg//
+
+# 第三方登录
+justAuth:
+  callbackUrl: http://localhost:8100/manage/callback

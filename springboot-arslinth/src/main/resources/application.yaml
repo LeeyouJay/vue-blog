@@ -6,12 +6,14 @@ server:
 spring:
   profiles:
     active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
   servlet:
     multipart:
       #最大单个上传文件大小
-      max-file-size: 4MB
+      max-file-size: 10MB
       #最大总文件上传大小
-      max-request-size: 10MB
+      max-request-size: 30MB
   datasource:
     url: jdbc:mysql://localhost:3306/arslinth?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -55,10 +57,11 @@ spring:
   mail:
     host: smtp.163.com    #邮箱服务器地址
     #username: 752279593@qq.com #邮箱账号
-    #password:  #邮箱密码
+    #password: lharqszbmlmfbfca #邮箱密码
     username: ArslinthBoot@163.com
-    password: 
+    password: SULKQUPRKNPYXRHI
     default-encoding: utf-8
+    nickName: Arslinth的个人小站
     properties:
       mail:
         smtp:
@@ -84,17 +87,35 @@ file:
   #静态资源对外暴露的访问路径
   staticAccessPath: /loadImg/**
 
+  musicPath: /music/
+  musicStaticPath: /music/**
+
 signUp:
   #注册赋予的权限(dashboard 首页)
-  authorities: dashboard,blog,write_html,write_markdown,article_list,ht_publish,md_publish,article_del
+  authorities: dashboard,blog,write_html,write_markdown,article_list,ht_publish,md_publish,article_del,music_list,del_music,edit_song
   #注册默认的头像
   avatarUrl: /loadImg/d6879fe4742048218ad62a92656f12f6-thumbnail.jpg
 
 # 防止XSS攻击
 xss:
   # 排除链接（多个用逗号分隔）
-  excludes: /article/add,/article/edit,/blog/addComment,/blog/applyFriend
+  excludes: /article/add,/article/edit,/blog/addComment,/blog/applyFriend,/friend/passApply
   # 匹配链接(所有)
   urlPatterns: /*
   # 是否过滤富文本
   isIncludeRichText: false
+
+# 第三方登录
+justAuth:
+  clientId:
+    QQ: 101956008
+    baidu: E0T9dfd3f9W8CLPEtsFX4xxs
+    gitee: 33ca9baac9c37b81b6f6e2906767d0e1462478db119383c5ac433b9ae3cf9438
+    github: 7fc6881736b931a9063e
+    Oschina: X8OeTbMshN8a76v0M1KE
+  clientSecret:
+    QQ: ded676942bdcf1b462be513a1d0481b1
+    baidu: sBC2R6EvIHD7at18AFQSOV5A26bFcZmE
+    gitee: 46a1f67ce9ff37896d0d783d2cf64973bfefdffd17edba149d7d89e33c1d42f2
+    github: 09daec01a42cfb96a4c4b298b28e0163b01175eb
+    Oschina: LoY2Qp8Q8hdY8CbxMUL81OCZ7XNPNbdi

@@ -1,6 +1,7 @@
 package com.arslinth.dao;
 
 import com.arslinth.entity.Comment;
+import com.arslinth.entity.SysUser;
 import com.arslinth.entity.VO.CommentVO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Select;
@@ -8,6 +9,7 @@ import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Arslinth
@@ -25,4 +27,14 @@ public interface CommentDao extends BaseMapper<Comment> {
 
     @Update("UPDATE `comment` SET has_new = #{hasNew} WHERE id =#{id}")
     int updateNew(String id,boolean hasNew);
+
+
+    @Select("SELECT u.nick_name ,u.email ,a.title FROM article AS a " +
+            "LEFT JOIN sys_user AS u ON a.user_id = u.id " +
+            "WHERE a.id = #{articleId} ")
+    Map<String,String> findAuthor(String articleId);
+
+    @Update("UPDATE `comment` SET from_user_avatar = #{avatar} WHERE from_user_id =#{userId}")
+    int changeAvatar(String userId,String avatar);
+
 }

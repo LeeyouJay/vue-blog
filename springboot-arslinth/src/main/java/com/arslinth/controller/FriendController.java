@@ -10,6 +10,7 @@ import com.arslinth.utils.PageUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,7 +52,8 @@ public class FriendController {
         int i = friendService.passApply(friend);
         if (i==1){
             HashMap<String, String> map = new HashMap<>();
-            mailService.sendMail(friend.getEmail(),"友链加入通知","applyPass",map);
+            if(!StringUtils.isEmpty(friend.getEmail()))
+                mailService.sendMail(friend.getEmail(),"友链加入通知","applyPass",map);
             return ApiResponse.code(ResponseCode.SUCCESS).message("添加成功！");
         }else
             return ApiResponse.code(ResponseCode.FAIL).message("错误代码："+i);
@@ -69,7 +71,8 @@ public class FriendController {
             map.put("content",friend.getTempDesc());
             map.put("description",friend.getDescription());
             map.put("createTime",friend.getCreateTime());
-            mailService.sendMail(friend.getEmail(),"友链申请回复","applyNotPass",map);
+            if(!StringUtils.isEmpty(friend.getEmail()))
+                mailService.sendMail(friend.getEmail(),"友链申请回复","applyNotPass",map);
         }
         int i = friendService.delFriend(friend.getId());
         if (i==1){

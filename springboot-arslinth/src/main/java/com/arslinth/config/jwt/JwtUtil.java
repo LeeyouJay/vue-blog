@@ -48,8 +48,7 @@ public class JwtUtil {
     }
 
     //生成token字符串的方法
-    public static String getJwtToken(String username,String phone, List<String> authorities){
-
+    public static String getJwtToken(String username,String details, List<String> authorities){
         byte[] keyBytes = Decoders.BASE64.decode(APP_SECRET);
         Key key = Keys.hmacShaKeyFor(keyBytes);
         String JwtToken = Jwts.builder()
@@ -61,7 +60,7 @@ public class JwtUtil {
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRE))//token的过期时间
                 //token的第二部分(有效载荷):存储用户信息
                 .claim("username",username)
-                .claim("phone",phone)
+                .claim("details",details)
                 .claim("authorities",authorities)
                 //token的第三部分(签名哈希):加密规则
                 .signWith(key)
@@ -112,12 +111,12 @@ public class JwtUtil {
      * @param request
      * @return
      */
-    public static String getUserPhonedByJwtToken(HttpServletRequest request) {
+    public static String getUserDetailsByJwtToken(HttpServletRequest request) {
         String jwtToken = request.getHeader("Authorization");
         if(StringUtils.isEmpty(jwtToken)) return "";
         Jws<Claims> claimsJws = Jwts.parser().setSigningKey(APP_SECRET).parseClaimsJws(jwtToken);
         Claims claims = claimsJws.getBody();
-        return (String)claims.get("phone");
+        return (String)claims.get("details");
     }
 
     /**

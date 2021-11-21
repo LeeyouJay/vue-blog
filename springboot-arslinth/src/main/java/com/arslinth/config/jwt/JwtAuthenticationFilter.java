@@ -58,7 +58,7 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
 
         String userName = JwtUtil.getUserNameByJwtToken(request);
-        String phone = JwtUtil.getUserPhonedByJwtToken(request);
+        String details = JwtUtil.getUserDetailsByJwtToken(request);
         List<String> list = JwtUtil.getAuthoritiesByJwtToken(request);
         if (userName != null) {
             Collection<GrantedAuthority> authorities = new ArrayList<>();
@@ -67,9 +67,9 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
                 SimpleGrantedAuthority authority = new SimpleGrantedAuthority(str);
                 authorities.add(authority);
             }
-            return new UsernamePasswordAuthenticationToken(userName, phone,authorities);
+            return new UsernamePasswordAuthenticationToken(userName, details,authorities);
         }
-        return null;
+        return new UsernamePasswordAuthenticationToken(null, details);
     }
 
 }

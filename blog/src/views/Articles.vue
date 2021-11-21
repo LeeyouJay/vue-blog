@@ -28,6 +28,10 @@
 					<mavon-editor v-if="article.markdown" ref="md" :value="article.content" :subfield="false"
 						:defaultOpen="'preview'" :toolbarsFlag="false" :editable="false" :scrollStyle="true"
 						:ishljs="true" :boxShadow="false" previewBackground="#ffffff" :imageClick="imageClick" />
+						<!-- 背景音乐 -->
+						<div class="music" v-if="showMusic">
+							<aplayer :music="song" :autoplay="true"  />
+						</div>
 					<!-- 文章底部 -->
 					<section-title>
 						<footer class="post-footer">
@@ -73,11 +77,11 @@
 					</div>
 					<comment-editor ref="mainEditor" :show="showComment" @onSubmit="submitComment"></comment-editor>
 					<div class="comments">
-						<comment v-for="item in comments" :key="item.id" :comment="item" :showReport="item.oppen"
-							@oppenComment="oppenComment" @reply="toReply">
+						<comment v-for="(item,index) in comments" :key="item.id" :comment="item" :showReport="item.oppen"  :showRetract="item.showRetract"
+							@oppenComment="oppenComment" @reply="toReply($event,index)"  @done="forDone" @delComment="delComment">
 							<template v-if="item.reply.length">
-								<comment v-for="reply in item.reply" :key="reply.id" :comment="reply"
-									:showReport="reply.oppen" @oppenComment="oppenComment" @reply="toReply"></comment>
+								<comment v-for="(reply,inkey) in item.reply" :key="reply.id" :comment="reply"  :showRetract="reply.showRetract"
+									:showReport="reply.oppen" @oppenComment="oppenComment" @reply="toReply($event,inkey)" @done="forDone" @delComment="delComment"></comment>
 							</template>
 						</comment>
 					</div>
@@ -89,10 +93,8 @@
 				</article>
 			</main>
 		</div>
-		<div class="imgDolg" v-show="imgPreview.show" @click.stop="imgPreview.show = false">
-
-			<img @click.stop="imgPreview.show = false" :src="imgPreview.img" />
-		</div>
+		<el-image-viewer v-if="imgPreview.show" :on-close="()=>{ move();imgPreview.show=false}"
+			:url-list="imgPreview.imgList" />
 	</div>
 </template>
 
@@ -102,19 +104,20 @@
 	import comment from '@/components/comment'
 	import menuTree from '@/components/menu-tree'
 	import commentEditor from '@/components/comment-editor.vue'
-	import {
-		Message
-	} from 'element-ui';
+	import base from '@/api/base.js'
+	import Aplayer from 'vue-aplayer'
+	
 	import {
 		removeToken
 	} from '@/utils/cookie.js'
-	import base from '@/api/base.js'
 	import 'mavon-editor/dist/css/index.css'
 	import {
 		mavonEditor
 	} from 'mavon-editor'
+
 	import {
 		articleAPI,
+		ArticleSongAPI,
 		addCommentAPI,
 		getCommentsAPI
 	} from '../api'
@@ -123,6 +126,7 @@
 		name: 'articles',
 		data() {
 			return {
+				showMusic:false,
 				query: {
 					state: '',
 					searchName: '',
@@ -131,7 +135,7 @@
 				},
 				pageTotal: 100,
 				imgPreview: {
-					img: "",
+					imgList: [],
 					show: false
 				},
 				showComment: true,
@@ -139,7 +143,8 @@
 				comments: [],
 				menus: [],
 				article: {},
-				tempCom: {}
+				tempCom: {},
+				song: {},
 			}
 		},
 		components: {
@@ -148,7 +153,9 @@
 			comment,
 			menuTree,
 			mavonEditor,
-			commentEditor
+			commentEditor,
+			Aplayer,
+			'el-image-viewer': () => import('element-ui/packages/image/src/image-viewer')
 		},
 		created() {
 
@@ -184,16 +191,36 @@
 					toUserId: v.fromUserId,
 					toUserName: v.fromUserName,
 					toUserEmail: v.fromUserEmail,
-					toUserAvatar: v.fromUserAvatar
+					toUserAvatar: v.fromUserAvatar,
+					toUserSite:v.fromUserSite,
+					yourContent: v.content
 				}
 				if (v.parentId)
 					this.tempCom.parentId = v.parentId
 			},
-			toReply(v) {
+			toReply(v,index) {
 				!v.fromUserAvatar && (v.fromUserAvatar =
-					'https://gravatar.loli.net/avatar/baee522214bec0d6d3664fa8a6640a1c?s=80&r=X&d=mm')
+					'https://z3.ax1x.com/2021/07/17/WlmaTS.png')
+				v.showRetract = true
 				var com = Object.assign(this.tempCom, v);
-				this.addComment(com)
+				if(this.$store.getters.needInfo) 
+					this.comments.find(val=> val.id == com.parentId).reply.push(com)
+				else
+					this.addComment(com)
+			},
+			submitComment(v) {
+				const path = this.$route.path
+				v.articleId = path.substring(path.lastIndexOf('/') + 1)
+				v.hasNew = true;
+				!v.fromUserAvatar && (v.fromUserAvatar =
+					'https://z3.ax1x.com/2021/07/17/WlmaTS.png')
+				v.reply = []
+				v.showRetract = true
+				if(this.$store.getters.needInfo) {
+					this.comments.unshift(Object.assign({},v))
+					this.$refs.mainEditor.clearContent()
+				}else
+					this.addComment(v)
 			},
 			// 图片点击放大
 			showImg(e) {
@@ -201,11 +228,7 @@
 					this.previewImg(e.target.src)
 				}
 			},
-			submitComment(v) {
-				const path = this.$route.path
-				v.articleId = path.substring(path.lastIndexOf('/') + 1)
-				v.hasNew = true 
-				!v.fromUserAvatar && (v.fromUserAvatar = 'https://gravatar.loli.net/avatar/baee522214bec0d6d3664fa8a6640a1c?s=80&r=X&d=mm')
+			forDone(v){
 				this.addComment(v)
 			},
 			addComment(com) {
@@ -226,6 +249,12 @@
 						this.$message.error(res.message)
 				})
 			},
+			delComment(v){
+				if(v.parentId){
+					this.comments.find(val=>val.id == v.parentId).reply.pop()
+				}else
+					this.comments.shift()
+			},
 			handlePageChange(val) {
 				this.$set(this.query, 'pageIndex', val);
 				this.getComment(this.query)
@@ -239,13 +268,15 @@
 						this.pageTotal = res.data.pageTotal
 						comments.map(item => {
 							item.oppen = false
-							if (item.fromUserId) {
+							item.showRetract = false
+							if (item.fromUserId && item.fromUserAvatar.indexOf('-thumbnail') != -1) {
 								item.fromUserAvatar = base.localUrl + item.fromUserAvatar
 							}
 							if (item.reply.length != 0) {
 								item.reply.map(val => {
 									val.oppen = false
-									if (val.fromUserId)
+									val.showRetract = false
+									if (val.fromUserId && val.fromUserAvatar.indexOf('-thumbnail') != -1)
 										val.fromUserAvatar = base.localUrl + val.fromUserAvatar
 									return val
 								})
@@ -267,13 +298,25 @@
 						this.$store.dispatch('setNeedInfo', true)
 					} else
 						this.$store.dispatch('setNeedInfo', false)
+						
 					this.article = res.data.article
 					this.article.banner = this.article.banner.includes('-thumbnail') ? this.article.banner.substr(
 						0, this.article.banner.lastIndexOf('-')) + '.jpg' : this.article.banner
 					setTimeout(() => {
 						this.getComment(this.query)
 						this.createMenus()
+						if(this.article.songId)
+							this.getArticleSong(this.article.songId)
 					}, 500)
+				})
+			},
+			getArticleSong(songId){
+				ArticleSongAPI(songId).then(res=>{
+					if(res.data.song){
+						this.showMusic = true
+						this.song = res.data.song
+					}
+						
 				})
 			},
 			imageClick(ele) {
@@ -285,8 +328,9 @@
 			previewImg(src) {
 				if (src.includes('-thumbnail'))
 					src = src.substr(0, src.lastIndexOf('-')) + '.jpg'
-				this.imgPreview.img = src
+				this.imgPreview.imgList = [src]
 				this.imgPreview.show = true
+				this.stop()
 			},
 			fetchH(arr, left, right) {
 				if (right) {
@@ -340,7 +384,23 @@
 				for (var i = 0; i < 6; i++)
 					text += possible.charAt(Math.floor(Math.random() * possible.length));
 				return text;
-			}
+			},
+			//禁止滚动
+			stop() {
+				var mo = function(e) {
+					e.preventDefault();
+				};
+				document.body.style.overflow = 'hidden';
+				document.addEventListener("touchmove", mo, false); //禁止页面滑动
+			},
+			/***取消滑动限制***/
+			move() {
+				var mo = function(e) {
+					e.preventDefault();
+				};
+				document.body.style.overflow = ''; //出现滚动条
+				document.removeEventListener("touchmove", mo, false);
+			},
 		},
 	}
 </script>
@@ -399,7 +459,9 @@
 				margin-bottom: 15px;
 			}
 		}
-
+		.music {
+			margin: 30px 0;
+		}
 		.entry-content {
 			font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
 
@@ -547,28 +609,12 @@
 			}
 		}
 	}
-
-	//富文本图片放大
-	.imgDolg {
-		width: 100vw;
-		height: 100vh;
-		position: fixed;
-		z-index: 900;
-		background: rgba(0, 0, 0, 0.7);
-		top: 0;
-		left: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		transition: all 0.1s linear 0s;
-
-		img {
-			width: 100%;
-		}
-	}
-
+	
 	@media (max-width: 600px) {
 		.open-message {
+			display: none;
+		}
+		.music {
 			display: none;
 		}
 	}

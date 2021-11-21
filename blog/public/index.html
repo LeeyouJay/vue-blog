@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta name="keywords" content="勇于冒险、敢于挑战">
+		<meta name="keywords" content="面向自由和真理的无名献身">
 		<meta name="description" content="一个基于VUE的博客">
 		<link rel="icon" href="<%= BASE_URL %>favicon.ico">
 		<title><%= htmlWebpackPlugin.options.title %></title>
@@ -18,91 +18,49 @@
 		<!-- built files will be auto injected -->
 	</body>
 	<script>
-		! function(e, t, a) {
-			function n() {
-				c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
-					o(), r()
-			}
+(function () {
+            var a_idx = 0;
+            window.onclick = function (event) {
+                var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国",
+                    "敬业", "诚信", "友善");
+					
+                var heart = document.createElement("b"); //创建b元素
+                heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
 
-			function r() {
-				for (var e = 0; e < d.length; e++) d[e].alpha <= 0 ? (t.body.removeChild(d[e].el), d.splice(e, 1)) : (d[e]
-					.y--, d[e].scale += .004, d[e].alpha -= .013, d[e].el.style.cssText = "left:" + d[e].x + "px;top:" +
-					d[e].y + "px;opacity:" + d[e].alpha + ";transform:scale(" + d[e].scale + "," + d[e].scale +
-					") rotate(45deg);background:" + d[e].color + ";z-index:99999");
-				requestAnimationFrame(r)
-			}
+                document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                a_idx = (a_idx + 1) % a.length;
+                heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
 
-			function o() {
-				var t = "function" == typeof e.onclick && e.onclick;
-				e.onclick = function(e) {
-					t && t(), i(e)
-				}
-			}
+                var f = 10, // 字体大小
+                    x = event.clientX - f / 2, // 横坐标
+                    y = event.clientY - f, // 纵坐标
+                    c = randomColor(), // 随机颜色
+                    a = 1, // 透明度
+                    s = 1.2; // 放大缩小
 
-			function i(e) {
-				var a = t.createElement("div");
-				a.className = "heart", d.push({
-					el: a,
-					x: e.clientX - 5,
-					y: e.clientY - 5,
-					scale: 1,
-					alpha: 1,
-					color: s()
-				}), t.body.appendChild(a)
-			}
+                var timer = setInterval(function () { //添加定时器
+                    if (a <= 0) {
+                        document.body.removeChild(heart);
+                        clearInterval(timer);
+                    } else {
+                        heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                            c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                            s + ");";
 
-			function c(e) {
-				var a = t.createElement("style");
-				a.type = "text/css";
-				try {
-					a.appendChild(t.createTextNode(e))
-				} catch (t) {
-					a.styleSheet.cssText = e
-				}
-				t.getElementsByTagName("head")[0].appendChild(a)
-			}
+                        y--;
+                        a -= 0.016;
+                        s += 0.002;
+                    }
+                }, 15)
 
-			function s() {
-				return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
-			}
-			var d = [];
-			e.requestAnimationFrame = function() {
-				return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e
-					.oRequestAnimationFrame || e.msRequestAnimationFrame || function(e) {
-						setTimeout(e, 1e3 / 60)
-					}
-			}(), n()
-		}(window, document);
-	</script>
-	<script>
-		/**/
-		function setClipboardText(event) {
-			event.preventDefault();
-			var node = document.createElement('div');
-			node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
-			var htmlData = '<div>' +
-				node.innerHTML +
-				'<br/><br/>著作权归作者所有。<br/>' +
-				'商业转载请联系作者获得授权，非商业转载请注明出处。<br/>' +
-				'作者：Arslinth<br/>' +
-				'来源：https://www.chenyi.ink<br/><br/>' +
-				'</div>';
-			var textData = window.getSelection().getRangeAt(0) +
-				'\n\n著作权归作者所有。\n' +
-				'商业转载请联系作者获得授权，非商业转载请注明出处。\n' +
-				'作者：Arslinth\n' +
-				'来源：https://www.chenyi.ink\n\n';
-			if (event.clipboardData) {
-				event.clipboardData.setData("text/html", htmlData);
-				event.clipboardData.setData("text/plain", textData);
-			} else if (window.clipboardData) {
-				return window.clipboardData.setData("text", textData);
-			}
-		};
+            }
+            // 随机颜色
+            function randomColor() {
 
-		document.addEventListener('copy', function(e) {
-			//setClipboardText(e);
-		});
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+            }
+        }());
 	</script>
 	<style>
 		.heart {

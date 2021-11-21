@@ -55,15 +55,6 @@ public class SysLogService {
 
         }
     }
-    public void insertSysLog(SysLog sysLog,String type, String message,Boolean isSuccess,String username){
-        sysLog.setId(RandomUtil.randomString(16));
-        sysLog.setUsername(username);
-        sysLog.setType(type);
-        sysLog.setMessage(message);
-        sysLog.setSuccess(isSuccess);
-        sysLogDao.insert(sysLog);
-    }
-
     public List<SysLog> getLogList(QueryBody query){
         QueryWrapper<SysLog> wrapper = new QueryWrapper<>();
         if(!StringUtils.isEmpty(query.getSearchName())){

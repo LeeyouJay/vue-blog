@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div id="layout-header" :class="{'fixed':fixed,'hidden':hidden}" >
+		<div id="layout-header" :class="{'fixed':fixed,'hidden':hidden}">
 			<div class="site-logo">
 				<div @click="toHome">
 					<img src="@/assets/site-logo.svg" alt="">
@@ -14,29 +14,29 @@
 					<header-search />
 				</div>
 				<div class="menu-item hasChild">
-					<a >分类</a>
+					<a>分类</a>
 					<div class="childMenu" v-if="tags.length">
 						<div class="sub-menu" v-for="(item, index) in tags" :key="index">
-							<a  @click="toCategory(item)">{{item}}</a>
+							<a @click="toCategory(item)">{{item}}</a>
 						</div>
 					</div>
 				</div>
-				<div class="menu-item" >
+				<div class="menu-item">
 					<router-link to="/Archives">归档</router-link>
 				</div>
 				<div class="menu-item">
-					<router-link to="/about" >关于</router-link>
+					<router-link to="/article/about">留言</router-link>
 				</div>
 				<div class="menu-item">
-					<router-link to="/friend" >友链</router-link>
+					<router-link to="/friend">友链</router-link>
 				</div>
-				<div class="menu-item" v-if="needInfo" @click="outerVisible = true" >
+				<div class="menu-item" v-if="needInfo" @click="outerVisible = true">
 					登入
 				</div>
-				<div class="menu-item" v-if="!needInfo" >
-					<span @click="longout"  >注销</span>
-					<div class="avatar" @click="longout" >
-						<img :src="userAvatar" />
+				<div class="menu-item" v-if="!needInfo">
+					<span @click="longout">注销</span>
+					<div class="avatar" @click="longout">
+						<img :src="showAvatar" />
 					</div>
 				</div>
 			</div>
@@ -44,7 +44,7 @@
 
 
 		<!-- 登入弹窗 -->
-		<el-dialog width="360px"  center :visible.sync="outerVisible">
+		<el-dialog width="360px" center :visible.sync="outerVisible" >
 			<el-dialog width="340px" :visible.sync="innerVisible" append-to-body :show-close="false"
 				:close-on-click-modal="true">
 				<template slot="title">
@@ -54,17 +54,18 @@
 					:sh="catcha.sh" :blocky="catcha.blocky" :imgurl="catcha.imgurl" :miniimgurl="catcha.miniimgurl"
 					:slider-text="catcha.text" @success="onSuccess" @fail="onFail" @refresh="onRefresh" />
 			</el-dialog>
-			<div class="ms-login">
+			<div class="ms-login" v-loading="loading" element-loading-text="正在登入中...">
 				<el-tabs v-model="activeName">
 					<el-tab-pane label="账号密码登入" name="first">
-						<el-form :model="param" :rules="rules" ref="login" label-width="0px" class="ms-content">
+						<el-form :model="param" :rules="rules" ref="login" label-width="0px" class="ms-content" >
 							<el-form-item prop="username">
 								<el-input placeholder="账号" v-model="param.username">
 									<el-button slot="prepend" icon="el-icon-user" size="mini"></el-button>
 								</el-input>
 							</el-form-item>
 							<el-form-item prop="password">
-								<el-input placeholder="密码" type="password" v-model="param.password"@keyup.enter.native="submitLogin()">
+								<el-input placeholder="密码" type="password" v-model="param.password"
+									@keyup.enter.native="submitLogin()">
 									<el-button slot="prepend" icon="el-icon-lock" size="mini"></el-button>
 								</el-input>
 							</el-form-item>
@@ -74,8 +75,10 @@
 							</div>
 						</el-form>
 					</el-tab-pane>
+
 					<el-tab-pane label="验证码登入" name="second">
-						<el-form :model="phoneLog" :rules="phoneRules" ref="phonelogin" label-width="0px" class="ms-content">
+						<el-form :model="phoneLog" :rules="phoneRules" ref="phonelogin" label-width="0px"
+							class="ms-content">
 							<el-form-item prop="mobile">
 								<el-input placeholder="手机号/邮箱" v-model="phoneLog.mobile">
 									<el-button slot="prepend" icon="el-icon-phone" size="mini"></el-button>
@@ -89,7 +92,8 @@
 										</el-input>
 									</el-col>
 									<el-col :span="10">
-										<el-button @click="sendMsg" size="mini" type="primary" :disabled="isDisabled">{{buttonName}}
+										<el-button @click="sendMsg" size="mini" type="primary" :disabled="isDisabled">
+											{{buttonName}}
 										</el-button>
 									</el-col>
 								</el-row>
@@ -100,6 +104,9 @@
 							</div>
 						</el-form>
 					</el-tab-pane>
+					<el-tab-pane label="快速登入" name="third" id="thirdLogin">
+						<OAuthLogin @showLoading="showLoading" @stopLoading="stopLoading"></OAuthLogin>
+					</el-tab-pane>
 				</el-tabs>
 			</div>
 		</el-dialog>
@@ -109,12 +116,12 @@
 <script>
 	import HeaderSearch from '@/components/header-search'
 	import Captcha from './captcha.vue'
+	import OAuthLogin from './OAuthLogin.vue'
 	import {
 		setToken,
 		getToken,
 		removeToken,
-		setAvatar,
-		getAvatar
+		removeAvatar
 	} from '@/utils/cookie.js'
 	import {
 		Message,
@@ -128,14 +135,14 @@
 		mobileCodeLoginAPI,
 		getCaptchaImageAPI,
 		getMobileCodeAPI,
-		getIpName
 	} from '@/api'
 
 	export default {
 		name: "layout-header",
 		components: {
 			HeaderSearch,
-			Captcha
+			Captcha,
+			OAuthLogin
 		},
 		data() {
 			return {
@@ -174,7 +181,8 @@
 					}],
 				},
 				buttonName: "发送验证码",
-				time: 10,
+				time: 30,
+				loading:false,
 				isDisabled: false,
 				activeName: 'first',
 				innerVisible: false,
@@ -190,9 +198,8 @@
 					sh: 60,
 					sw: 75,
 				},
-				IpInfo:{},
+				IpInfo: {},
 				showLog: false,
-				userAvatar: '',
 				lastScrollTop: 0,
 				fixed: false,
 				hidden: false,
@@ -200,30 +207,22 @@
 				mobileShow: false
 			}
 		},
-		computed:{
-			needInfo(){
+		computed: {
+			needInfo() {
 				return this.$store.getters.needInfo
+			},
+			showAvatar() {
+				return this.$store.getters.avatar
 			}
 		},
-		created() {
-			this.userAvatar = base.localUrl + getAvatar()
-			this.getTags()
-		},
 		mounted() {
-			 
+			this.getTags()
 			window.addEventListener('scroll', this.watchScroll)
 		},
 		beforeDestroy() {
 			window.removeEventListener("scroll", this.watchScroll)
 		},
 		methods: {
-			getIpName(){
-				getIpName().then(res=>{
-					const IpInfo = res.data.IpInfo
-					this.IpInfo = res.data.IpInfo
-					this.phoneLog = Object.assign(this.phoneLog,IpInfo)
-				})
-			},
 			sendMsg() {
 				let me = this;
 				if (!this.phoneLog.mobile) {
@@ -239,7 +238,7 @@
 							--me.time;
 							if (me.time < 0) {
 								me.buttonName = "重新发送";
-								me.time = 10;
+								me.time = 30;
 								me.isDisabled = false;
 								window.clearInterval(interval);
 							}
@@ -253,20 +252,20 @@
 					confirmButtonText: '确定',
 					cancelButtonText: '取消',
 					type: 'warning',
-					 center: true
+					center: true
 				}).then(() => {
 					Message.info("退出成功！")
 					removeToken()
-					this.$store.dispatch('setNeedInfo',true)
+					removeAvatar()
+					this.$store.dispatch('setNeedInfo', true)
 					//location.reload()
 				}).catch(() => {
-					
+
 				});
 			},
 			submitLogin() {
 				this.$refs.login.validate(valid => {
 					if (valid) {
-						this.getIpName()
 						this.onRefresh()
 					} else {
 						return false;
@@ -292,7 +291,7 @@
 					captchaUUid: this.param.captchaUUid,
 					moveX: left
 				}
-				user = Object.assign(user,this.IpInfo);
+				user = Object.assign(user, this.IpInfo);
 				user.password = this.setSha256(user.password);
 				this.login(user);
 			},
@@ -314,10 +313,9 @@
 						this.$refs.dialogopen.handleSuccess()
 						this.innerVisible = false
 						this.outerVisible = false
-						this.userAvatar = base.localUrl + res.data.avatar
+						this.$store.dispatch('setAvatar', res.data.avatar)
 						setToken(res.data.token)
-						setAvatar(res.data.avatar)
-						this.$store.dispatch('setNeedInfo',false)
+						this.$store.dispatch('setNeedInfo', false)
 						this.$nextTick(() => this.$bus.$emit("reload"))
 					} else if (res.code === 2003) {
 						Message.error(res.message);
@@ -334,10 +332,9 @@
 					if (res.code === 200) {
 						Message.success(res.message)
 						this.outerVisible = false
-						this.userAvatar = base.localUrl + res.data.avatar
+						this.$store.dispatch('setAvatar', res.data.avatar)
 						setToken(res.data.token)
-						setAvatar(res.data.avatar)
-						this.$store.dispatch('setNeedInfo',false)
+						this.$store.dispatch('setNeedInfo', false)
 						this.$nextTick(() => this.$bus.$emit("reload"))
 					} else if (res.code === 2003) {
 						Message.error(res.message);
@@ -360,7 +357,13 @@
 					}
 				})
 			},
-
+			showLoading() {
+				this.loading = true
+			},
+			stopLoading(){
+				this.outerVisible = false
+				this.loading = false
+			},
 			toCategory(msg) {
 				if (this.$route.path !== "/") {
 					this.$store.dispatch('setTag', msg)
@@ -413,9 +416,7 @@
 </script>
 
 <style scoped lang="less">
-	.ms-content {
-		
-	}
+	.ms-content {}
 
 	.login-btn {
 		text-align: center;
@@ -427,11 +428,19 @@
 		margin-bottom: 10px;
 	}
 
+	.imgDiv {
+		margin: 10px 0;
+	}
+	.imgSpan {
+		margin: 0 20px;
+	}
+
 	.avatar {
 		cursor: pointer;
 		width: 30px;
 		height: 30px;
 		margin-top: 15%;
+
 		img {
 			width: 30px;
 			height: 30px;
@@ -501,7 +510,7 @@
 	.site-menus {
 		display: flex;
 		align-items: center;
-		
+
 		.menu-item {
 			min-width: 60px;
 			height: 50px;
@@ -509,6 +518,7 @@
 			text-align: center;
 			position: relative;
 			cursor: pointer;
+
 			&:hover {
 				color: #ff6d6d;
 			}
@@ -519,6 +529,7 @@
 				font-weight: 500;
 				font-size: 16px;
 				cursor: pointer;
+
 				&:hover {
 					color: #ff6d6d;
 				}
@@ -527,17 +538,18 @@
 			&:not(:last-child) {
 				margin-right: 15px;
 			}
-			
-			&:last-child > span{
+
+			&:last-child>span {
 				display: none;
 			}
-			
+
 			&.hasChild:hover .childMenu {
 				opacity: 1;
 				visibility: visible;
 				transform: translateY(-5px);
 			}
 		}
+
 		.childMenu {
 			width: 130px;
 			background-color: #FDFDFD;
@@ -596,11 +608,14 @@
 		#layout-header {
 			padding: 0 20px;
 		}
-		.avatar{
+		#thirdLogin {
 			display: none;
 		}
-		
-		.menu-item:last-child>span{
+		.avatar {
+			display: none;
+		}
+
+		.menu-item:last-child>span {
 			display: block !important;
 		}
 	}
@@ -609,9 +624,11 @@
 		#layout-header {
 			padding: 0 10px;
 		}
-		.avatar{
+
+		.avatar {
 			display: none;
 		}
+
 		.menus-btn {
 			display: block;
 			visibility: visible;
@@ -635,7 +652,7 @@
 				&:not(:last-child) {
 					margin-right: 0;
 				}
-				
+
 			}
 
 			.childMenu {

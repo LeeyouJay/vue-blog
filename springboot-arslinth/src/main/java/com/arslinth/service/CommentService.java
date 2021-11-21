@@ -3,32 +3,27 @@ package com.arslinth.service;
 import cn.hutool.core.util.RandomUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.arslinth.dao.ArticleDao;
 import com.arslinth.dao.CommentDao;
+import com.arslinth.dao.MottoDao;
 import com.arslinth.entity.Comment;
+import com.arslinth.entity.SysUser;
 import com.arslinth.entity.VO.CommentVO;
-import com.arslinth.exception.TransactionalException;
+import com.arslinth.utils.AuthenticationUtils;
 import com.arslinth.utils.HtmlFilter;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.thymeleaf.util.StringUtils;
 
-import java.beans.Transient;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -47,20 +42,43 @@ public class CommentService {
 
     private final MailService mailService;
 
+    private final MottoDao mottoDao;
+
+
     @Transactional
     public int addComment(Comment comment){
         comment.setId(RandomUtil.randomString(16));
+        commentDao.updateNew(comment.getParentId(),true);
+        HashMap<String, String> map = new HashMap<>();
+
+        map.put("content", HtmlFilter.delHtmlTags(comment.getContent()));
+        map.put("nickName",comment.getFromUserName());
+        map.put("articleId",comment.getArticleId());
+        map.put("motto",mottoDao.selectById(RandomUtil.randomInt(10)).getWords());
+
         if(!StringUtils.isEmpty(comment.getParentId())){
-            commentDao.updateNew(comment.getParentId(),true);
-            HashMap<String, String> map = new HashMap<>();
-            map.put("nickName",comment.getFromUserName());
-            map.put("content", HtmlFilter.delHtmlTags(comment.getContent()));
-            map.put("articleId",comment.getArticleId());
-            mailService.sendMail(comment.getToUserEmail(),"留言回复通知","reply",map);
+            map.put("toUserName",comment.getToUserName());
+            map.put("yourContent", HtmlFilter.delHtmlTags(comment.getYourContent()));
+            mailService.sendMail(comment.getToUserEmail(),"您在Arslinth的博客评论中有了新的回复呐~","reply",map);
+        }else{
+            Map<String,String> author = commentDao.findAuthor(comment.getArticleId());
+
+            author = Optional.ofNullable(author).orElseGet(()->{
+                Map<String, String> finalAuthor = new HashMap<>();
+                finalAuthor.put("nick_name", "Arslinth");
+                finalAuthor.put("title","留言");
+                finalAuthor.put("email","752279593@qq.com");
+                return finalAuthor;
+            });
+
+            map.put("toUserName",author.get("nick_name"));
+            map.put("ArticleTile",author.get("title"));
+            mailService.sendMail(author.get("email"),"您在Arslinth的博客中发表的文章《"+author.get("title")+"》有了新的留言呐~","ArticleMessage",map);
         }
         articleDao.commentCount(comment.getArticleId(),1);
         return commentDao.insert(comment);
     }
+
     public void changeNew(String id,boolean hasNew){
         commentDao.updateNew(id,hasNew);
     }
@@ -84,7 +102,7 @@ public class CommentService {
     }
     public String[] getQQInfo(Long qqId){
         StringBuilder jsonString = new StringBuilder();
-        URLConnection connection = null;
+        URLConnection connection ;
         try {
             URL urlObject = new URL("https://r.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins="+qqId);
             connection = urlObject.openConnection();

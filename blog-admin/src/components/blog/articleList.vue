@@ -48,6 +48,13 @@
 						</el-select>
 					</template>
 				</el-table-column>
+				<el-table-column label="设置音乐" width="180">
+					<template slot-scope="scope">
+						<el-select v-model="scope.row.songId" clearable @change="musicChange(scope.row)">
+							<el-option v-for="(item,index) in musicData" :key="index" :label="item.title" :value="item.id"></el-option>
+						</el-select>
+					</template>
+				</el-table-column>
 				<el-table-column label="是否置顶">
 					<template slot-scope="scope">
 						<el-switch v-model="scope.row.top" @change="stateChange(scope.row)">
@@ -90,6 +97,7 @@
 		data() {
 			return {
 				dynamicTags: [],
+				musicData:[],
 				inputVisible: false,
 				inputValue: '',
 				query: {
@@ -116,6 +124,7 @@
 						if(res.data.tags)
 							this.$store.dispatch('setArticleTags',res.data.tags)
 						this.getData()
+						this.getMusicList()
 						this.dynamicTags = this.$store.state.articleTags
 					}else if (res.code === 401) {
 						this.$removeToken()
@@ -140,6 +149,15 @@
 						this.$message.error(res.message);
 				})
 			},
+			getMusicList() {
+				this.$api.blog.getMusicList(this.query).then(res => {
+					if (res.code === 200) {
+						this.musicData = res.data.songs
+					} else
+						this.$message.error(res.message)
+				})
+			},
+			
 			handleClose(tag) {
 				var tags = this.$store.getters.getArticleTags
 				tags.splice(tags.indexOf(tag), 1)
@@ -247,6 +265,9 @@
 				this.saveEdit(row)
 			},
 			typeChange(row) {
+				this.saveEdit(row)
+			},
+			musicChange(row){
 				this.saveEdit(row)
 			},
 			// 保存编辑
